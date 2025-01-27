@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+.is-cj { background: linear-gradient(-45deg, #152738, #337eb8, #050c11, #36abcc); background-size: 400% 400%; margin: 0; padding: 0; animation: gradient 10s ease infinite; }
+
+.circle-bg { display: inline-flex; justify-content: center; align-items: center; background-color: #3b6d9d; /* Cambia el color según tu diseño */ border-radius: 50%; width: 100px; /* Ajusta el tamaño del círculo */ height: 100px; /* Ajusta el tamaño del círculo */ }
+
+@keyframes gradient { 0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; } }
+
+/*# sourceMappingURL=styles.css.map */

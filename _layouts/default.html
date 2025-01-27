@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="en" class="bd-theme-{% if page.theme %}{{ page.theme }}{% else %}{{ page.layout }}{% endif %}">
+<html>
   <head>
-    {% include global/head.html %}
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/solid.css">
   </head>
   <body>
-    
-
+    {% include navigation.html %}
     {{ content }}
-
-    {% include global/footer.html %}
+    {% include footer.html %}
   </body>
 </html>

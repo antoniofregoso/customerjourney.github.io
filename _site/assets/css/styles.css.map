@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"styles.scss",
+		"_sass/main.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";\n@import \"https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css\";\n",
+		"\n\n\n.is-cj {\n\tbackground: linear-gradient(-45deg, #152738, #337eb8,  #050c11,  #36abcc);\n\tbackground-size: 400% 400%;\n\tmargin: 0;\n\tpadding: 0;\n\tanimation: gradient 10s ease infinite;\n}\n\n.circle-bg {\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #3b6d9d; /* Cambia el color según tu diseño */\n  border-radius: 50%;\n  width: 100px; /* Ajusta el tamaño del círculo */\n  height: 100px; /* Ajusta el tamaño del círculo */\n}\n\n@keyframes gradient {\n\t0% {\n\t\tbackground-position: 0% 50%;\n\t}\n\t50% {\n\t\tbackground-position: 100% 50%;\n\t}\n\t100% {\n\t\tbackground-position: 0% 50%;\n\t}\n}"
+	],
+	"names": [],
+	"mappings": ";AACA,OAAO,CAAP,4DAAO;ACEP,AAAA,MAAM,CAAC,EACN,UAAU,EAAE,2DAA6D,EACzE,eAAe,EAAE,SAAS,EAC1B,MAAM,EAAE,CAAC,EACT,OAAO,EAAE,CAAC,EACV,SAAS,EAAE,0BAA0B,GACrC;;AAED,AAAA,UAAU,CAAC,EACT,OAAO,EAAE,WAAW,EACpB,eAAe,EAAE,MAAM,EACvB,WAAW,EAAE,MAAM,EACnB,gBAAgB,EAAE,OAAO,EAAE,qCAAqC,CAChE,aAAa,EAAE,GAAG,EAClB,KAAK,EAAE,KAAK,EAAE,kCAAkC,CAChD,MAAM,EAAE,KAAK,EAAE,kCAAkC,EAClD;;AAED,UAAU,CAAV,QAAU,GACT,EAAE,GACD,mBAAmB,EAAE,MAAM;EAE5B,GAAG,GACF,mBAAmB,EAAE,QAAQ;EAE9B,IAAI,GACH,mBAAmB,EAAE,MAAM"
+}

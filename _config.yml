@@ -1,21 +1,11 @@
 # Meta
+env: "development"
 
-env: "production"
-docs_file: "website.min"
+title: Mi Sitio Jekyll
+description: Un sitio generado con Jekyll
+baseurl: "" # Cambia si el sitio no está en el root del dominio
+url: "http://localhost:4000" # Dirección de tu sitio
 
 # Build
 
-markdown: kramdown
 permalink: pretty
-url: https://bulma.io
-exclude:
-  [
-    ".babelrc",
-    "docker-compose.yml",
-    "icons",
-    "node_modules",
-    "package.json",
-    "templates",
-    "website.scss",
-    "yarn.lock",
-  ]

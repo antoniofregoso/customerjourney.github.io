@@ -1,0 +1,19 @@
+<a class="
+navbar-item
+{% if page.url == link.path %}is-active{% endif %}
+" 
+{%
+    if
+    link.href
+    %}
+    href="{{ link.href }}"
+    target="_blank"
+    {%
+    else
+    %}
+    href="{{ site.url }}{{ link.path }}"
+    {%
+    endif
+    %}>
+    {{link.name}}
+  </a>
