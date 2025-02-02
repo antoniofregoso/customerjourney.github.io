@@ -1,5 +1,9 @@
-
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 
 .is-cj {
 	background: linear-gradient(-45deg, #152738, #337eb8,  #050c11,  #36abcc);
@@ -30,3 +34,23 @@
 		background-position: 0% 50%;
 	}
 }
+
+.coverflow {
+	width: 300px !important;
+}
+
+.swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	color: #000;
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-pagination-bullet-active {
+	color: #fff;
+	background: #007aff;
+  }

@@ -1,12 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>CJjs | Home</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="/assets/fontawesome/css/solid.css">
-    <script src="/assets/js/main.js" defer></script>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CustumerJourney.js</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css"/>
+<link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="/assets/fontawesome/css/solid.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<script src="/assets/js/main.js" defer></script>
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -31,16 +44,6 @@ navbar-item
 
 " 
 
-    href="http://localhost:4000/concept/"
-    >
-    Concept
-  </a>
-      
-        <a class="
-navbar-item
-
-" 
-
     href="http://localhost:4000/getting-started/"
     >
     Getting Started
@@ -53,7 +56,7 @@ navbar-item
 
     href="http://localhost:4000/usage-guide/"
     >
-    User Guide
+    Usage Guide
   </a>
       
         <a class="
@@ -61,19 +64,9 @@ navbar-item
 
 " 
 
-    href="http://localhost:4000/router/"
+    href="http://localhost:4000/documentation/"
     >
-    Router
-  </a>
-      
-        <a class="
-navbar-item
-
-" 
-
-    href="http://localhost:4000/libraries/"
-    >
-    Libraries
+    Documentation
   </a>
       
         <a class="
@@ -110,45 +103,207 @@ navbar-item
   </div>
 </nav>
     <section class="hero is-medium is-cj" >
-    <div class="hero-body">
-      <p class="title">CustumerJourney.js</p>
-      <p class="subtitle">Open Source Vanilla Javascript Libraries for Building Touchpoints as a System.</p>
-    </div>
-  </section>
+  <div class="hero-body">
+    <h1 class="title has-text-light"> CustumerJourney.js</h1>
+    <p class="subtitle has-text-light">Open Source Vanilla Javascript Libraries for Building Touchpoints as a System.</p>
+</section>
 <section class="section">
 <div class="container">
 <div class="columns has-text-centered">
     <div class="column">
-        <span class="icon circle-bg">
+        <span class="icon circle-bg has-text-light">
             <i class="fas fa-arrows fa-3x"></i>
           </span>
-        <p class="is-size-3">Router</p>
+        <h3 class="is-size-3">Router</h3>
         <p class="">Client-side routing with detection of path parameters, query parameters and optionally hass fragment routing.</p>
 
     </div>
     <div class="column">
-        <span class="icon circle-bg">
+        <span class="icon circle-bg has-text-light">
             <i class="fas fa-people-group fa-3x"></i>
           </span>
-        <p class="is-size-3">Adaptable</p>
+        <h3 class="is-size-3">Adaptable</h3>
         <p class="">You can completely change the style and content of the front-end based on parameters to adapt to the user.</p>
     </div>
     <div class="column">
-        <span class="icon circle-bg">
+        <span class="icon circle-bg has-text-light">
             <i class="fas fa-ellipsis-h fa-3x"></i>
           </span>
-        <p class="is-size-3">Observable</p>
+        <h3 class="is-size-3">Observable</h3>
         <p class="">Detects client behavior within the app by emitting events to adjust the content and behavior of the app.</p>
     </div>
     <div class="column">
-        <span class="icon circle-bg">
+        <span class="icon circle-bg has-text-light">
             <i class="fas fa-gears fa-3x"></i>
           </span>
-        <p class="is-size-3">Automatable</p>
+        <h3 class="is-size-3">Automatable</h3>
         <p class="">It can be easily integrated with applications such as Make, Odoo or chatbots such as Manychat or Rasa.</p>
     </div>
   </div>
 </div>
+</section>
+<section class="section">
+    <div class="container">
+        <h2 class="is-size-3 has-text-centered" data-animation="tada" >CustumerJourney.js is made with:</h2>
+        <div id="partners" class="swiper mt-6" data-effect="coverflow" data-autoplay="2500" pagination>
+            <div class="swiper-wrapper mb-5">
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/js.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">JavaScript</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/redux.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">Redux</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://redux-toolkit.js.org/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/bulma.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">Bulma</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://bulma.io/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/animate.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">animate.css</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://animate.style/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/fontawsome.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">Font Awesome</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://fontawesome.com/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/remarkable.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">Remarkable</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://jonschlinkert.github.io/remarkable/demo/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/simpleparalax.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">SimpleParalax</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://simpleparallax.com/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            <div class="card swiper-slide coverflow">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/assets/images/swiper.webp" alt="Placeholder image"/>
+      </figure>
+    </div>
+    <div class="card-content">  
+      <div class="content">
+        <h3 class="title">Swiper</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+        iaculis mauris. </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="https://swiperjs.com/" target="_blank" class="card-footer-item">Visit</a>
+    </footer>
+  </div>
+  
+            
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </div>
 </section>
     <footer class="footer">
     <div class="content has-text-centered">

@@ -1,28 +1,352 @@
 {
     "navbar":[
         {
-        "name": "Concept",
-        "path": "/concept/"
-        },
-        {
         "name": "Getting Started",
         "path": "/getting-started/"
         },
         {
-        "name": "User Guide",
+        "name": "Usage Guide",
         "path": "/usage-guide/"
         },
         {
-        "name": "Router",
-        "path": "/router/"
-        },
-        {
-        "name": "Libraries",
-        "path": "/libraries/"
+        "name": "Documentation",
+        "path": "/documentation/"
         },
         {
         "name": "Sponsor",
         "path": "/sponsor/"
         }
-    ]
+    ],
+    "by_id": {
+      "concept":{
+        "name": "Concept",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/concept/"
+      },
+      "concept-touchpoint":{
+        "name": "Vanilla flavor touchponts",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/concept/touchpoint/"
+      },
+      "concept-system":{
+        "name": "Touchpoits as system",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/concept/system/"
+      },
+      "concept-adaptable":{
+        "name": "Adaptive touchpoint",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/concept/adaptive/"
+      },
+      "project":{
+        "name": "CJjs Project",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/proyect/"},
+      "project-structure":{
+        "name": "Structure",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/project/structure/"},
+      "project-titles":{
+        "name": "Titles",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/project/titles/"},
+      "project-markdonwn-text":{
+        "name": "Markdonwn Text",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/project/markdonwn-text/"},
+      "project-animations":{
+        "name": "Animations",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/project/animations/"},
+      "project-buttons":{
+        "name": "Buttons",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/project/buttons/"},
+      "project-i18n":{
+        "name": "i18n",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/project/i18n/"},
+      "core": {
+        "name": "Core",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/core/"
+      },
+      "core-app-page":{
+        "name": "AppPage",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/core/app-page/"
+
+      },
+        "core-page-header":{
+          "name": "PageHeader",
+          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "path": "/documentation/core/page-header/"
+        
+      },
+        "core-page-footer":{
+          "name": "PageFooter",
+          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "path": "/documentation/core/page-footer/"
+        
+        },
+        "core-app-element":{
+          "name": "AppElement",
+          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "path": "/documentation/core/app-element"
+        
+        },
+        "core-functions":{
+          "name": "Functions",
+          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "path": "/documentation/core/functions/"
+        
+        },
+      "router": {
+        "name": "Router",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/router/"
+      },
+      "router-cj-router":{
+        "name": "cjRouter",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/router/cj-router/"
+      },
+      "router-routing":{
+        "name": "Routing CJ style",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/router/routing"
+        
+      },
+      "components": {
+        "name": "Components",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/"
+      },
+      "components-cards-list":{
+        "name": "CardsList",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/cards-list/"
+      },
+      "components-cta-banner":{
+        "name": "CtaBanner",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/cta-banner/"
+      },
+      "components-countdown-timer":{
+        "name": "CountdownTimer",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/countdown-timer/"
+      },
+      "components-hero-banner":{
+        "name": "HeroBanner",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/hero-banner/"
+      },
+      "components-image-banner":{
+        "name": "ImageBanner",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/image-banner/"
+      },
+      "components-image-text":{
+        "name": "ImageText",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/image-text/"
+      },
+      "components-level-centered":{
+        "name": "LevelCentered",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/level-centered/"
+      },
+      "components-media-list":{
+        "name": "MediaList",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/media-list/"
+      },
+      "components-modal-box":{
+
+        "name": "ModalBox",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/modal-box/"
+      },
+      "components-omnichannel-chat":{
+
+        "name": "OmnichannelChat",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/omnichannel-chat/"
+      },
+      "components-text-accordion":{
+        "name": "TextAccordion",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/text-accordion/"
+      },
+      "components-text-columns":{
+        "name": "TextColumns",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/text-columns/"
+      },
+      "components-text-message":{
+
+        "name": "TextMessage",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/text-message/"
+      },
+      "components-text-notification":{
+
+        "name": "TextNotification",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/text-notification/"
+      },
+      "components-text-section":{
+        "name": "TextSection",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/text-section/"
+      },
+      "components-video-player":{
+
+        "name": "VideoPlayer",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/video-player/"
+      },
+      "components-webinar-invitation":{
+        "name": "WebinarInvitation",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/components/webinar-invitation/"
+      },
+      "forms": {
+        "name": "Forms",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/forms/"
+      },
+      "forms-form-hero": {
+        "name": "Form Hero",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/forms/form-hero"
+      },
+      "forms-form-lead": {
+        "name": "Form Lead",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/forms/form-lead"
+      },
+      "forms-form-modal": {
+        "name": "Form Modal",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/forms/form-modal"
+      },
+      "sliders": {
+        "name": "Sliders",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/sliders/"
+      },
+      "sliders-multi-slider":{
+        "name": "MultiSlider",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/sliders/multi-slider/"
+        },
+      "sliders-cj-swiper": {
+        "name": "CjSwiper",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/sliders/cj-swiper/"
+        },
+      "linkin-bio": {
+        "name": "Link in Bio",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/linkin-bio/"
+      },
+      "linkin-bio-linkin-bio":{
+        "name": "LinkinBio",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/linkin-bio/linkin-bio/"
+
+      },
+      "gamification": {
+        "name": "Gamification",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/gamification/"
+      },
+      "gamification-activation-modal":{
+        "name": "ActivationModal",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/gamification/activation-modal/"
+      },
+        "gamification-social-proof":{
+          "name": "SocialProof",
+          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "path": "/documentation/gamification/social-proof/"
+        },
+      "odoo": {
+        "name": "Odoo",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/odoo/"
+      },
+      "odoo-odoo-client":{
+        "name": "OdooClient",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/odoo/odoo-client/"
+      }
+    },
+    "categories": {
+      "concept":[
+        "concept-touchpoint",
+        "concept-system",
+        "concept-adaptable"
+      ],
+      "project":[
+        "project-structure",
+        "project-titles",
+        "project-markdonwn-text",
+        "project-animations",
+        "project-buttons",
+        "project-i18n"
+      ],
+      "core": [
+        "core-app-page",
+        "core-page-header",
+        "core-page-footer",
+        "core-app-element",
+        "core-functions"
+      ],
+      "router": [
+        "router-cj-router",
+        "router-routing"
+      ],
+      "components": [
+        "components-cards-list",
+        "components-cta-banner",
+        "components-countdown-timer",
+        "components-hero-banner",
+        "components-image-banner",
+        "components-image-text",
+        "components-level-centered",
+        "components-media-list",
+        "components-modal-box",
+        "components-omnichannel-chat",
+        "components-text-accordion",
+        "components-text-columns",
+        "components-text-message",
+        "components-text-notification",
+        "components-text-section",
+        "components-video-player",
+        "components-webinar-invitation"
+      ],
+      
+      "forms": [
+        "forms-form-hero",
+        "forms-form-lead",
+        "forms-form-modal"
+      ],
+      "sliders": [
+        "sliders-multi-slider",
+        "sliders-cj-swiper"
+      ],
+      "linkin-bio": [
+        "linkin-bio-linkin-bio"
+      ],
+      "gamification": [
+        "gamification-activation-modal",
+        "gamification-social-proof"
+      ],
+      "odoo": [
+        "odoo-odoo-client"
+      ]
+  }
 }

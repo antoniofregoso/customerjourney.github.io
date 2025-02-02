@@ -1,0 +1,42 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/images/cj-js.png" alt="CustumerJourney.js">
+    </a>
+
+    <a  id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start">
+      {% for link in site.data.links.navbar %}
+        {% include /website/nav-item.html link=link %}
+      {% endfor %}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item has-dropdown">
+        <a id="themes" class="navbar-link is-arrowless">
+          <i class="fas fa-moon"></i>
+        </a>
+        <div class="navbar-dropdown is-right">
+          <a id="light-theme" class="navbar-item">
+            <i class="fas fa-sun"></i> Light
+          </a>
+          <a id="dark-theme" class="navbar-item">
+            <i class="fas fa-moon"></i> Dark
+          </a>
+          <a id="system-theme" class="navbar-item">
+            <i class="fa-solid fa-desktop"></i> System
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</nav>

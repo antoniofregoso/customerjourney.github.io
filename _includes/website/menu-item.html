@@ -1,0 +1,6 @@
+{% assign link = site.data.links.by_id[include.link_id] %}
+{% assign has_sublist = include.sublist_id != nil %}
+{% assign sublist_size = site.data.links.categories[include.sublist_id] | size %}
+{% assign current_category = page['doc-tab'] %}
+{% assign is_current = current_category == include.sublist_id %}
+<li><a class="is-lateral-link" href="{{link.path}}">{{link.name}}</a></li>

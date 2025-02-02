@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
   let cjSite = new Site();
 })
@@ -9,6 +7,9 @@ class Site {
   constructor(){
     this.setTheme();
     this.addEvents();
+    this.setupSliders();
+    this.detectMenuActive();    
+    this.whithAnimations();
   }
 
   handleEvent(e){
@@ -77,4 +78,93 @@ class Site {
     }
   }
 
+  setupSliders(){
+    let sliders = document.querySelectorAll('.swiper');
+    sliders.forEach(slider=>{
+      let config = {};
+      if (slider.hasAttribute('pagination')){
+        config.pagination = {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        }
+      }
+      switch(slider.dataset.effect){
+        case 'coverflow':
+          config.grabCursor = true;
+          config.centeredSlides = true;
+          config.slidesPerView = 'auto';
+          config.effect = 'coverflow';
+          config.coverflowEffect = {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }
+          break;
+      };
+      if ( slider.dataset.autoplay ){
+        config.autoplay = {
+          delay: slider.dataset.autoplay,
+          disableOnInteraction: false
+        }
+      }
+      var swiper = new Swiper(`#${slider.id}`,config);
+    });
+  }
+
+
+  detectMenuActive(){
+    const currentPath = window.location.pathname;
+    console.log(currentPath);
+    if (currentPath.includes('/usage-guide') || currentPath.includes('/documentation')) {
+      let menuLinks = document.querySelectorAll('.is-lateral-link');
+      menuLinks.forEach(link => {
+        let linkPath = link.getAttribute('href');
+        if (currentPath === linkPath) {
+          link.classList.add('is-active');
+      }
+      })
+    }
+  }
+
+  whithAnimations(){
+    let objs = document.querySelectorAll('[data-animation]')
+    let options = { threshold: 0.1}   
+    var observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setupAnimation(entry.target)
+                return
+            }
+            entry.target.classList.forEach(_class => {
+                if (_class.startsWith('animate__')){
+                    entry.target.classList.remove(_class)
+                }
+            })
+        })
+    })
+    objs.forEach(obj => {
+        observer.observe(obj);
+    })
 }
+
+}
+
+
+function setupAnimation(el){
+  el.classList.add("animate__animated", `animate__${el.getAttribute('data-animation')}`);
+  if (el.hasAttribute('data-delay')){
+      el.classList.add(`animate__delay-${el.getAttribute('data-delay')}`);
+  }
+  if (el.hasAttribute('data-speed')){
+      el.classList.add(`animate__${el.getAttribute('data-speed')}`);
+  }
+  if (el.hasAttribute('data-repeat')){
+      el.getAttribute('data-repeat') === "infinite"?el.classList.add("animate__infinite"):el.classList.add(`animate__repeat-${el.getAttribute('data-repeat')}`);
+  }
+}
+

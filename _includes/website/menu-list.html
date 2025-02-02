@@ -1,0 +1,5 @@
+<ul class="menu-list">
+{% for link_id in site.data.links.categories[include.category_id] %}
+    {% include website/menu-item.html link_id=link_id %}
+  {% endfor %}
+</ul>
