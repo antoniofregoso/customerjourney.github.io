@@ -132,14 +132,15 @@ class Site {
       let crumHref = '/';
       let breadcrum = document.querySelector('.breadcrumb-items');
       for (let i = 0; i < crums.length; i++) {
-        console.log(crums[i])
         let crum = document.createElement('li');
         let crumLink = document.createElement('a');
         crumHref += crums[i] + '/';
         crumLink.href = crumHref;   
-        let unslug = crums[i].replace(/-/g, ' ');
-        crumLink.textContent = unslug.charAt(0).toUpperCase() + unslug.slice(1).toLowerCase();
-        if (i==crums.length-1){
+        if (i<crums.length-1){
+          let unslug = crums[i].replace(/-/g, ' ');
+          crumLink.textContent = unslug.charAt(0).toUpperCase() + unslug.slice(1).toLowerCase();
+        }else{
+          crumLink.textContent = document.title;
           crum.classList.add('is-active');
         }
         crum.appendChild(crumLink);
