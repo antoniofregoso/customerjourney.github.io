@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let cjSite = new Site();
+  let bjApp = new App();
 })
 
-class Site {
+class App {
 
   constructor(){
     this.setTheme();

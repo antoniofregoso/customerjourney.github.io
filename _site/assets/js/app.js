@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let cjSite = new Site();
+  let bjApp = new App();
 })
 
-class Site {
+class App {
 
   constructor(){
     this.setTheme();
@@ -119,7 +119,6 @@ class Site {
 
   detectMenuActive(){
     const currentPath = window.location.pathname;
-    console.log(currentPath);
     if (currentPath.includes('/usage-guide') || currentPath.includes('/documentation')) {
       let menuLinks = document.querySelectorAll('.is-lateral-link');
       menuLinks.forEach(link => {

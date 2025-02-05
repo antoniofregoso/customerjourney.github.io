@@ -9,3 +9,17 @@ url: "http://localhost:4000" # Dirección de tu sitio
 # Build
 
 permalink: pretty
+
+exclude: 
+  - Gemfile
+  - clean-theme.gemspec
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+sass:
+  style: compressed
+  source_dir: _sass

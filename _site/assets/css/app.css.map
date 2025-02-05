@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "app.css",
+	"sources": [
+		"app.scss",
+		"_sass/main.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";",
+		"\n@import \"https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css\";\n\nh1, h2, h3, h4, h5, h6 {\n    font-family: 'Orbitron', sans-serif;\n}\nbody {\n    font-family: 'Montserrat', sans-serif;\n}\n\n.is-cj {\n\tbackground: linear-gradient(-45deg, #152738, #337eb8,  #050c11,  #36abcc);\n\tbackground-size: 400% 400%;\n\tmargin: 0;\n\tpadding: 0;\n\tanimation: gradient 10s ease infinite;\n}\n\n.circle-bg {\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #3b6d9d; /* Cambia el color según tu diseño */\n  border-radius: 50%;\n  width: 100px; /* Ajusta el tamaño del círculo */\n  height: 100px; /* Ajusta el tamaño del círculo */\n}\n\n@keyframes gradient {\n\t0% {\n\t\tbackground-position: 0% 50%;\n\t}\n\t50% {\n\t\tbackground-position: 100% 50%;\n\t}\n\t100% {\n\t\tbackground-position: 0% 50%;\n\t}\n}\n\n.coverflow {\n\twidth: 300px !important;\n}\n\n.swiper-pagination-bullet {\n\twidth: 20px;\n\theight: 20px;\n\ttext-align: center;\n\tline-height: 20px;\n\tfont-size: 12px;\n\tcolor: #000;\n\topacity: 1;\n\tbackground: rgba(0, 0, 0, 0.2);\n  }\n\n  .swiper-pagination-bullet-active {\n\tcolor: #fff;\n\tbackground: #007aff;\n  }"
+	],
+	"names": [],
+	"mappings": "ACCA,OAAO,CAAP,4DAAO,CAEP,AAAA,EAAE,CAAE,EAAE,CAAE,EAAE,CAAE,EAAE,CAAE,EAAE,CAAE,EAAE,AAAC,CACnB,WAAW,CAAE,sBAAsB,CACtC,AACD,AAAA,IAAI,AAAC,CACD,WAAW,CAAE,wBAAwB,CACxC,AAED,AAAA,MAAM,AAAC,CACN,UAAU,CAAE,2DAA6D,CACzE,eAAe,CAAE,SAAS,CAC1B,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACV,SAAS,CAAE,0BAA0B,CACrC,AAED,AAAA,UAAU,AAAC,CACT,OAAO,CAAE,WAAW,CACpB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,gBAAgB,CAAE,OAAO,CACzB,aAAa,CAAE,GAAG,CAClB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,KAAK,CACd,AAED,UAAU,CAAV,QAAU,CACT,EAAE,CACD,mBAAmB,CAAE,MAAM,CAE5B,GAAG,CACF,mBAAmB,CAAE,QAAQ,CAE9B,IAAI,CACH,mBAAmB,CAAE,MAAM,EAI7B,AAAA,UAAU,AAAC,CACV,KAAK,CAAE,gBAAgB,CACvB,AAED,AAAA,yBAAyB,AAAC,CACzB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,MAAM,CAClB,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,eAAkB,CAC5B,AAED,AAAA,gCAAgC,AAAC,CAClC,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,OAAO,CACjB"
+}
