@@ -12,13 +12,16 @@ permalink: pretty
 
 exclude: 
   - Gemfile
-  - clean-theme.gemspec
   - Gemfile.lock
   - node_modules
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - _scss
+  - package.json
+  - package-lock.json
+  - buyerjourney.github.io.code-workspace
 
 sass:
   style: compressed
