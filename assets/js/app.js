@@ -71,10 +71,16 @@ class App {
     let theme = localStorage.getItem('theme');
     if (theme==='dark'){
       document.documentElement.setAttribute('data-theme', 'dark');
-      document.getElementById('themes').innerHTML = '<i class="fas fa-moon">'
+      document.getElementById('themes').innerHTML = '<i class="fas fa-moon">';
+      document.getElementById('dark-theme').classList.add('is-active');
     }else if (theme==='light'){
       document.documentElement.setAttribute('data-theme', 'light');
-      document.getElementById('themes').innerHTML = '<i class="fas fa-sun">'
+      document.getElementById('themes').innerHTML = '<i class="fas fa-sun">';
+      document.getElementById('light-theme').classList.add('is-active');
+    }else {
+      document.documentElement.removeAttribute('data-theme');
+      document.getElementById('themes').innerHTML = '<i class="fas fa-desktop">';
+      document.getElementById('system-theme').classList.add('is-active');
     }
   }
 
