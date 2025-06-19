@@ -1,0 +1,12 @@
+---
+layout: default
+title: Terms of Use
+subtitle: Open Source Vanilla Javascript Libraries for Building Touchpoints as a System.
+---
+{% include website/hero.html %}
+<div class="container">
+    <div class="content my-4">
+        {% capture terms %}{% include legal/terms-of-use.md %}{% endcapture %}
+        {{ terms | markdownify }}
+    </div>
+</div>

@@ -5,13 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
 class App {
 
   cookieConsent = {
-
+        cookie: {
+        name: 'cc_cj',
+          },
+           guiOptions: {
+          consentModal: {
+              layout: 'box wide',
+              position: 'bottom right',
+              equalWeightButtons: false
+          },
+          preferencesModal: {
+              layout: 'bar',
+              position: 'left',
+          }
+      },
         categories: {
             necessary: {
-                enabled: true,  // this category is enabled by default
-                readOnly: true  // this category cannot be disabled
+                enabled: true,  
+                readOnly: true
             },
-            analytics: {}
+            performance: {
+              enabled: true
+            },
+            functional: {
+              enabled: true
+            },
+            targeting: {
+              enabled: true
+            }
         },
 
         language: {
@@ -20,37 +41,39 @@ class App {
                 en: {
                     consentModal: {
                         title: 'We use cookies',
-                        description: 'Cookie modal description',
+                        description: 'This website uses cookies and similar technologies to ensure functionality, evaluate website usage, and to serve marketing content.',
+                        showPreferencesBtn: 'Cookie Preferences',
                         acceptAllBtn: 'Accept all',
-                        acceptNecessaryBtn: 'Reject all',
-                        showPreferencesBtn: 'Manage Individual preferences'
+                        acceptNecessaryBtn: 'Reject all'
                     },
                     preferencesModal: {
-                        title: 'Manage cookie preferences',
-                        acceptAllBtn: 'Accept all',
-                        acceptNecessaryBtn: 'Reject all',
+                        title: 'Cookie preferences',
                         savePreferencesBtn: 'Accept current selection',
                         closeIconLabel: 'Close modal',
                         sections: [
                             {
-                                title: 'Somebody said ... cookies?',
-                                description: 'I want one!'
+                                title: 'Privacy Preference',
+                                description: 'When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.'
                             },
                             {
-                                title: 'Strictly Necessary cookies',
-                                description: 'These cookies are essential for the proper functioning of the website and cannot be disabled.',
-
-                                //this field will generate a toggle linked to the 'necessary' category
+                                title: 'Strictly Necessary Cookies',
+                                description: 'These cookies are necessary for the website to function. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.',
                                 linkedCategory: 'necessary'
                             },
                             {
-                                title: 'Performance and Analytics',
-                                description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
-                                linkedCategory: 'analytics'
+                                title: 'Performance Cookies',
+                                description: 'These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us understand how visitors move around the site and which pages are most frequently visited.',
+                                linkedCategory: 'performance'
                             },
                             {
-                                title: 'More information',
-                                description: 'For any queries in relation to my policy on cookies and your choices, please <a href="#contact-page">contact us</a>'
+                                title: 'Functional Cookies',
+                                description: 'These cookies are used to record your choices and settings, maintain your preferences over time and recognize you when you return to our website. These cookies help us to personalize our content for you and remember your preferences.',
+                                linkedCategory: 'functional'
+                            },
+                            {
+                                title: 'Targeting Cookies',
+                                description: 'These cookies are deployed to our site by our advertising partners to build a profile of your interests and provide you with content that is relevant to you, including to show you relevant ads on other sites.',
+                                linkedCategory: 'targeting'
                             }
                         ]
                     }

@@ -1,16 +1,21 @@
 # Meta
-env: "development"
-
+env: development
 title: Mi Sitio Jekyll
 description: Un sitio generado con Jekyll
-baseurl: "" # Cambia si el sitio no está en el root del dominio
-url: "http://localhost:4000" # Dirección de tu sitio
+baseurl: "" # Ajusta a "/nombre-repositorio" si es necesario
+url: "" # Dejar vacío para que Jekyll lo infiera
 
 # Build
-
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+markdown: kramdown
 permalink: pretty
 
-exclude: 
+exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
@@ -18,11 +23,13 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - _scss
+  - _scss/
   - package.json
   - package-lock.json
   - buyerjourney.github.io.code-workspace
 
 sass:
   style: compressed
-  source_dir: _sass
+  sass_dir: _sass # Asegúrate de que coincida con tu carpeta Sass
+
+
