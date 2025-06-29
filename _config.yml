@@ -1,14 +1,14 @@
 # Meta
-env: development
-title: Mi Sitio Jekyll
-description: Un sitio generado con Jekyll
+env: production
+title: CustumerJourney.js
+description: Open Source Vanilla Javascript Libraries for Building Touchpoints as a System.
 baseurl: "" # Ajusta a "/nombre-repositorio" si es necesario
 url: "customerjourney.ninja" # Dejar vacío para que Jekyll lo infiera
 
 # Build
 lsi: false
 safe: true
-source: git@github.com:antoniofregoso/customerjourney.github.io.git
+#source: git@github.com:antoniofregoso/customerjourney.github.io.git
 incremental: false
 highlighter: rouge
 gist:

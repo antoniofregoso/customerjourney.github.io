@@ -392,7 +392,37 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    <div class="content"></div>
+    <div class="content"><div class="container">
+    <div class="content my-4">
+        
+        <p>In the app.js file. The callback functions are located inside the pages folder within the app folder. We have one for home, one for thanks and notFound to style the 404 error. bj-router responds to the 404 error, but can optionally be customized.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/router</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">thanks</span><span class="p">,</span> <span class="nx">notFound</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bjRouter</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">home</span><span class="p">);</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/#thanks</span><span class="dl">'</span><span class="p">,</span> <span class="nx">thanks</span><span class="p">).</span><span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">bye</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">onNotFound</span><span class="p">(</span><span class="nx">notFound</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>In the index.js file using redux persistent state and the loading function to enable Bulma’s Page-loader extension for styling :)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">persistor</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/store/store</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">loading</span> <span class="p">}</span> <span class="k">from</span>  <span class="dl">"</span><span class="s2">@customerjourney/core</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">@customerourney/core/src/bj.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">loading</span><span class="p">({</span><span class="na">color</span><span class="p">:</span><span class="dl">"</span><span class="s2">is-dark</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span><span class="dl">"</span><span class="s2">is-right-to-left</span><span class="dl">"</span><span class="p">});</span>
+
+<span class="nx">persistor</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">rehydratedState</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>  
+    <span class="nx">App</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+    </div>
+</div></div>
   </div>
 </main>
 

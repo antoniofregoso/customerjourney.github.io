@@ -2,3 +2,9 @@
 title: Routing CJ style
 layout: docs
 ---
+<div class="container">
+    <div class="content my-4">
+        {% capture routing %}{% include docs/router/routing.md %}{% endcapture %}
+        {{ routing | markdownify }}
+    </div>
+</div>
