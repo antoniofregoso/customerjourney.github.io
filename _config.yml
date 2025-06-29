@@ -8,7 +8,7 @@ url: "customerjourney.ninja" # Dejar vacío para que Jekyll lo infiera
 # Build
 lsi: false
 safe: true
-#source: git@github.com:antoniofregoso/customerjourney.github.io.git
+source: git@github.com:antoniofregoso/customerjourney.github.io.git
 incremental: false
 highlighter: rouge
 gist:
