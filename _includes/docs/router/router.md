@@ -80,4 +80,4 @@ The router object passed to the callback function has the pathFor(name) function
 window.location.href = router.pathFor("bye");
 ```
 ## Repository
-To propose features, report bugs or collaborate: [git@github.com:antoniofregoso/router.git](git@github.com:antoniofregoso/router.git).
+To propose features, report bugs or collaborate: [https://github.com/antoniofregoso/cj-router.git](https://github.com/antoniofregoso/cj-router.git).
