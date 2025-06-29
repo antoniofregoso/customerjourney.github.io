@@ -85,10 +85,12 @@ class App {
   constructor(){
     this.setTheme();
     this.addEvents();
+    this.addCopyCodeButtons(); 
     this.setupSliders();
-    this.detectMenuActive();    
+    this.detectMenuActive();   
     this.whithAnimations();
     CookieConsent.run(this.cookieConsent);
+    this.setUpPreferences();
   }
 
   handleEvent(e){
@@ -125,10 +127,9 @@ class App {
           document.getElementById('themes').parentNode.classList.toggle('is-active');
           document.documentElement.removeAttribute('data-theme');
           localStorage.removeItem('theme');
-          break;    
-
+          break;
       }
-    }
+    } 
   }
 
   addEvents() {
@@ -145,6 +146,68 @@ class App {
     darkTheme.addEventListener('click', this)
     let systemTheme = document.querySelector('#system-theme');
     systemTheme.addEventListener('click', this)
+    window.addEventListener('cc:onFirstConsent', ({detail}) => {
+      this.updatePreferences(CookieConsent.getCookie().categories);
+    });
+    window.addEventListener('cc:onChange', ({detail}) => {
+      this.updatePreferences(CookieConsent.getCookie().categories);
+    });
+
+  }
+
+  setUpPreferences(){
+    let preferences = CookieConsent.getCookie()
+    if (preferences.categories!=undefined){ 
+      this.updatePreferences(preferences.categories);
+    }
+  }
+
+  updatePreferences(preferences){
+    //['necessary', 'performance', 'functional', 'targeting']
+    let analyticsConsent = 'granted';
+    if (preferences.performance == undefined){
+      analyticsConsent = 'denied';
+    }
+    gtag('consent', 'update', {
+      'analytics_storage': analyticsConsent
+    });
+
+  }
+
+  addCopyCodeButtons(){
+    const codeBlocks = document.querySelectorAll('pre > code');
+    codeBlocks.forEach((codeBlock, index) => {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('is-relative');
+      wrapper.style.position = 'relative'; 
+      codeBlock.parentNode.parentNode.insertBefore(wrapper, codeBlock.parentNode);
+      wrapper.appendChild(codeBlock.parentNode);
+
+      const copyButton = document.createElement('button');
+      copyButton.classList.add('button','small');
+      copyButton.style.position = 'absolute';
+      copyButton.style.top = '0.5rem';
+      copyButton.style.right = '0.5rem';
+      copyButton.style.zIndex = '10';
+      copyButton.setAttribute('aria-label', 'Copy code');
+      copyButton.innerHTML = '<i class="fa-regular fa-copy"></i>';
+      wrapper.appendChild(copyButton);
+
+      copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeBlock.textContent)
+          .then(() => {
+            copyButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+            setTimeout(() => {
+              copyButton.innerHTML = '<i class="fa-regular fa-copy"></i>';
+            }, 2000);
+          })
+          .catch(err => {
+            console.error('Failed to copy text: ', err);
+          }); 
+      })
+       
+
+    });
   }
 
   setTheme(){

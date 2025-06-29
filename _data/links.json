@@ -106,10 +106,10 @@
         "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
         "path": "/documentation/router/"
       },
-      "router-cj-router":{
-        "name": "cjRouter",
+      "router-router":{
+        "name": "Router",
         "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
-        "path": "/documentation/router/cj-router/"
+        "path": "/documentation/router/router/"
       },
       "router-routing":{
         "name": "Routing CJ style",
@@ -306,7 +306,7 @@
         "core-functions"
       ],
       "router": [
-        "router-cj-router",
+        "router-router",
         "router-routing"
       ],
       "components": [

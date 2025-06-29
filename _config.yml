@@ -3,18 +3,20 @@ env: development
 title: Mi Sitio Jekyll
 description: Un sitio generado con Jekyll
 baseurl: "" # Ajusta a "/nombre-repositorio" si es necesario
-url: "" # Dejar vacío para que Jekyll lo infiera
+url: "customerjourney.ninja" # Dejar vacío para que Jekyll lo infiera
 
 # Build
 lsi: false
 safe: true
+source: git@github.com:antoniofregoso/customerjourney.github.io.git
 incremental: false
 highlighter: rouge
 gist:
   noscript: false
-markdown: kramdown
-permalink: pretty
-
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -26,10 +28,10 @@ exclude:
   - _scss/
   - package.json
   - package-lock.json
-  - buyerjourney.github.io.code-workspace
+  - custumerjourney.github.io.code-workspace
 
-sass:
-  style: compressed
-  sass_dir: _sass # Asegúrate de que coincida con tu carpeta Sass
+#sass:
+#  style: compressed
+#  sass_dir: _sass 
 
 
