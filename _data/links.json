@@ -232,6 +232,11 @@
         "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
         "path": "/documentation/forms/form-modal"
       },
+      "forms-form-appoinment": {
+        "name": "Form Appoinment",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/documentation/forms/form-appoinment"
+      },
       "sliders": {
         "name": "Sliders",
         "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
@@ -332,7 +337,8 @@
       "forms": [
         "forms-form-hero",
         "forms-form-lead",
-        "forms-form-modal"
+        "forms-form-modal",
+        "forms-form-appoinment"
       ],
       "sliders": [
         "sliders-multi-slider",

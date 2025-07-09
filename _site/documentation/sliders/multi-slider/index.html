@@ -320,6 +320,13 @@ navbar-item
 
 <li><a class="is-lateral-link" href="/documentation/forms/form-modal">Form Modal</a></li>
   
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/forms/form-appoinment">Form Appoinment</a></li>
+  
 </ul>
   <p class="menu-label">Sliders</p>
   <ul class="menu-list">
@@ -392,7 +399,185 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    <div class="content"></div>
+    <div class="content"><div class="container">
+    <div class="content my-4">
+        
+        <h2 id="description">Description</h2>
+<p>MultiSlider is a macro component based on <a href="https://swiperjs.com/">Swiper</a>. It allows you to generate one or more stacked sliders, each completely independent in their configuration. Its appearance can be modified according to the bulma classes.</p>
+
+<h2 id="components">Components</h2>
+<ul>
+  <li>id <em><strong>required</strong></em>.</li>
+  <li>caption.</li>
+  <li>title.</li>
+  <li>subtitle.</li>
+  <li>swipers.</li>
+</ul>
+
+<p>Swipers are a set of objects that represent a slide swiper. Sliders stack on top of each other and can be completely different.</p>
+
+<h3 id="swipers">Swipers</h3>
+<p>Each swiper has two components: setup and slides.</p>
+
+<h2 id="setup-options">Setup options</h2>
+<p>All configuration attributes are optional, but the “setup”:{} attribute must be declared.</p>
+<ul>
+  <li><strong>navigation</strong>{boolean}: Add navigation arrows.</li>
+  <li><strong>navigationColor</strong>{string}: Color in hexadecimal or rgb format.</li>
+  <li><strong>pagination</strong>{string}:
+    <ol>
+      <li>dots: One point for each slide located under the swiper.</li>
+      <li>fraction: n/total.</li>
+      <li>progressbar: It is located at the top of the swiper.</li>
+      <li>dynamic: Few points of different sizes.</li>
+      <li>bullets: Large numbered balls. They look like pool balls.</li>
+    </ol>
+  </li>
+  <li><strong>paginationColor</strong>{string}: Color in hexadecimal or rgb format.</li>
+  <li><strong>paginationGap</strong>{boolean}: Adds 30 pixels of additional space to navigation indicators.</li>
+  <li><strong>cards</strong>{boolean}: Change image for Bulma cards.</li>
+  <li><strong>autoplay</strong>{integer}:Duration of each slide in milliseconds.</li>
+  <li><strong>loop</strong>{boolean}:After the last slide comes the first one.</li>
+  <li><strong>spaceBetween</strong>{integer}:</li>
+  <li><strong>slidesPerView</strong>{integer}: Number of images displayed on the screen in the slider. On mobile phones, only one image can be displayed.</li>
+  <li><strong>speed</strong>{integer}:Speed ​​in milliseconds.</li>
+  <li><strong>centeredSlides</strong>{boolean}:</li>
+  <li><strong>parallaxImage</strong>{string}:</li>
+  <li><strong>effect</strong>{string}:
+    <ol>
+      <li>default:</li>
+      <li>fade:</li>
+      <li>coverflow:</li>
+      <li>Parallax:</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="slides">Slides</h2>
+<p>There are three types of slides: an image with optional text above it, product cards, and text only with a background image for all slides.</p>
+<h3 id="image">Image</h3>
+<h4 id="simple">Simple</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ratio"</span><span class="p">:</span><span class="s2">"is-16by9"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h4 id="with-text-over-the-image">With text over the image</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ratio"</span><span class="p">:</span><span class="s2">"is-16by9"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+            </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+            </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+            </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="parallax">Parallax</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="cards">Cards</h3>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"sdsf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+
+        </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"footer"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"buttons"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"caption"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"classList"</span><span class="p">:{},</span><span class="w">
+    </span><span class="nl">"animation"</span><span class="p">:{}</span><span class="w">   
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+    </span><span class="nl">"classList"</span><span class="p">:[],</span><span class="w">
+    </span><span class="nl">"animation"</span><span class="p">:{}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:{},</span><span class="w">
+    </span><span class="nl">"classList"</span><span class="p">:[],</span><span class="w">
+    </span><span class="nl">"animation"</span><span class="p">:{}</span><span class="w">  
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"swipers"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"slider1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"setup"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"cards"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"coverflow"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"navigation"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"navigationColor"</span><span class="p">:</span><span class="s2">"#ffb70f"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pagination"</span><span class="p">:</span><span class="s2">"bullets"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"paginationColor"</span><span class="p">:</span><span class="s2">"#ffb70f"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"paginationGap"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"slides"</span><span class="p">:[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+    </div>
+</div></div>
   </div>
 </main>
 
@@ -402,7 +587,7 @@ navbar-item
     <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>CustumerJourney.js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
+        <strong>CustumerJourney.Js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
         The source code is licensed
         <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>. The
         website content is licensed

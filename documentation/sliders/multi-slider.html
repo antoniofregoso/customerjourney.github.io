@@ -1,9 +1,10 @@
 ---
 title: MultiSlider
 layout: docs
-breadcrumb:
-- home
-- documentation
-- sliders
-- multi-slider
 ---
+<div class="container">
+    <div class="content my-4">
+        {% capture content %}{% include docs/sliders/multi-slider.md %}{% endcapture %}
+        {{ content | markdownify }}
+    </div>
+</div>

@@ -320,6 +320,13 @@ navbar-item
 
 <li><a class="is-lateral-link" href="/documentation/forms/form-modal">Form Modal</a></li>
   
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/forms/form-appoinment">Form Appoinment</a></li>
+  
 </ul>
   <p class="menu-label">Sliders</p>
   <ul class="menu-list">
@@ -392,7 +399,220 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    <div class="content"></div>
+    <div class="content"><div class="container">
+    <div class="content my-4">
+        
+        <p>All macro components of type fom have a form component with the same properties as described here.</p>
+<h2 id="components">Components</h2>
+<ul>
+  <li>form</li>
+  <li>name</li>
+  <li>function</li>
+  <li>email</li>
+  <li>phone</li>
+  <li>company</li>
+  <li>subject</li>
+  <li>description</li>
+  <li>terms</li>
+  <li>termsLink</li>
+  <li>submit</li>
+  <li>cancel</li>
+</ul>
+
+<h2 id="default-attributes-and-properties">Default attributes and properties</h2>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">"form"</span><span class="p">:{</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Nombre"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Name"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Nom"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Nombre es obligatorio."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Name field is required."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Il est requis de compléter le champ correspondant au nom."</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"function"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Puesto de Trabajo"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Job Position"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Poste"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Puesto de Trabajo es obligatorio."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Job Position field is required."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le champ Poste est obligatoire."</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Correo Electrónico"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"e-mail"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"e-mail"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Correo Electrónico es obligatorio."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Email field is required."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le champ E-mail est obligatoire."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"help2"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El correo electrónico es invalido."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Email is invalid."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le courriel est invalide."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Teléfono"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Phone"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Téléphone"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Teléfono es obligatorio."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Telephone field is required."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le champ Téléphone est obligatoire."</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help2"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El Número Telefónico es inválido."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Telephone Number is invalid."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le numéro de téléphone n'est pas valide."</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Compañía"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Entreprise"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Compañia es obligatorio."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Company field is required."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le champ Société est obligatoire."</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"subject"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Asunto"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Subject"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Objet"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Asunto es obligatorio."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Subject field is required."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le champ Objet est obligatoire."</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Descripción"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Description"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"El campo Descripción es obligatorio."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The Description field is required."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Le champ Description est obligatoire."</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"terms"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Estoy de acuerdo con los"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"I agree to the"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"J'accepte les"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"help"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Tienes que aceptar los Términos y Condiciones."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"You have to accept the Terms and Conditions."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Vous devez accepter les termes et conditions."</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"required"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"termsLink"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"términos y condiciones"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"terms and conditions"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"termes et conditions"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"submit"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Enviar"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Submit"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Soumettre"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"cancel"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Cancelar"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Cancel"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Annuler"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"context"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"lang"</span><span class="p">:</span><span class="s2">"en"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="form">Form</h2>
+<h3 id="options">Options</h3>
+<ul>
+  <li><strong>classList</strong>: Array of bulma and custom classes.</li>
+  <li><strong>animation</strong>: Animation of the completed form.</li>
+  <li><strong>code</strong>: Default country code in the phone field in 2-letter format.<em>US</em>, <em>MX</em>, etc.</li>
+  <li><strong>phoneCodes</strong>: Array of country codes to limit the selection to certain countries.</li>
+</ul>
+
+<h2 id="imput-fields">Imput fields</h2>
+<p>Fields function, email, phone, company, subject and description are controlled in the same way.</p>
+<h3 id="options-1">Options</h3>
+<ul>
+  <li><strong>disabled</strong>{boolean}:If true the field is not generated.</li>
+  <li><strong>animation</strong>{object}: Animation <a href="/usage-guide/project/animations/">description</a>.</li>
+  <li><strong>label</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a>.</li>
+  <li><strong>placeholder</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a>.</li>
+  <li><strong>required</strong>{boolean}:</li>
+  <li><strong>help</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a> Error message in required fields.</li>
+  <li><strong>help2</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a>. Bad format error message in phone and email fields. Error messages and label text are default for Spanish, English, and French.</li>
+</ul>
+
+<h2 id="terms">terms</h2>
+<p>Checkbox to accept terms and conditions.</p>
+<h3 id="options-2">Options</h3>
+<ul>
+  <li><strong>disabled</strong>{boolean}:If true the field is not generated.</li>
+  <li><strong>text</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a>.
+    <h2 id="termslink">termsLink</h2>
+    <h3 id="options-3">Options</h3>
+  </li>
+  <li><strong>url</strong>{string}: Link to the terms and conditions page.</li>
+  <li><strong>text</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a>.</li>
+</ul>
+
+<h2 id="buttons">Buttons</h2>
+<p>The submit and cancel buttons are controlled in the same way.</p>
+
+<h3 id="options-4">Options</h3>
+<ul>
+  <li><strong>animation</strong>{object}: Animation <a href="/usage-guide/project/animations/">description</a>.</li>
+  <li><strong>classList</strong>: Array of bulma and custom classes.</li>
+  <li><strong>text</strong>{object}:<a href="/usage-guide/project/i18n/">Multitext</a>.</li>
+</ul>
+
+<h2 id="macro-componentes">Macro-componentes</h2>
+<ol>
+  <li><a href="/documentation/forms/form-hero/">FormHero</a>.</li>
+  <li><a href="/documentation/forms/form-lead/">FormLead</a>.</li>
+  <li><a href="/documentation/forms/form-modal/">FormModal</a>.</li>
+  <li><a href="/documentation/forms/form-appoinment/">FormAppoinment</a>.</li>
+</ol>
+
+    </div>
+</div>
+</div>
   </div>
 </main>
 
@@ -402,7 +622,7 @@ navbar-item
     <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>CustumerJourney.js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
+        <strong>CustumerJourney.Js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
         The source code is licensed
         <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>. The
         website content is licensed

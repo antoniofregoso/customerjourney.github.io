@@ -2,3 +2,9 @@
 title: Markdown Text
 layout: usage-guide
 ---
+<div class="container">
+    <div class="content my-4">
+        {% capture content %}{% include usage-guide/project/markdown.md %}{% endcapture %}
+        {{ content | markdownify }}
+    </div>
+</div>

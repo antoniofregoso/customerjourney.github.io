@@ -2,3 +2,9 @@
 title: Forms
 layout: docs
 ---
+<div class="container">
+    <div class="content my-4">
+        {% capture form %}{% include docs/form/forms.md %}{% endcapture %}
+        {{ form | markdownify }}
+    </div>
+</div>

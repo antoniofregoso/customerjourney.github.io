@@ -200,7 +200,69 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    <div class="content"></div>
+    <div class="content"><div class="container">
+    <div class="content my-4">
+        
+        <p>Titles are header components for most macro components. They are generated within a div with the <a href="https://bulma.io/documentation/elements/content/">Bulma content class</a>, so without adding classes, they already have a Bulma appearance. <a href="https://bulma.io/documentation/helpers/typography-helpers/">Classes can be added</a> to modify their appearance.</p>
+
+<h2 id="types-of-titles">Types of titles</h2>
+<ul>
+  <li>caption: Short sentence about the title.</li>
+  <li>title: The main message.</li>
+  <li>subtitle: Message under the title to reinforce the idea.</li>
+</ul>
+
+<h2 id="components">Components</h2>
+<ul>
+  <li>Multi-language text.</li>
+  <li>classList: Bulma or custom class..</li>
+  <li>animation: It is configured in the <a href="/usage-guide/project/animations/">CJ style</a>.</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"caption"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"No son anteojos. Es una declaración silenciosa."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"They are not glasses. It's a silent statement."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Ce ne sont pas des lunettes. C'est une déclaration silencieuse."</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"speed"</span><span class="p">:</span><span class="s2">"slower"</span><span class="w">
+            </span><span class="p">}</span><span class="w">   
+        </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Diseñados para los que no necesitan pedir atención. La imponen."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Designed for those who don't need to ask for attention. They impose it."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Conçus pour ceux qui n'ont pas besoin de demander de l'attention. Ils l'imposent."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-size-2"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Hechos a mano. Inspirados en el poder. Llevados por quienes deciden las reglas."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Handmade. Inspired by power. Worn by those who set the rules."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Faits à la main. Inspirés par le pouvoir. Portés par ceux qui décident des règles."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-size-4"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"speed"</span><span class="p">:</span><span class="s2">"slower"</span><span class="w">
+        </span><span class="p">}</span><span class="w">  
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/assets/images/usage-guide/titles.webp" alt="Titles" /></p>
+
+    </div>
+</div></div>
   </div>
 </main>
 
@@ -209,7 +271,7 @@ navbar-item
     <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>CustumerJourney.js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
+        <strong>CustumerJourney.Js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
         The source code is licensed
         <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>. The
         website content is licensed

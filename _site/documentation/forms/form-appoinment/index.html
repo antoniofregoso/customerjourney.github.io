@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FormAppoinment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css"/>
+<link rel="stylesheet" href="/assets/css/code.css"/>
+<link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="/assets/fontawesome/css/solid.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-445JGGLZK0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-445JGGLZK0');
+</script>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<script src="/assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/images/cj-js.png" alt="CustumerJourney.js">
+    </a>
+
+    <a  id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start">
+      
+        <a class="
+navbar-item
+
+" 
+
+    href="http://localhost:4000/getting-started/"
+    >
+    Getting Started
+  </a>
+      
+        <a class="
+navbar-item
+
+" 
+
+    href="http://localhost:4000/usage-guide/"
+    >
+    Usage Guide
+  </a>
+      
+        <a class="
+navbar-item
+
+" 
+
+    href="http://localhost:4000/documentation/"
+    >
+    Documentation
+  </a>
+      
+        <a class="
+navbar-item
+
+" 
+
+    href="http://localhost:4000/sponsor/"
+    >
+    Sponsor
+  </a>
+      
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item has-dropdown">
+        <a id="themes" class="navbar-link is-arrowless">
+          <i class="fas fa-moon"></i>
+        </a>
+        <div class="navbar-dropdown is-right">
+          <a id="light-theme" class="navbar-item">
+            <i class="fas fa-sun"></i> Light
+          </a>
+          <a id="dark-theme" class="navbar-item">
+            <i class="fas fa-moon"></i> Dark
+          </a>
+          <a id="system-theme" class="navbar-item">
+            <i class="fa-solid fa-desktop"></i> System
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</nav>
+    <main class="columns is-gapless">
+  <div class="column is-2">
+    <aside class="menu p-4">
+  <p class="menu-label">Router</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/router/router/">Router</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/router/routing">Routing CJ style</a></li>
+  
+</ul>
+  <p class="menu-label">Core</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/core/app-page/">AppPage</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/core/page-header/">PageHeader</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/core/page-footer/">PageFooter</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/core/app-element">AppElement</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/core/functions/">Functions</a></li>
+  
+</ul>
+  <p class="menu-label">Components</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/cards-list/">CardsList</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/cta-banner/">CtaBanner</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/countdown-timer/">CountdownTimer</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/hero-banner/">HeroBanner</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/image-banner/">ImageBanner</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/image-text/">ImageText</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/level-centered/">LevelCentered</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/media-list/">MediaList</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/modal-box/">ModalBox</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/omnichannel-chat/">OmnichannelChat</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/text-accordion/">TextAccordion</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/text-columns/">TextColumns</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/text-message/">TextMessage</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/text-notification/">TextNotification</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/text-section/">TextSection</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/video-player/">VideoPlayer</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/components/webinar-invitation/">WebinarInvitation</a></li>
+  
+</ul>
+  <p class="menu-label">Forms</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/forms/form-hero">Form Hero</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/forms/form-lead">Form Lead</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/forms/form-modal">Form Modal</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/forms/form-appoinment">Form Appoinment</a></li>
+  
+</ul>
+  <p class="menu-label">Sliders</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/sliders/multi-slider/">MultiSlider</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/sliders/cj-swiper/">CjSwiper</a></li>
+  
+</ul>
+  <p class="menu-label">Link in Bio</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/linkin-bio/linkin-bio/">LinkinBio</a></li>
+  
+</ul>
+  <p class="menu-label">Gamification</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/gamification/activation-modal/">ActivationModal</a></li>
+  
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/gamification/social-proof/">SocialProof</a></li>
+  
+</ul>
+  <p class="menu-label">Odoo</p>
+  <ul class="menu-list">
+
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/documentation/odoo/odoo-client/">OdooClient</a></li>
+  
+</ul>
+</aside>
+  </div>
+  <div class="column">
+    <section class="hero is-medium is-cj" >
+  <div class="hero-body">
+    <h1 class="title has-text-light" data-animation="fadeInDown"> FormAppoinment</h1>
+    <p class="subtitle has-text-light" data-animation="fadeInUp"></p>
+</section>
+    <nav class="breadcrumb is-right" aria-label="breadcrumbs" data-animation="bounceInRight">
+    <ul  class="breadcrumb-items">
+      <li><a href="/">Home</a></li>
+    </ul>
+  </nav>
+    <div class="content"><div class="container">
+    <div class="content my-4">
+        
+        <h2 id="components">Components</h2>
+<ul>
+  <li>id <em><strong>required</strong></em>.</li>
+  <li>caption</li>
+  <li>title</li>
+  <li>subtitle</li>
+  <li>calendar</li>
+  <li>form</li>
+</ul>
+
+<h2 id="default-attributes-and-properties">Default attributes and properties</h2>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"eventName"</span><span class="p">:</span><span class="s2">"user:click-form-appoinment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"form"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"function"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"disabled"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"disabled"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"subject"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"disabled"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"disabled"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"calendar"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"initialTime"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"finalTime"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deltaTime"</span><span class="p">:</span><span class="mi">60</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h2 id="title">Title</h2>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Agenda tu cita"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Schedule your appointment"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Planifiez votre rendez-vous"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-size-2"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h2 id="calendar">Calendar</h2>
+
+<h3 id="options">Options</h3>
+
+<ul>
+  <li><strong>disablePastDays</strong>{boolean}: Disables days before the current date.</li>
+  <li><strong>deltaDays</strong>{integer}: Number how many days is the range of selectable dates from the current day.</li>
+  <li><strong>initialTime</strong>{integer}: Appointments start time in 24-hour format.</li>
+  <li><strong>finalTime</strong>{integer}: Appointments end time in 24-hour format.</li>
+  <li><strong>deltaTime</strong>{integer}: Interval of minutes between appointments in minutes.</li>
+  <li><strong>availableDates</strong>{integer}: Array of dates in <em>YYYY:MM:DD</em> format.</li>
+</ul>
+
+<h3 id="basic-configuration">Basic configuration</h3>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"calendar"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"initialTime"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"finalTime"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deltaTime"</span><span class="p">:</span><span class="mi">30</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="interval-of-business-days">Interval of business days</h3>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"disablePastDays"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deltaDays"</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"initialTime"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"finalTime"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deltaTime"</span><span class="p">:</span><span class="mi">30</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="available-dates">Available Dates</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"initialTime"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"finalTime"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deltaTime"</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"availableDates"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"2025-07-01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2025-07-02"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2025-07-03"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2025-07-04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"2025-07-05"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h2 id="form">Form</h2>
+
+<p><a href="/documentation/forms/">Form Configuration</a></p>
+
+<h2 id="example">Example</h2>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"appoinment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eventName"</span><span class="p">:</span><span class="s2">"submitappoinment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Agenda tu cita"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Schedule your appointment"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Planifiez votre rendez-vous"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-size-2"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"calendar"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"disablePastDays"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deltaDays"</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"initialTime"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"finalTime"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deltaTime"</span><span class="p">:</span><span class="mi">30</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"form"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"terms"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"disabled"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/assets/images/docs/form_appoinment.webp" alt="FormAppoinment View" /></p>
+
+    </div>
+</div></div>
+  </div>
+</main>
+
+
+
+  
+    <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>CustumerJourney.Js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
+        The source code is licensed
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>. The
+        website content is licensed
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">
+          CC BY-NC-SA 4.0
+        </a>.
+      </p>
+      <p><a href="/privacy-policy">Privacy Policy</a> - <a href="/terms-of-use">Terms of Use</a> - <a type="button" data-cc="show-preferencesModal">Cookie Preferences</a></p>      
+    </div>
+  </footer>
+     <script type="module" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+  </body>
+</html>
