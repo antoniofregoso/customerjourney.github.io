@@ -1,5 +1,5 @@
 All macro components of type fom have a form component with the same properties as described here.
-## Components
+## Elements
 - form 
 - name
 - function
@@ -187,9 +187,3 @@ The submit and cancel buttons are controlled in the same way.
 - **animation**{object}: Animation [description](/usage-guide/project/animations/).
 - **classList**: Array of bulma and custom classes.
 - **text**{object}:[Multitext](/usage-guide/project/i18n/).
-
-## Macro-componentes
-1. [FormHero](/documentation/forms/form-hero/).
-2. [FormLead](/documentation/forms/form-lead/).
-3. [FormModal](/documentation/forms/form-modal/).
-4. [FormAppoinment](/documentation/forms/form-appoinment/).

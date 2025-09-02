@@ -4,3 +4,50 @@ title: Sponsor
 subtitle: Open Source Vanilla Javascript Libraries for Building Touchpoints as a System.
 ---
 {% include website/hero.html %}
+<div class="container p-4">
+    <div class="content my-4">
+        <h2>Become a CustumerJourney.js Sponsor</h2>
+        <p>CustumerJourney.js is an open-source project that thrives on community support. By becoming a sponsor, you help us maintain and improve the library, ensuring it remains a valuable resource for developers worldwide.</p>
+        <h2 class="title is-3 has-text-centered">Choose your sponsorship plan</h2>
+<p class="subtitle is-5 has-text-centered">Your support is vital to the future of this project.</p>
+    </div>
+    <hr>
+    {% for item in site.data.ux.sponsors.options %}
+        <div class="columns is-vcentered row-with-border">
+            <div class="column is-1">
+                <div class="is-size-4 has-text-weight-bold">{{ item.price }}</div>
+            </div>
+            <div class="column is-narrow">
+                <div class="is-size-5 has-text-grey">{{ item.frequency }}</div>
+            </div>
+            <div class="column">
+                <p>{{ item.message }}</p>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+    <div class="content">
+        <div class="buttons is-centered mt-6"> 
+            <a href="https://github.com/antoniofregoso/customerjourney.github.io" target="_blank" rel="noopener noreferrer" class="button is-dark is-large"> 
+                <span class="icon is-medium"><i class="fab fa-github"></i></span><span>Sponsor on GitHub</span> 
+            </a> 
+            <a href="https://www.patreon.com/antoniofregoso" target="_blank" rel="noopener noreferrer" class="button is-danger is-large"> 
+                <span class="icon is-medium"><i class="fab fa-patreon"></i></span><span></span>Sponsor on Patreon</span> 
+            </a>
+        </div>
+    </div>
+    <article class="message">
+  <div class="message-header">
+    <p>What is the difference between Patreon and GitHub for sponsorship?</p>
+  </div>
+  <div class="message-body content">
+    <p>In terms of rewards for your sponsorship, there's no difference. You'll receive the same rewards on both platforms.</p>
+    <p>The main distinction lies in billing and convenience:
+        <ul>
+            <li>Billing (VAT): Patreon charges VAT based on your geographic location.</li>
+            <li>Integration: If you already use GitHub, your sponsorship will be billed alongside your current GitHub subscription, simplifying the process.</li>
+        </ul>
+        In short, the best option for you is the one that's easiest for you. If you're already in the GitHub ecosystem, sponsoring through that platform may be more convenient.</p>
+  </div>
+</article>
+</div>

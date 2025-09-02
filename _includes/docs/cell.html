@@ -1,0 +1,18 @@
+{% assign link = site.data.links.by_id[include.item] %}
+<div class="cell">
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                {{ link.name }}
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                {{ link.subtitle }}
+            </div>
+        </div>
+        <footer class="card-footer">
+        <a href="{{ link.path }}" class="card-footer-item">Details</a>
+        </footer>
+    </div>
+</div> 
