@@ -78,47 +78,47 @@
       },
       "core-app-page":{
         "name": "AppPage",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "The container for all the page components, event controller and data management.",
         "path": "/documentation/core/app-page/"
 
       },
         "core-page-header":{
           "name": "PageHeader",
-          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "subtitle": "Header with language and theme selectors.",
           "path": "/documentation/core/page-header/"
         
       },
         "core-page-footer":{
           "name": "PageFooter",
-          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "subtitle": "Footer of the page with logo and privacy policies",
           "path": "/documentation/core/page-footer/"
         
         },
         "core-app-element":{
           "name": "AppElement",
-          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "subtitle": "Base component for creating CJjs macro-components",
           "path": "/documentation/core/app-element"
         
         },
         "core-functions":{
           "name": "Functions",
-          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "subtitle": "Toolbox for adding CJjs functionality",
           "path": "/documentation/core/functions/"
         
         },
       "router": {
         "name": "Router",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "All CJjs apps start here. The router is the heart of a CJjs app with persistent state management.",
         "path": "/documentation/router/"
       },
       "router-router":{
         "name": "Router",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Simple, light and flexible routing for your CJjs applications",
         "path": "/documentation/router/router/"
       },
       "router-routing":{
         "name": "Routing CJ style",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "The router as the heart of a CJjs app with persistent state management.",
         "path": "/documentation/router/routing"
         
       },
@@ -129,22 +129,22 @@
       },
       "components-cards-list":{
         "name": "CardsList",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Generate highly customizable Bulma-style cards lists with ease.",
         "path": "/documentation/components/cards-list/"
       },
       "components-cta-banner":{
         "name": "CtaBanner",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "A classic CTA with text and buttons.",
         "path": "/documentation/components/cta-banner/"
       },
       "components-countdown-timer":{
         "name": "CountdownTimer",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Countdown timer in days, hours and minutes for temporary promotions",
         "path": "/documentation/components/countdown-timer/"
       },
       "components-hero-banner":{
         "name": "HeroBanner",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Highly customizable Bulma-style hero banner.",
         "path": "/documentation/components/hero-banner/"
       },
       "components-image-banner":{
