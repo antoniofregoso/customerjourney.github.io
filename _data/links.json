@@ -38,6 +38,11 @@
         "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
         "path": "/usage-guide/concept/adaptive/"
       },
+      "concept-ai-integration":{
+        "name": "AI Integration",
+        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "path": "/usage-guide/concept/ai-integration/"
+      },
       "project":{
         "name": "CJjs Project",
         "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
@@ -293,7 +298,8 @@
       "concept":[
         "concept-touchpoint",
         "concept-system",
-        "concept-adaptable"
+        "concept-adaptable",
+        "concept-ai-integration"
       ],
       "project":[
         "project-structure",

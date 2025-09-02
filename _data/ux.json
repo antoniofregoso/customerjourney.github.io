@@ -112,6 +112,10 @@
         {
             "name":"cj-sliders",
             "repository":"github.com/antoniofregoso/cj-sliders"
+        },
+        {
+            "name":"customerjourney.github.io",
+            "repository":"github.com/antoniofregoso/customerjourney.github.io"
         }
     ]
 }
