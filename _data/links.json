@@ -20,60 +20,60 @@
     "by_id": {
       "concept":{
         "name": "Concept",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "The concepts behind CJjs",
         "path": "/usage-guide/concept/"
       },
       "concept-touchpoint":{
         "name": "Vanilla flavor touchponts",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Vanilla philosophy in generating HTML components with JavaScript.",
         "path": "/usage-guide/concept/touchpoint/"
       },
       "concept-system":{
-        "name": "Touchpoits as system",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "name": "App as system",
+        "subtitle": "Systems thinking applied to CJs apps.",
         "path": "/usage-guide/concept/system/"
       },
       "concept-adaptable":{
-        "name": "Adaptive touchpoint",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "name": "Adaptive apps",
+        "subtitle": "User behavior observability plus data to adapt and achieve hyper-personalization.",
         "path": "/usage-guide/concept/adaptive/"
       },
       "concept-ai-integration":{
         "name": "AI Integration",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "How an AI agent can facilitate hyper-personalization of the user experience.",
         "path": "/usage-guide/concept/ai-integration/"
       },
       "project":{
         "name": "CJjs Project",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "How to create a CJjs project from scratch.",
         "path": "/usage-guide/proyect/"},
       "project-structure":{
         "name": "Structure",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Layout of a CJjs App with hyper-personalization and state management.",
         "path": "/usage-guide/project/structure/"},
       "project-titles":{
         "name": "Titles",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "How titles are generated within CJjs components.",
         "path": "/usage-guide/project/titles/"},
       "project-markdonwn-text":{
         "name": "Markdonwn Text",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "CJjs uses markdown to generate HTML content.",
         "path": "/usage-guide/project/markdonwn-text/"},
       "project-animations":{
         "name": "Animations",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Integrating Animate.css animations into CJjs components",
         "path": "/usage-guide/project/animations/"},
       "project-buttons":{
         "name": "Buttons",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "How to generate CTA buttons in BJjs components",
         "path": "/usage-guide/project/buttons/"},
       "project-i18n":{
         "name": "i18n",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Multi-language internationalization i8n in CJjs apps",
         "path": "/usage-guide/project/i18n/"},
       "core": {
         "name": "Core",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "The core CJjs package",
         "path": "/documentation/core/"
       },
       "core-app-page":{
@@ -124,7 +124,7 @@
       },
       "components": {
         "name": "Components",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Reusable UI macro-components for CJjs apps",
         "path": "/documentation/components/"
       },
       "components-cards-list":{
@@ -139,7 +139,7 @@
       },
       "components-countdown-timer":{
         "name": "CountdownTimer",
-        "subtitle": "Countdown timer in days, hours and minutes for temporary promotions",
+        "subtitle": "Countdown timer in days, hours and minutes for temporary promotions.",
         "path": "/documentation/components/countdown-timer/"
       },
       "components-hero-banner":{
@@ -149,148 +149,148 @@
       },
       "components-image-banner":{
         "name": "ImageBanner",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "One-image banner with titles at the top, descriptions, and buttons at the bottom.",
         "path": "/documentation/components/image-banner/"
       },
       "components-image-text":{
         "name": "ImageText",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Highly configurable two-column component. One for an image and the other for information and CTA buttons.",
         "path": "/documentation/components/image-text/"
       },
       "components-level-centered":{
         "name": "LevelCentered",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "A Level bulma with icons, heading and title centered.",
         "path": "/documentation/components/level-centered/"
       },
       "components-media-list":{
         "name": "MediaList",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Bulma's Media Object List component made easy.",
         "path": "/documentation/components/media-list/"
       },
       "components-modal-box":{
 
         "name": "ModalBox",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "A Modal Box with a card, image, or message options.",
         "path": "/documentation/components/modal-box/"
       },
       "components-omnichannel-chat":{
 
         "name": "OmnichannelChat",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Multi-channel chat button with WhatsApp, Messenger, Telegram, and more.",
         "path": "/documentation/components/omnichannel-chat/"
       },
       "components-text-accordion":{
         "name": "TextAccordion",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Animated accordion to present information one by one.",
         "path": "/documentation/components/text-accordion/"
       },
       "components-text-columns":{
         "name": "TextColumns",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Two-column text with CTA buttons.",
         "path": "/documentation/components/text-columns/"
       },
       "components-text-message":{
 
         "name": "TextMessage",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Colored message blocks, to emphasize part of your page's content.",
         "path": "/documentation/components/text-message/"
       },
       "components-text-notification":{
 
         "name": "TextNotification",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Bold notification blocks, to alert your users of something important.",
         "path": "/documentation/components/text-notification/"
       },
       "components-text-section":{
         "name": "TextSection",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Text section with titles and CTA buttons.",
         "path": "/documentation/components/text-section/"
       },
       "components-video-player":{
 
         "name": "VideoPlayer",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Video player with titles and CTA buttons.",
         "path": "/documentation/components/video-player/"
       },
       "components-webinar-invitation":{
         "name": "WebinarInvitation",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Webinar banner with start date, duration, price, and iCal button.",
         "path": "/documentation/components/webinar-invitation/"
       },
       "forms": {
         "name": "Forms",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Forms and form components for CJjs apps",
         "path": "/documentation/forms/"
       },
       "forms-form-hero": {
-        "name": "Form Hero",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "name": "FormHero",
+        "subtitle": "Two columns, one for the form and one for titles and CTA buttons",
         "path": "/documentation/forms/form-hero"
       },
       "forms-form-lead": {
-        "name": "Form Lead",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "name": "FormLead",
+        "subtitle": "Base form for all components with form",
         "path": "/documentation/forms/form-lead"
       },
       "forms-form-modal": {
-        "name": "Form Modal",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "name": "FormModal",
+        "subtitle": "A modal with a form inside.",
         "path": "/documentation/forms/form-modal"
       },
       "forms-form-appoinment": {
-        "name": "Form Appoinment",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "name": "FormAppoinment",
+        "subtitle": "Practical form to generate appointments.",
         "path": "/documentation/forms/form-appoinment"
       },
       "sliders": {
         "name": "Sliders",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Sliders and carousels for CJjs apps",
         "path": "/documentation/sliders/"
       },
       "sliders-multi-slider":{
         "name": "MultiSlider",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Multi-slider based on Swiper. Can generate sliders of different types stacked together.",
         "path": "/documentation/sliders/multi-slider/"
         },
       "sliders-cj-swiper": {
         "name": "CjSwiper",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Base component for generating macro-components with sliders based on Swiper",
         "path": "/documentation/sliders/cj-swiper/"
         },
       "linkin-bio": {
         "name": "Link in Bio",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Link In Bio App.",
         "path": "/documentation/linkin-bio/"
       },
       "linkin-bio-linkin-bio":{
         "name": "LinkinBio",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "A highly customizable Link In Bio page.",
         "path": "/documentation/linkin-bio/linkin-bio/"
 
       },
       "gamification": {
         "name": "Gamification",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Gamification components to increase conversions.",
         "path": "/documentation/gamification/"
       },
       "gamification-activation-modal":{
         "name": "ActivationModal",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "A modal for activations with name and email fields.",
         "path": "/documentation/gamification/activation-modal/"
       },
         "gamification-social-proof":{
           "name": "SocialProof",
-          "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+          "subtitle": "Stackable social proof that slides across the screen.",
           "path": "/documentation/gamification/social-proof/"
         },
       "odoo": {
         "name": "Odoo",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Odoo integration components for CJjs apps",
         "path": "/documentation/odoo/"
       },
       "odoo-odoo-client":{
         "name": "OdooClient",
-        "subtitle": "An overview of what Bulma as a <strong>framework</strong> is all about",
+        "subtitle": "Full integration with Odoo's JSON-RPC API",
         "path": "/documentation/odoo/odoo-client/"
       }
     },
