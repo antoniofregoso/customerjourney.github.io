@@ -13,13 +13,13 @@ npm i @customerjourney/cj-forms
         {% capture form %}{% include docs/form/forms.md %}{% endcapture %}
         {{ form | markdownify }}
         <h2>Components</h2>
-    </div>
-    <div class="fixed-grid has-2-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-        <div class="grid">
-            {% assign elements = site.data.links.categories['forms'] %}
-            {% for item in elements %}
-                {% include docs/cell.html item=item %} 
-            {% endfor %}
+        <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+            <div class="grid">
+                {% assign elements = site.data.links.categories['forms'] %}
+                {% for item in elements %}
+                    {% include docs/cell.html item=item %} 
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
