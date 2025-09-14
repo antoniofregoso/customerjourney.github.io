@@ -43,6 +43,11 @@
         "subtitle": "How an AI agent can facilitate hyper-personalization of the user experience.",
         "path": "/usage-guide/concept/ai-integration/"
       },
+      "concept-hyper-personalization":{
+        "name": "Hyper-personalization",
+        "subtitle": "Enhanced customer experience.",
+        "path": "/usage-guide/concept/hyper-personalization/"
+      },
       "project":{
         "name": "CJjs Project",
         "subtitle": "How to create a CJjs project from scratch.",
@@ -299,7 +304,8 @@
         "concept-touchpoint",
         "concept-system",
         "concept-adaptable",
-        "concept-ai-integration"
+        "concept-ai-integration",
+        "concept-hyper-personalization"
       ],
       "project":[
         "project-structure",

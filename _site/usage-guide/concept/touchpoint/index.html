@@ -151,6 +151,13 @@ navbar-item
 
 <li><a class="is-lateral-link" href="/usage-guide/concept/ai-integration/">AI Integration</a></li>
 
+    
+
+
+
+
+<li><a class="is-lateral-link" href="/usage-guide/concept/hyper-personalization/">Hyper-personalization</a></li>
+
 </ul>
   <a class="menu-label" href="/usage-guide/project/">CJ Project</a>
   <ul class="menu-list">
@@ -211,7 +218,31 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    
+    <div class="container">
+    <div class="content my-4">
+        
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppPage</span><span class="p">,</span> <span class="nx">PageHeader</span><span class="p">,</span> <span class="nx">PageFooter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HeroBanner</span><span class="p">,</span> <span class="nx">MediaList</span><span class="p">,</span> <span class="nx">CardsList</span><span class="p">,</span> <span class="nx">ModalBox</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-components</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../store/store</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">currentValue</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span><span class="s2">`
+        &lt;page-header id="header"&gt;&lt;/page-header&gt;
+        &lt;hero-banner id="atention"&gt;&lt;/hero-banner&gt;
+        &lt;cards-list id="interest"&gt;&lt;/cards-list&gt;
+        &lt;media-list id="desire"&gt;&lt;/media-list&gt;
+        &lt;cards-list id="action"&gt;&lt;/cards-list&gt;
+        &lt;page-footer id=c&gt;&lt;/page-footer&gt;
+        &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
+        `</span><span class="p">;</span>
+    <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">({},</span> <span class="nx">template</span><span class="p">);</span>
+     <span class="nx">pag</span><span class="p">.</span><span class="nx">sendWebhook</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://webhook-url</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </div>
+</div>
   </div>
 </main>
 
