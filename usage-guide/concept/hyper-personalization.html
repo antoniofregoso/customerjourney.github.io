@@ -3,3 +3,9 @@ title: Hyper-personalization
 subtitle: Enhanced customer experience
 layout: usage-guide
 ---
+<div class="container">
+    <div class="content my-4">
+        {% capture content %}{% include usage-guide/concept/hyper-personalization.md %}{% endcapture %}
+        {{ content | markdownify }}
+    </div>
+</div>
