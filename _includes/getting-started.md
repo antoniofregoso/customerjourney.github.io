@@ -35,7 +35,7 @@ Open the Redux DevTools extension in your browser and watch the magic happen.
 ```bash
 npm run watch
 ```
-Inside the src/app/data/home.js folder make changes and observe the results.
+Inside the src/app/data/home.json file make changes and observe the results.
 ## 9. Integration with AI.
 The home.json object describes the landing page's layout, content, and animations, but in production, it's generated in the backend and sent to the application based on route parameters, query parameters, status, and user-specific information from an enterprise management system, such as Odoo. An AI agent can generate a hyper-personalized user experience with all this information using tools like n8n.
 ## 10. Open Source Project.
