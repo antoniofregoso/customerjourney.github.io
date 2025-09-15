@@ -1,6 +1,9 @@
 Start playing with the landing page demo. It's very easy.
 ## 1. Prepare your browser.
 Install the Redux DevTools extension to monitor state changes.
+- [In Chrome](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
+- [In Firefox](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
+
 ## 2. Install the demo.
 
 ```bash
