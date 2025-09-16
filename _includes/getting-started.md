@@ -1,6 +1,6 @@
 Start playing with the landing page demo. It's very easy.
 ## 1. Prepare your browser.
-Install the Redux DevTools extension to monitor state changes.
+Install the  extension to monitor state changes.
 - [In Chrome](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
 - [In Firefox](https://addons.mozilla.org/es-ES/firefox/addon/reduxdevtools).
 
