@@ -3,21 +3,24 @@ title: Core
 subtitle: "The core CJjs package"
 layout: docs
 ---
-<div class="container">
-    <div class="content p-4">
-        <h2>Install</h2>
-        <p>Install the components package with npm:</p>
-            {% highlight bash %}
-npm i @customerjourney/cj-core
-            {% endhighlight %}
-        <h2>Components</h2>
-        <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-            <div class="grid">
-                {% assign elements = site.data.links.categories['core'] %}
-                {% for item in elements %}
-                    {% include docs/cell.html item=item %} 
-                {% endfor %}
+<div class="section">
+    <div class="container">
+        <div class="content p-4">
+            <h2>Install</h2>
+            <p>Install the components package with npm:</p>
+                {% highlight bash %}
+    npm i @customerjourney/cj-core
+                {% endhighlight %}
+            <h2>Components</h2>
+            <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+                <div class="grid">
+                    {% assign elements = site.data.links.categories['core'] %}
+                    {% for item in elements %}
+                        {% include docs/cell.html item=item %} 
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+    {% include website/sponsorme.html %}
 </div>

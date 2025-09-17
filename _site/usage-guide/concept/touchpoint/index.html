@@ -223,8 +223,9 @@ navbar-item
         
         <p>CustomerJourney.js are libraries specialized in creating sales funnels and landing pages based on macro components with a focus on hyper-personalization with AI. Each macro component represents a section of a page. These sections are developed using the <a href="https://bulma.io/">Bulma CSS Framework</a>.</p>
 
-<p>The paradigm used is OOP, and JavaScript natively has HTMLElement and Template literals, so I decided to go bare-bones without using React, Vue, or any other aids.
-The necessary router is very simple and runs on the client side, so we created a simple, fast one that fits the needs of CustomerJourney.js.</p>
+<p>The paradigm used is OOP, and JavaScript natively has HTMLElement and Template literals, so I decided to go bare-bones without using React, Vue, or any other aids.</p>
+
+<p>The necessary router is very simple and runs on the client side, so we created a simple, fast one that fits the needs of CustomerJourney.js.</p>
 <h2 id="simple-router">Simple router</h2>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">bye</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
@@ -240,9 +241,20 @@ The necessary router is very simple and runs on the client side, so we created a
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppPage</span><span class="p">,</span> <span class="nx">PageHeader</span><span class="p">,</span> <span class="nx">PageFooter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">HeroBanner</span><span class="p">,</span> <span class="nx">MediaList</span><span class="p">,</span> <span class="nx">CardsList</span><span class="p">,</span> <span class="nx">ModalBox</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-components</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../store/store</span><span class="dl">"</span><span class="p">;</span>
-
+<span class="cm">/**
+ * Declare callback funtion for home page
+ * @param {object} req 
+ * @param {object} router 
+ */</span>
 <span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
+    <span class="cm">/**
+     * current state of the app
+     * @type {object}
+     */</span>
     <span class="kd">let</span> <span class="nx">currentValue</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+    <span class="cm">/**
+     * Template for the page
+     */</span>
     <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span><span class="s2">`
         &lt;page-header id="header"&gt;&lt;/page-header&gt;
         &lt;hero-banner id="atention"&gt;&lt;/hero-banner&gt;
@@ -252,9 +264,12 @@ The necessary router is very simple and runs on the client side, so we created a
         &lt;page-footer id=c&gt;&lt;/page-footer&gt;
         &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
         `</span><span class="p">;</span>
+    <span class="cm">/**
+     * Page instance
+     */</span>
     <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">({},</span> <span class="nx">template</span><span class="p">);</span>
     <span class="cm">/**
-     * I get hyper-personalized AI-generated design, content, and animations for the client in json mode.
+     * Get hyper-personalized AI-generated design, content, and animations for the client in json mode.
      */</span>
     <span class="nx">pag</span><span class="p">.</span><span class="nx">sendWebhook</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://webhook-url</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">)</span>
 <span class="p">}</span>
@@ -316,9 +331,9 @@ The necessary router is very simple and runs on the client side, so we created a
 </span></code></pre></div></div>
 
     </div>
-    <p class="has-text-right pr-6"><a class="button" href="/getting-started/">
+    <p class="has-text-right pr-6"><a class="button" href="/getting-started/" data-animation="heartBeat" data-repeat="2">
     <span class="icon">
-      <i class="fab fa-github"></i>
+      <i class="fas fa-utensils"></i>
     </span>
     <span>Try it here</span>
     </a></p>

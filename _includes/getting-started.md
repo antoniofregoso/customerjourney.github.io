@@ -41,4 +41,4 @@ Here you can see the structure of the Customer Journey.js projects: [See CJ.js  
 ## Integration with AI
 The home.json object describes the landing page's layout, content, and animations, but in production, it's generated in the backend and sent to the application based on route parameters, query parameters, status, and user-specific information from an enterprise management system, such as Odoo. An AI agent can generate a hyper-personalized user experience with all this information using tools like n8n.
 ## Open Source Project
-This is an open source project licensed under the GPLv3. We invite you to support this project to turn it into a powerful tool for hyper-personalizing the user experience for sales funnels at: [Sponsor](/sponsor/).
+This is an open source project licensed under the GPLv3. We invite you to support this project to turn it into a powerful tool for hyper-personalizing the user experience for sales funnels at:

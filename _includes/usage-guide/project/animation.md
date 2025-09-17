@@ -69,3 +69,9 @@ slow, slower, fast, faster.
             } 
 }
 ```
+Animations use IntersectionObserver and are activated and deactivated by the user's scrolling.
+They are enabled as follows in src/index.js:
+```javascript
+App.run();
+whithAnimations();
+```

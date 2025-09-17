@@ -4,18 +4,20 @@ title: Github
 subtitle: These are the repositories for the Customer Journey.js project.
 ---
 {% include website/hero.html %}
-
-<div class="container p-4">
-    <div class="content my-4">
-        <p>CustumerJourney.js is an open-source project that thrives on community support. By sponsoring us on GitHub, you help us maintain and improve the library, ensuring it remains a valuable resource for developers worldwide.</p>
-        <p>Visit our <a href="/sponsor/" class="text-primary">Sponsor Page</a> to learn more about how you can contribute and support the project.</p>
-        <p>We appreciate your support and look forward to building a better CustumerJourney.js together!</p>
-        <p>Check out our GitHub repositories for code access:<br>
-        <ul>
-            {% for item in site.data.ux.github %}
-                <li><a href="https://{{item.repository}}">{{item.name}}</a></li>
-            {% endfor %}
-        </ul>
-        </p>
+<div class="section">
+    <div class="container p-4">
+        <div class="content my-4">
+            <p>CustumerJourney.js is an open-source project that thrives on community support. By sponsoring us on GitHub, you help us maintain and improve the library, ensuring it remains a valuable resource for developers worldwide.</p>
+            <p>Visit our <a href="/sponsor/" class="text-primary">Sponsor Page</a> to learn more about how you can contribute and support the project.</p>
+            <p>We appreciate your support and look forward to building a better CustumerJourney.js together!</p>
+            <p>Check out our GitHub repositories for code access:<br>
+            <ul>
+                {% for item in site.data.ux.github %}
+                    <li><a href="https://{{item.repository}}">{{item.name}}</a></li>
+                {% endfor %}
+            </ul>
+            </p>
+        </div>
     </div>
+    {% include website/sponsorme.html %}
 </div>

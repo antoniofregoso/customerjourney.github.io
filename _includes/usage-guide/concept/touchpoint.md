@@ -1,6 +1,7 @@
 CustomerJourney.js are libraries specialized in creating sales funnels and landing pages based on macro components with a focus on hyper-personalization with AI. Each macro component represents a section of a page. These sections are developed using the [Bulma CSS Framework](https://bulma.io/).
 
 The paradigm used is OOP, and JavaScript natively has HTMLElement and Template literals, so I decided to go bare-bones without using React, Vue, or any other aids.
+
 The necessary router is very simple and runs on the client side, so we created a simple, fast one that fits the needs of CustomerJourney.js.
 ## Simple router
 ```javascript
@@ -19,9 +20,20 @@ App.on('/#thanks', bye).setName("bye");
 import { AppPage, PageHeader, PageFooter } from "@customerjourney/cj-core";
 import { HeroBanner, MediaList, CardsList, ModalBox } from "@customerjourney/cj-components";
 import { store } from "../store/store";
-
+/**
+ * Declare callback funtion for home page
+ * @param {object} req 
+ * @param {object} router 
+ */
 export function home(req, router){
+    /**
+     * current state of the app
+     * @type {object}
+     */
     let currentValue = store.getState();
+    /**
+     * Template for the page
+     */
     let template =`
         <page-header id="header"></page-header>
         <hero-banner id="atention"></hero-banner>
@@ -31,9 +43,12 @@ export function home(req, router){
         <page-footer id=c></page-footer>
         <modal-box id="message"></modal-box>
         `;
+    /**
+     * Page instance
+     */
     page =  new AppPage({}, template);
     /**
-     * I get hyper-personalized AI-generated design, content, and animations for the client in json mode.
+     * Get hyper-personalized AI-generated design, content, and animations for the client in json mode.
      */
     pag.sendWebhook('https://webhook-url', req, currentValue.context)
 }

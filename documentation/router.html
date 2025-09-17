@@ -3,3 +3,24 @@ title: Router
 subtitle: All CJjs apps start here. The router is the heart of a CJjs app with persistent state management.
 layout: docs
 ---
+<div class="section">
+    <div class="container">
+        <div class="content p-4">
+            <h2>Install</h2>
+            <p>Install the router package with npm:</p>
+                {% highlight bash %}
+    npm i @customerjourney/cj-router
+                {% endhighlight %}
+            <h2>Documentation</h2>
+            <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+                <div class="grid">
+                    {% assign elements = site.data.links.categories['router'] %}
+                    {% for item in elements %}
+                        {% include docs/cell.html item=item %} 
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include website/sponsorme.html %}
+</div>

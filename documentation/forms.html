@@ -3,23 +3,26 @@ title: Forms
 subtitle: Forms and form components for CJjs apps
 layout: docs
 ---
-<div class="container">
-    <div class="content p-4">
-        <h2>Install</h2>
-        <p>Install the components package with npm:</p>
-            {% highlight bash %}
-npm i @customerjourney/cj-forms
-            {% endhighlight %}
-        {% capture form %}{% include docs/form/forms.md %}{% endcapture %}
-        {{ form | markdownify }}
-        <h2>Components</h2>
-        <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-            <div class="grid">
-                {% assign elements = site.data.links.categories['forms'] %}
-                {% for item in elements %}
-                    {% include docs/cell.html item=item %} 
-                {% endfor %}
+<div class="section">
+    <div class="container">
+        <div class="content p-4">
+            <h2>Install</h2>
+            <p>Install the components package with npm:</p>
+                {% highlight bash %}
+    npm i @customerjourney/cj-forms
+                {% endhighlight %}
+            {% capture form %}{% include docs/form/forms.md %}{% endcapture %}
+            {{ form | markdownify }}
+            <h2>Components</h2>
+            <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+                <div class="grid">
+                    {% assign elements = site.data.links.categories['forms'] %}
+                    {% for item in elements %}
+                        {% include docs/cell.html item=item %} 
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</div>
+    {% include website/sponsorme.html %}
+</div> 

@@ -3,27 +3,30 @@ layout: usage-guide
 title: Usage Guide
 subtitle: Understand the fundamentals and basic concepts of Customer Journey.js.
 ---
- <div class="container">
-    <div class="content p-4">
-        <h2>Concept</h2><div class="fixed-grid has-2-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-        <p>The four basic concepts with which this project is developed with the purpose of achieving hyper-personalization of the user experience.</p>
-        <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-            <div class="grid">
-                {% assign elements = site.data.links.categories['concept'] %}
-                {% for item in elements %}
-                    {% include docs/cell.html item=item %} 
-                {% endfor %}
+<div class="section">
+    <div class="container">
+        <div class="content p-4">
+            <h2>Concept</h2><div class="fixed-grid has-2-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+            <p>The four basic concepts with which this project is developed with the purpose of achieving hyper-personalization of the user experience.</p>
+            <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+                <div class="grid">
+                    {% assign elements = site.data.links.categories['concept'] %}
+                    {% for item in elements %}
+                        {% include docs/cell.html item=item %} 
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <h2>CJ Proyect</h2><div class="fixed-grid has-2-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-        <p>Basic principles for understanding and creating a Customer Journey.js project</p>
-        <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
-            <div class="grid">
-                {% assign elements = site.data.links.categories['project'] %}
-                {% for item in elements %}
-                    {% include docs/cell.html item=item %} 
-                {% endfor %}
+            <h2>CJ Proyect</h2><div class="fixed-grid has-2-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+            <p>Basic principles for understanding and creating a Customer Journey.js project</p>
+            <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop">
+                <div class="grid">
+                    {% assign elements = site.data.links.categories['project'] %}
+                    {% for item in elements %}
+                        {% include docs/cell.html item=item %} 
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+    {% include website/sponsorme.html %}
 </div>
