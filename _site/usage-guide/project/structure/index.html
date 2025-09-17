@@ -267,29 +267,46 @@ navbar-item
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">config</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./.env/conf.json</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">persistor</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/store/store</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">loading</span><span class="p">,</span> <span class="nx">whithAnimations</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">setStage</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/store/slices/homeSlice</span><span class="dl">"</span>
 <span class="k">import</span> <span class="dl">'</span><span class="s1">animate.css</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="dl">'</span><span class="s1">@customerjourney/cj-core/src/pageloader.css</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
 
+<span class="cm">/**
+ * Set loader element and its properties: Color and direction
+ */</span>
 <span class="nx">loading</span><span class="p">({</span><span class="na">color</span><span class="p">:</span><span class="dl">"</span><span class="s2">is-dark</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span><span class="dl">"</span><span class="s2">is-right-to-left</span><span class="dl">"</span><span class="p">});</span>
 
+<span class="cm">/**
+ * Set theme from the store if exists
+ */</span>
 <span class="kd">let</span> <span class="nx">currentValue</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
     <span class="kd">let</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">currentValue</span><span class="p">?.</span><span class="nx">context</span><span class="p">?.</span><span class="nx">theme</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">theme</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-theme</span><span class="dl">'</span><span class="p">,</span> <span class="nx">theme</span><span class="p">);</span>
     <span class="p">}</span>
 
+<span class="cm">/**
+ * rehydrate state from local storage
+ */</span>
 <span class="nx">persistor</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
     <span class="kd">const</span> <span class="nx">rehydratedState</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>  
 <span class="p">})</span>
+<span class="cm">/**
+ * Run the app
+ */</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+<span class="cm">/**
+ * Init animations 
+ */</span>
 <span class="nx">whithAnimations</span><span class="p">();</span>
 </code></pre></div></div>
 <h3 id="appjs">App.js</h3>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">bye</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
 
+<span class="cm">/**
+ * Main application router
+ */</span>
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">home</span><span class="p">);</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/#thanks</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bye</span><span class="p">).</span><span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">bye</span><span class="dl">"</span><span class="p">);</span>
@@ -302,23 +319,39 @@ navbar-item
 <span class="k">import</span> <span class="nx">homeSlice</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./slices/homeSlice</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">byeSlice</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./slices/byeSlice</span><span class="dl">"</span><span class="p">;</span>
 
+<span class="cm">/**
+ * Configure Redux store with persistence
+ */</span>
 <span class="kd">const</span> <span class="nx">persistConfig</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span>
     <span class="nx">storage</span>
   <span class="p">};</span>
 
+  <span class="cm">/**
+   * Combine all slices into a root reducer
+   */</span>
   <span class="kd">const</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="nx">combineReducers</span><span class="p">({</span>
     <span class="na">context</span><span class="p">:</span> <span class="nx">contextSlice</span><span class="p">,</span>
     <span class="na">home</span><span class="p">:</span> <span class="nx">homeSlice</span><span class="p">,</span>
     <span class="na">bye</span><span class="p">:</span> <span class="nx">byeSlice</span>
   <span class="p">});</span>
 
+  <span class="cm">/**
+   * Create a persisted reducer
+   */</span>
   <span class="kd">const</span> <span class="nx">persistedReducer</span> <span class="o">=</span> <span class="nx">persistReducer</span><span class="p">(</span><span class="nx">persistConfig</span><span class="p">,</span> <span class="nx">rootReducer</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Configure the Redux store with the persisted reducer
+   */</span>
 
   <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">({</span>
     <span class="na">reducer</span><span class="p">:</span> <span class="nx">persistedReducer</span>
   <span class="p">});</span>
 
+  <span class="cm">/**
+   * Create a persistor to manage persistence
+   */</span>
   <span class="kd">const</span> <span class="nx">persistor</span> <span class="o">=</span> <span class="nx">persistStore</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span> 
 
   <span class="k">export</span> <span class="p">{</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">persistor</span> <span class="p">};</span>
@@ -326,6 +359,10 @@ navbar-item
 <h3 id="contextslicejs">contextSlice.js</h3>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createSlice</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">generateSessionToken</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@customerjourney/cj-core</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="cm">/**
+ * Context slice to manage global settings like language, theme, and session token.
+ */</span>
 <span class="kd">const</span> <span class="nx">contextSlice</span> <span class="o">=</span> <span class="nx">createSlice</span><span class="p">({</span>
     <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">context</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">initialState</span><span class="p">:{</span>
@@ -351,6 +388,9 @@ navbar-item
 <h3 id="homeslicejs">homeSlice.js</h3>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createSlice</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
 
+<span class="cm">/**
+ * Home slice to manage the state of the home component, including stage and breadcrumb.
+ */</span>
 <span class="kd">const</span> <span class="nx">homeSlice</span> <span class="o">=</span> <span class="nx">createSlice</span><span class="p">({</span>
     <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">initialState</span><span class="p">:{</span>
@@ -379,14 +419,30 @@ navbar-item
 <span class="k">import</span> <span class="p">{</span> <span class="nx">setLanguaje</span><span class="p">,</span> <span class="nx">setTheme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../store/slices/contextSlice</span><span class="dl">"</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../store/store</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">homeUpdater</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./updaters/homeUpdater</span><span class="dl">"</span><span class="p">;</span>
+<span class="cm">/**
+ * Import design, content and animation for the home page
+ */</span>
 <span class="k">import</span> <span class="nx">data</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/home.json</span><span class="dl">"</span><span class="p">;</span>
 
+<span class="cm">/**
+ * Declare home function
+ * This function will be called by the router when the user navigates to the home page.
+ * @param {*} req : request object  with path params and  query params
+ * @param {*} router : router object
+ */</span>
 <span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
-
+    <span class="cm">/**
+     * Date time when the user enters the page
+     */</span>
     <span class="kd">let</span> <span class="nx">go</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
 
+    <span class="cm">/**
+     * Counter describes the customer's behavior on the page
+    */</span>
     <span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="p">{</span><span class="na">go</span><span class="p">:</span><span class="nx">go</span><span class="p">,</span> <span class="na">time</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">atention</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">interest</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">desire</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">action</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">conversion</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">leavingapp</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">leavedapp</span><span class="p">:</span><span class="mi">0</span> <span class="p">}</span>
-
+    <span class="cm">/**
+     * Page template
+     */</span>
     <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span><span class="s2">`
     &lt;page-header id="header"&gt;&lt;/page-header&gt;
     &lt;hero-banner id="atention"&gt;&lt;/hero-banner&gt;
@@ -396,11 +452,19 @@ navbar-item
     &lt;page-footer id="footer"&gt;&lt;/page-footer&gt;
     &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
     `</span><span class="p">;</span>
-    
+    <span class="cm">/**
+     * The state is recovered from the store
+     */</span>
     <span class="kd">let</span> <span class="nx">currentValue</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
     <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">setStage</span><span class="p">(</span><span class="dl">'</span><span class="s1">start</span><span class="dl">'</span><span class="p">));</span>
-    <span class="nx">data</span><span class="p">.</span><span class="nx">context</span> <span class="o">=</span> <span class="nx">currentValue</span><span class="p">;</span>    <span class="p">;</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">context</span> <span class="o">=</span> <span class="nx">currentValue</span><span class="p">;</span>
+    <span class="cm">/**
+     * Page creation
+     */</span>
     <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">template</span><span class="p">);</span>
+    <span class="cm">/**
+     * Eventes handler for the page
+     */</span>
     <span class="kd">const</span> <span class="nx">pageEvents</span> <span class="o">=</span> <span class="p">{</span>
         <span class="na">handleEvent</span><span class="p">:</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="k">switch</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">){</span>
@@ -506,25 +570,43 @@ navbar-item
             <span class="p">}}</span>
             
         <span class="p">}</span>
-
+    <span class="cm">/**
+     * Function to handle state changes in the store
+     * It compares the previous state with the current state and calls the homeUpdater function if there are changes.
+     */</span>    
     <span class="kd">function</span> <span class="nx">handleChange</span><span class="p">(){</span>
             <span class="kd">let</span> <span class="nx">previousValue</span> <span class="o">=</span> <span class="nx">currentValue</span><span class="p">;</span>
             <span class="nx">currentValue</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">previousValue</span> <span class="o">!==</span> <span class="nx">currentValue</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">homeUpdater</span><span class="p">(</span><span class="nx">previousValue</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">);</span>
               <span class="p">}</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">)</span>
         <span class="p">}</span>
 
+    <span class="cm">/**
+     * Set page events handler
+     */</span>
     <span class="nx">page</span><span class="p">.</span><span class="nx">setEvents</span><span class="p">(</span><span class="nx">pageEvents</span><span class="p">);</span>
 
+    <span class="cm">/**
+     * Suscribe to store changes
+     * The handleChange function will be called whenever the state in the store changes.
+     */</span>
     <span class="nx">store</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">handleChange</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="homeupdaterjs">homeUpdater.js</h2>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">homeUpdater</span><span class="p">(</span><span class="nx">previousValue</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">){</span>
+
+    <span class="cm">/**
+     * Home updater to handle changes in context and home state.
+     */</span>
     <span class="kd">let</span> <span class="nx">page</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">app-page</span><span class="dl">'</span><span class="p">);</span>
-    
+    <span class="cm">/**
+     * If there are changes in language or theme, update the context and reload data.
+     * If there are changes in the home stage, update the appoinment component accordingly.
+     */</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">previousValue</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">lang</span><span class="o">!=</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">lang</span><span class="o">||</span><span class="nx">previousValue</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">theme</span><span class="o">!=</span><span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">theme</span><span class="p">){</span>
         <span class="nx">page</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">context</span> <span class="o">=</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">;</span>
         <span class="nx">page</span><span class="p">.</span><span class="nx">loadData</span><span class="p">();</span>
@@ -547,7 +629,7 @@ navbar-item
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
+<h2 id="assetsscss">assets.scss</h2>
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@use</span> <span class="s1">"bulma/sass"</span> <span class="n">with</span> <span class="p">(</span>
   <span class="err">$</span><span class="n">family-primary</span><span class="p">:</span> <span class="s2">'"Play", sans-serif'</span>
 <span class="p">);</span>
@@ -560,8 +642,7 @@ navbar-item
   <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
-<h2 id="project-structure">Project structure</h2>
+<h2 id="indexhtml">index.html</h2>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span> <span class="nt">&gt;</span>
@@ -578,11 +659,13 @@ navbar-item
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
+
+<h2 id="project-structure">Project structure</h2>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📦cj-demo
  ┣ 📂public
  ┃ ┣ 📂images
- ┃ ┃ ┣ 🖼️social_proof_1.png
- ┃ ┃ ┣ 🖼️social_proof_2.png
+ ┃ ┃ ┣ 🖼️logo.png
+ ┃ ┃ ┣ 🖼️hero.png
  ┃ ┣ 📜assets.css
  ┃ ┣ 📜assets.css.map
  ┃ ┣ 📜index.css

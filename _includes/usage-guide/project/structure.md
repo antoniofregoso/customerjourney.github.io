@@ -44,23 +44,37 @@ The structure is very simple:
 import config from './.env/conf.json';
 import { store, persistor } from './app/store/store';
 import { loading, whithAnimations } from "@customerjourney/cj-core"
-import { setStage } from "./app/store/slices/homeSlice"
 import 'animate.css';
 import '@customerjourney/cj-core/src/pageloader.css';
 import { App } from './App';
 
+/**
+ * Set loader element and its properties: Color and direction
+ */
 loading({color:"is-dark", direction:"is-right-to-left"});
 
+/**
+ * Set theme from the store if exists
+ */
 let currentValue = store.getState();
     let theme = currentValue?.context?.theme;
     if (theme) {
         document.documentElement.setAttribute('data-theme', theme);
     }
 
+/**
+ * rehydrate state from local storage
+ */
 persistor.subscribe(()=>{
     const rehydratedState = store.getState();  
 })
+/**
+ * Run the app
+ */
 App.run();
+/**
+ * Init animations 
+ */
 whithAnimations();
 ```
 ### App.js
@@ -68,6 +82,9 @@ whithAnimations();
 import { Router } from "@customerjourney/cj-router";
 import { home, bye } from "./app/pages";
 
+/**
+ * Main application router
+ */
 export const App = new Router({ hashSensitive:true});
 App.on('/', home);
 App.on('/#thanks', bye).setName("bye");
@@ -81,23 +98,39 @@ import contextSlice from "./slices/contextSlice";
 import homeSlice from "./slices/homeSlice";
 import byeSlice from "./slices/byeSlice";
 
+/**
+ * Configure Redux store with persistence
+ */
 const persistConfig = {
     key: 'root',
     storage
   };
 
+  /**
+   * Combine all slices into a root reducer
+   */
   const rootReducer = combineReducers({
     context: contextSlice,
     home: homeSlice,
     bye: byeSlice
   });
 
+  /**
+   * Create a persisted reducer
+   */
   const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+  /**
+   * Configure the Redux store with the persisted reducer
+   */
 
   const store = configureStore({
     reducer: persistedReducer
   });
 
+  /**
+   * Create a persistor to manage persistence
+   */
   const persistor = persistStore(store); 
 
   export { store, persistor };
@@ -106,6 +139,10 @@ const persistConfig = {
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
 import { generateSessionToken } from '@customerjourney/cj-core';
+
+/**
+ * Context slice to manage global settings like language, theme, and session token.
+ */
 const contextSlice = createSlice({
     name: 'context',
     initialState:{
@@ -132,6 +169,9 @@ export default contextSlice.reducer;
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
 
+/**
+ * Home slice to manage the state of the home component, including stage and breadcrumb.
+ */
 const homeSlice = createSlice({
     name: 'home',
     initialState:{
@@ -162,14 +202,30 @@ import { setStage, setBreadcrumb } from "../store/slices/homeSlice";
 import { setLanguaje, setTheme } from "../store/slices/contextSlice"
 import { store } from "../store/store";
 import { homeUpdater } from "./updaters/homeUpdater";
+/**
+ * Import design, content and animation for the home page
+ */
 import data from "../data/home.json";
 
+/**
+ * Declare home function
+ * This function will be called by the router when the user navigates to the home page.
+ * @param {*} req : request object  with path params and  query params
+ * @param {*} router : router object
+ */
 export function home(req, router){
-
+    /**
+     * Date time when the user enters the page
+     */
     let go = Date.now();
 
+    /**
+     * Counter describes the customer's behavior on the page
+    */
     let counter = {go:go, time:0, atention:0, interest:0, desire:0, action:0, conversion:0, leavingapp:0, leavedapp:0 }
-
+    /**
+     * Page template
+     */
     let template =`
     <page-header id="header"></page-header>
     <hero-banner id="atention"></hero-banner>
@@ -179,11 +235,19 @@ export function home(req, router){
     <page-footer id="footer"></page-footer>
     <modal-box id="message"></modal-box>
     `;
-    
+    /**
+     * The state is recovered from the store
+     */
     let currentValue = store.getState();
     store.dispatch(setStage('start'));
-    data.context = currentValue;    ;
+    data.context = currentValue;
+    /**
+     * Page creation
+     */
     page =  new AppPage(data, template);
+    /**
+     * Eventes handler for the page
+     */
     const pageEvents = {
         handleEvent: (e) => {
             switch(e.type){
@@ -289,17 +353,28 @@ export function home(req, router){
             }}
             
         }
-
+    /**
+     * Function to handle state changes in the store
+     * It compares the previous state with the current state and calls the homeUpdater function if there are changes.
+     */    
     function handleChange(){
             let previousValue = currentValue;
             currentValue = store.getState();
             if (previousValue !== currentValue) {
                 homeUpdater(previousValue, currentValue);
               }
+              console.log(counter)
         }
 
+    /**
+     * Set page events handler
+     */
     page.setEvents(pageEvents);
 
+    /**
+     * Suscribe to store changes
+     * The handleChange function will be called whenever the state in the store changes.
+     */
     store.subscribe(handleChange);
 }
 ```
@@ -307,8 +382,15 @@ export function home(req, router){
 ## homeUpdater.js
 ```javascript
 export function homeUpdater(previousValue, currentValue){
+
+    /**
+     * Home updater to handle changes in context and home state.
+     */
     let page = document.querySelector('app-page');
-    
+    /**
+     * If there are changes in language or theme, update the context and reload data.
+     * If there are changes in the home stage, update the appoinment component accordingly.
+     */
     if (previousValue.context.lang!=currentValue.context.lang||previousValue.context.theme!=currentValue.context.theme){
         page.data.context = currentValue.context;
         page.loadData();
@@ -331,7 +413,7 @@ export function homeUpdater(previousValue, currentValue){
     }
 }
 ```
-
+## assets.scss
 ```css
 @use "bulma/sass" with (
   $family-primary: '"Play", sans-serif'
@@ -345,8 +427,7 @@ export function homeUpdater(previousValue, currentValue){
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 ```
-
-## Project structure
+## index.html
 
 ```html
 <!DOCTYPE html>
@@ -364,12 +445,14 @@ export function homeUpdater(previousValue, currentValue){
 </body>
 </html>
 ```
+
+## Project structure
 ```text
 📦cj-demo
  ┣ 📂public
  ┃ ┣ 📂images
- ┃ ┃ ┣ 🖼️social_proof_1.png
- ┃ ┃ ┣ 🖼️social_proof_2.png
+ ┃ ┃ ┣ 🖼️logo.png
+ ┃ ┃ ┣ 🖼️hero.png
  ┃ ┣ 📜assets.css
  ┃ ┣ 📜assets.css.map
  ┃ ┣ 📜index.css

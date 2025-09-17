@@ -221,7 +221,23 @@ navbar-item
     <div class="container">
     <div class="content my-4">
         
-        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppPage</span><span class="p">,</span> <span class="nx">PageHeader</span><span class="p">,</span> <span class="nx">PageFooter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span><span class="p">;</span>
+        <p>CustomerJourney.js are libraries specialized in creating sales funnels and landing pages based on macro components with a focus on hyper-personalization with AI. Each macro component represents a section of a page. These sections are developed using the <a href="https://bulma.io/">Bulma CSS Framework</a>.</p>
+
+<p>The paradigm used is OOP, and JavaScript natively has HTMLElement and Template literals, so I decided to go bare-bones without using React, Vue, or any other aids.
+The necessary router is very simple and runs on the client side, so we created a simple, fast one that fits the needs of CustomerJourney.js.</p>
+<h2 id="simple-router">Simple router</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">bye</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/**
+ * Main application router
+ */</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">home</span><span class="p">);</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/#thanks</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bye</span><span class="p">).</span><span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">bye</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+<h2 id="simple-page">Simple page</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppPage</span><span class="p">,</span> <span class="nx">PageHeader</span><span class="p">,</span> <span class="nx">PageFooter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">HeroBanner</span><span class="p">,</span> <span class="nx">MediaList</span><span class="p">,</span> <span class="nx">CardsList</span><span class="p">,</span> <span class="nx">ModalBox</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-components</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../store/store</span><span class="dl">"</span><span class="p">;</span>
 
@@ -237,11 +253,75 @@ navbar-item
         &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
         `</span><span class="p">;</span>
     <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">({},</span> <span class="nx">template</span><span class="p">);</span>
-     <span class="nx">pag</span><span class="p">.</span><span class="nx">sendWebhook</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://webhook-url</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">)</span>
+    <span class="cm">/**
+     * I get hyper-personalized AI-generated design, content, and animations for the client in json mode.
+     */</span>
+    <span class="nx">pag</span><span class="p">.</span><span class="nx">sendWebhook</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://webhook-url</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
+<h3 id="simple-copy-design-and-animations">Simple copy, design and animations</h3>
+<p>An AI-generated setting HeroBanner section in CustumerJourney.js style</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"atention"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"backgroundImage"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"/images/crm-hero.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fixed"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-fullheight-with-navbar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hero is-link"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"caption"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¿Estás perdiendo ventas por no tener un seguimiento adecuado?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Are you losing sales due to inadequate follow-up?"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-shadow"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Incrementa tus ventas y optimiza tu gestión de clientes!"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Increase your sales and optimize your customer management!"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Augmentez vos ventes et optimisez votre gestion client !"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-shadow"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"zoomIn"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Nuestro CRM es la herramienta que necesitas para organizar, automatizar y hacer crecer tu negocio. ¡Todo en un solo lugar!"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Our CRM is the tool you need to organize, automate, and grow your business. Everything in one place!"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Notre CRM est l'outil dont vous avez besoin pour organiser, automatiser et développer votre entreprise. Tout en un seul endroit !"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-shadow"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"buttons"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"eventName"</span><span class="p">:</span><span class="s2">"appclick"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-centered"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"buttons"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"landing-button"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Pruébalo gratis ahora!"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Try it for free now!"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Essayez-le gratuitement maintenant!"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-rounded"</span><span class="p">,</span><span class="s2">"is-info"</span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"scrollButton"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"color"</span><span class="p">:</span><span class="s2">"has-text-info"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
     </div>
+    <p class="has-text-right pr-6"><a class="button" href="/getting-started/">
+    <span class="icon">
+      <i class="fab fa-github"></i>
+    </span>
+    <span>Try it here</span>
+    </a></p>
 </div>
   </div>
 </main>
