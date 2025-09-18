@@ -23,6 +23,24 @@
 
   gtag('config', 'G-445JGGLZK0');
 </script>
+{% if page.schema_data %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "@customerjourney/{{ page.schema_data.name }}",
+    "description": "{{ page.subtitle }}",
+    "url": "https://customerjourney.ninja/getting-started/",
+    "codeRepository": [
+    "https://github.com/antoniofregoso/{{ page.schema_data.name }}",
+    "https://www.npmjs.com/package/@customerjourney/{{ page.schema_data.name }}"
+    ],
+    "supportContact": "https://customerjourney.ninja/sponsor/",
+    "programmingLanguage": "JavaScript",
+    "version": "{{ page.schema_data.version }}"
+  }
+  </script>
+  {% endif %}
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />

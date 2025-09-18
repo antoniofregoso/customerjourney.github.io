@@ -9,247 +9,317 @@
 
 <url>
   <loc>https://customerjourney.ninja/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/getting-started/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/sponsor/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/github/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/privacy-policy/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/terms-of-use/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://customerjourney.ninja/usage-guide/project/structure/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/usage-guide/concept/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://customerjourney.ninja/usage-guide/concept/touchpoint/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/concept/system/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/concept/adaptive/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://customerjourney.ninja/usage-guide/project/structure/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <loc>https://customerjourney.ninja/usage-guide/concept/ai-integration/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/usage-guide/concept/hyper-personalization/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/usage-guide/project/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/project/titles/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/project/markdonwn-text/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/project/animations/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/project/buttons/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/usage-guide/project/i18n/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://customerjourney.ninja/documentation/core/app-page/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://customerjourney.ninja/documentation/core/page-header/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://customerjourney.ninja/documentation/core/page-footer/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://customerjourney.ninja/documentation/core/app-element/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://customerjourney.ninja/documentation/core/functions/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <loc>https://customerjourney.ninja/documentation/router/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/router/router/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/router/routing/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/core/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/core/app-page/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/core/page-header/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/core/page-footer/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/core/app-element/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/core/functions/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/components/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/cards-list/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/cta-banner/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/countdown-timer/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/hero-banner/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/image-banner/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/image-text/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/level-centered/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/media-list/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/modal-box/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/omnichannel-chat/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/text-accordion/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/text-columns/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/text-message/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/text-notification/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/text-section/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/video-player/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/components/webinar-invitation/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/forms/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/forms/form-hero/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/forms/form-lead/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/forms/form-modal/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/forms/form-appoinment/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/sliders/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/sliders/multi-slider/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/sliders/cj-swiper/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/linkin-bio/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/linkin-bio/linkin-bio/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/gamification/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/gamification/activation-modal/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/gamification/social-proof/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://customerjourney.ninja/documentation/odoo/</loc>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://customerjourney.ninja/documentation/odoo/odoo-client/</loc>
-  <lastmod>2025-06-29T16:18:56+00:00</lastmod>
+  <lastmod>2025-09-17T17:45:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
