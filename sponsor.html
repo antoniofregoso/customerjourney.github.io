@@ -24,7 +24,15 @@ subtitle: Support the development of Customer Journey.js.
                 <div class="is-size-5 has-text-grey">{{ item.frequency }}</div>
             </div>
             <div class="column">
-                <p>{{ item.message }}</p>
+                <h2>Benefits</h2>
+                <p ><ol class="pl-5">
+                    <li>{{ item.message }}</li>
+                    {% if item.community %}<li>Access to a private community with advanced documentation.</li>{% endif %}
+                    {% if item.discord %}<li>Access to Discord <span class="icon"><i class="fab fa-discord"></i></span>.</li>{% endif %}
+                    {% if item.funnels %}<li>Access to ready-to-customize sales funnel templates.</li>{% endif %}
+                    {% if item.n8n %}<li>Access to workflows with AI agents in n8n.</li>{% endif %}
+                    {% if item.special %}<li>2 hours of consulting per month.</li>{% endif %}
+                </ol></p>
             </div>
         </div>
         <hr>

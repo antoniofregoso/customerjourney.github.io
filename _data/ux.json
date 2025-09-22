@@ -63,31 +63,46 @@
                 "name":"Backer",
                 "price": "$30",
                 "frequency": "a month",
-                "message": "Your name will be put at the top of the CustumerJourney.js website’s backers page, and at the top of backers.md in the CustumerJourney.js repository"
+                "message": "Your name will be put at the top of the CustumerJourney.js website’s backers page, and at the top of backers.md in the CustumerJourney.js repository",
+                "community":true
             },
             {
                 "name":"Sponsor",
                 "price": "$100",
                 "frequency": "a month",
-                "message": "Your name or company logo will appear on the CustumerJourney.js homepage."
+                "message": "Your name or company logo will appear on the CustumerJourney.js homepage.",
+                "discord":true,
+                "community":true
             },
             {
                 "name":"Silver Sponsor",
                 "price": "$200",
                 "frequency": "a month",
-                "message": "Two of your names or company logos will appear on the CustumerJourney.js homepage."
+                "message": "Two of your names or company logos will appear on the CustumerJourney.js homepage.",
+                "discord":true,
+                "community":true,
+                "funnels":true
             },
             {
                 "name":"Gold Sponsor",
                 "price": "$300",
                 "frequency": "a month",
-                "message": "Your name or company logo will appear on the CustumerJourney.js homepage and in the footer of each page of the website."
+                "message": "Your name or company logo will appear on the CustumerJourney.js homepage and in the footer of each page of the website.",
+                "discord":true,
+                "community":true,
+                "funnels":true,
+                "n8n":true
             },
             {
                 "name":"Platinum Sponsor",
                 "price": "$500",
                 "frequency": "a month",
-                "message": "Your name or company logo will appear on the CustumerJourney.js documentation sidebar."
+                "message": "Your name or company logo will appear on the CustumerJourney.js documentation sidebar.",
+                "discord":true,
+                "community":true,
+                "funnels":true,
+                "n8n":true,
+                "special":true
             }
         ]
     },
