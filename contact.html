@@ -1,0 +1,63 @@
+---
+layout: default
+title: Contact
+subtitle: Get in touch with us
+---
+{% include website/hero.html %}
+<div class="container p-4">
+    <div class="colums">
+        <div class="column is-half is-offset-one-quarter">
+            <div class="box">
+                <form action="https://formspree.io/f/maykzbpj" method="POST">
+                    <div class="field">
+                        <label class="label" for="name">Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" id="name" name="name" required>
+                            <span class="icon is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <span class="icon is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="email">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="email" id="email" name="_replyto" required>
+                            <span class="icon is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="subject">Subject</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" id="subject" name="subject" required>
+                            <span class="icon is-left">
+                                <i class="fas fa-tag"></i>
+                            </span>
+                            <span class="icon is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="message">Message</label>
+                        <div class="control">
+                            <textarea class="textarea" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <button class="button is-link" type="submit">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
