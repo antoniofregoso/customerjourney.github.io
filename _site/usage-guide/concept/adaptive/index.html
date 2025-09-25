@@ -219,7 +219,619 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
+    <div class="container">
+    <div class="content my-4">
+        
+        <h2 id="a-sales-funnel-for-different-consumer-profiles">A sales funnel for different consumer profiles</h2>
+<p>There are two methods you can use to adapt the sales funnel to the customer: route parameters and query parameters.</p>
+<h3 id="route-parameters">Route parameters</h3>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mydomain.com/average/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-friday
+</code></pre></div></div>
+<p>Where <strong>average</strong> is the route parameter</p>
+
+<h4 id="setting-the-route-parameter-in-appjs">Setting the route parameter in App.js</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">bye</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">home</span><span class="p">);</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/{profile}</span><span class="dl">'</span><span class="p">,</span> <span class="nx">home</span><span class="p">);</span>
+<span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/#thanks</span><span class="dl">'</span><span class="p">,</span> <span class="nx">bye</span><span class="p">);</span>
+</code></pre></div></div>
+<p>The router’s callback function receives a request object and a router.Request object containing all the parameter information.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+    <span class="p">.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="capturing-the-route-parameter">Capturing the route parameter</h4>
+<p>The values ​​of req are</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/average"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"referrer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="query-parameters">Query parameters</h3>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mydomain.com/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-friday&amp;cjtm_profile=average
+</code></pre></div></div>
+<p>where cjtm_profile=average sets the customer profile.</p>
+<h4 id="capturing-the-query-parameter">Capturing the query parameter</h4>
+<p>The values ​​of req are</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-friday&amp;cjtm_profile=average"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"referrer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="s2">"newslette"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="s2">"black-friday"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cjtm_profile"</span><span class="p">:</span><span class="s2">"average"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="getting-content">Getting Content</h3>
+<h4 id="getting-local-content">Getting local content</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppPage</span><span class="p">,</span> <span class="nx">PageHeader</span><span class="p">,</span> <span class="nx">PageFooter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HeroBanner</span><span class="p">,</span> <span class="nx">LevelCentered</span><span class="p">,</span> <span class="nx">MediaList</span><span class="p">,</span> <span class="nx">CardsList</span><span class="p">,</span> <span class="nx">ModalBox</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-components</span><span class="dl">"</span><span class="p">;</span>
+<span class="cm">/* All 4 contents are imported */</span>
+<span class="k">import</span> <span class="nx">average</span> <span class="k">from</span>  <span class="dl">"</span><span class="s2">../data/average.json</span><span class="dl">"</span> <span class="nx">assert</span> <span class="p">{</span> <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">json</span><span class="dl">"</span> <span class="p">};</span>
+<span class="k">import</span> <span class="nb">self</span><span class="o">-</span><span class="nx">centered</span> <span class="k">from</span>  <span class="dl">"</span><span class="s2">../data/self-centered.json</span><span class="dl">"</span> <span class="nx">assert</span> <span class="p">{</span> <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">json</span><span class="dl">"</span> <span class="p">};</span>
+<span class="k">import</span> <span class="nx">reserved</span> <span class="k">from</span>  <span class="dl">"</span><span class="s2">../data/reserved.json</span><span class="dl">"</span> <span class="nx">assert</span> <span class="p">{</span> <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">json</span><span class="dl">"</span> <span class="p">};</span>
+<span class="k">import</span> <span class="nx">role</span><span class="o">-</span><span class="nx">model</span> <span class="k">from</span>  <span class="dl">"</span><span class="s2">../data/role-model.json</span><span class="dl">"</span> <span class="nx">assert</span> <span class="p">{</span> <span class="nl">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">json</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
+    <span class="cm">/* The page structure is defined */</span>
+    <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span><span class="s2">`
+    &lt;page-header id="header"&gt;&lt;/page-header&gt;
+    &lt;hero-banner id="atention"&gt;&lt;/hero-banner&gt;
+    &lt;cards-list id="interest"&gt;&lt;/cards-list&gt;
+    &lt;media-list id="desire"&gt;&lt;/media-list&gt;
+    &lt;cards-list id="action"&gt;&lt;/cards-list&gt;
+    &lt;page-footer id="footer"&gt;&lt;/page-footer&gt;
+    &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
+    `</span><span class="p">;</span>
+
+    <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="cm">/* The content is selected according to cjtm_profile */</span>
+    <span class="cm">/* In this example it is done by query string */</span>
+    <span class="k">switch</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">cjtm_profile</span><span class="p">){</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">average</span><span class="dl">"</span><span class="p">:</span>
+            <span class="nx">data</span> <span class="o">=</span> <span class="nx">average</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">self-centered</span><span class="dl">"</span><span class="p">:</span>
+            <span class="nx">data</span> <span class="o">=</span> <span class="nb">self</span><span class="o">-</span><span class="nx">centered</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">reserved</span><span class="dl">"</span><span class="p">:</span>
+            <span class="nx">data</span> <span class="o">=</span> <span class="nx">reserved</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">role-model</span><span class="dl">"</span><span class="p">:</span>
+            <span class="nx">data</span> <span class="o">=</span> <span class="nx">role</span><span class="o">-</span><span class="nx">model</span><span class="p">;</span>
+        <span class="nl">default</span><span class="p">:</span>
+            <span class="nx">data</span> <span class="o">=</span> <span class="nx">average</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/* The page is instantiated and rendered */</span>
+    <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">template</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h4 id="getting-remote-content">Getting remote content</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AppPage</span><span class="p">,</span> <span class="nx">PageHeader</span><span class="p">,</span> <span class="nx">PageFooter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HeroBanner</span><span class="p">,</span> <span class="nx">LevelCentered</span><span class="p">,</span> <span class="nx">MediaList</span><span class="p">,</span> <span class="nx">CardsList</span><span class="p">,</span> <span class="nx">ModalBox</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-components</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
+    <span class="cm">/* The page structure is defined */</span>
+    <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span><span class="s2">`
+    &lt;page-header id="header"&gt;&lt;/page-header&gt;
+    &lt;hero-banner id="atention"&gt;&lt;/hero-banner&gt;
+    &lt;cards-list id="interest"&gt;&lt;/cards-list&gt;
+    &lt;media-list id="desire"&gt;&lt;/media-list&gt;
+    &lt;cards-list id="action"&gt;&lt;/cards-list&gt;
+    &lt;page-footer id="footer"&gt;&lt;/page-footer&gt;
+    &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
+    `</span><span class="p">;</span>
+    <span class="cm">/* The page is instantiated */</span>
+    <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">({},</span> <span class="nx">template</span><span class="p">);</span>
+    <span class="cm">/* The page is rendered */</span>
+    <span class="nx">pag</span><span class="p">.</span><span class="nx">sendWebhook</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://hook.mydomain.com/lqn51rg16dfgd0qkvm7mc893vuk3m2vewexy</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">context</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="content-design-and-animations-obtained">Content, design and animations obtained</h2>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"props"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"home"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"noCache"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"events"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"trackViewed"</span><span class="p">:[</span><span class="s2">"attention"</span><span class="p">,</span><span class="w"> </span><span class="s2">"interest"</span><span class="p">,</span><span class="w"> </span><span class="s2">"desire"</span><span class="p">,</span><span class="w"> </span><span class="s2">"action"</span><span class="p">],</span><span class="w">
+            </span><span class="nl">"leavingapp"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"leavedapp"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Demo|CustumerJourney.js"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Demo|CustumerJourney.js"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Démo|CustumerJourney.js"</span><span class="w">
+
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Demo de CustomerJourney.js - La herramienta definitiva para crear embudos de ventas hiper-personalizables."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"CustomerJourney.js Demo - The ultimate tool to create hyper-customizable sales funnels."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Démo de CustomerJourney.js - L'outil ultime pour créer des entonnoirs de vente hyper-personnalisables."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"components"</span><span class="p">:[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"header"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"brand"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/cj.webp"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"srcDark"</span><span class="p">:</span><span class="s2">"/images/cj-light.webp"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"i18n"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"lang"</span><span class="p">:{</span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"🇲🇽"</span><span class="p">,</span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"🇺🇸"</span><span class="p">,</span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"🇫🇷"</span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"atention"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"backgroundImage"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"/images/crm-hero.webp"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fixed"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-fullheight-with-navbar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"is-link"</span><span class="p">],</span><span class="w">
+                </span><span class="nl">"caption"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¿Estás perdiendo ventas por no tener un seguimiento adecuado?"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Are you losing sales due to inadequate follow-up?"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Perdez-vous des ventes en raison d'un suivi inadéquat ?"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-shadow"</span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"speed"</span><span class="p">:</span><span class="s2">"slower"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Incrementa tus ventas y optimiza tu gestión de clientes!"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Increase your sales and optimize your customer management!"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Augmentez vos ventes et optimisez votre gestion client !"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-shadow"</span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Nuestro CRM es la herramienta que necesitas para organizar, automatizar y hacer crecer tu negocio. ¡Todo en un solo lugar!"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Our CRM is the tool you need to organize, automate, and grow your business. Everything in one place!"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Notre CRM est l'outil dont vous avez besoin pour organiser, automatiser et développer votre entreprise. Tout en un seul endroit !"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-shadow"</span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"fadeIn"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"speed"</span><span class="p">:</span><span class="s2">"slower"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"buttons"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"eventName"</span><span class="p">:</span><span class="s2">"app-click"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-centered"</span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"buttons"</span><span class="p">:[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"atention-button"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                             </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Pruébalo gratis ahora!"</span><span class="p">,</span><span class="w">
+                             </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Try it for free now!"</span><span class="p">,</span><span class="w">
+                             </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Essayez-le gratuitement maintenant!"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-rounded"</span><span class="p">,</span><span class="s2">"is-info"</span><span class="p">]</span><span class="w">
+                         </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"scrollButton"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"color"</span><span class="p">:</span><span class="s2">"has-text-info"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"interest"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cardsWidth"</span><span class="p">:</span><span class="s2">"is-3"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cards"</span><span class="p">:[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/lead-management.webp"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-square"</span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"### Gestión de leads</span><span class="se">\n\n</span><span class="s2">Organiza y prioriza tus contactos para un seguimiento efectivo."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"### Lead Management</span><span class="se">\n\n</span><span class="s2">Organize and prioritize your contacts for effective follow-up."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"### Gestion des leads</span><span class="se">\n\n</span><span class="s2">Organisez et priorisez vos contacts pour un suivi efficace."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"bounce"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/automation.webp"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-square"</span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"### Automatización</span><span class="se">\n\n</span><span class="s2">Automatiza tareas repetitivas y gana tiempo valioso."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"### Automation</span><span class="se">\n\n</span><span class="s2">Automate repetitive tasks and save valuable time."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"### Automatisation</span><span class="se">\n\n</span><span class="s2">Automatisez les tâches répétitives et gagnez du temps précieux."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"bounce"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/data-analysis.webp"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-square"</span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"### Análisis de datos</span><span class="se">\n\n</span><span class="s2">Toma decisiones inteligentes con reportes y métricas claras."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"### Data Analysis</span><span class="se">\n\n</span><span class="s2">Make smart decisions with clear reports and metrics."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"### Analyse des données</span><span class="se">\n\n</span><span class="s2">Prenez des décisions intelligentes avec des rapports et des métriques clairs."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"bounce"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"image"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/collaboration.webp"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"alt"</span><span class="p">:</span><span class="s2">"Collaboration"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"### Colaboración</span><span class="se">\n\n</span><span class="s2">Mejora la comunicación entre tus equipos de venta y marketing."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"### Collaboration</span><span class="se">\n\n</span><span class="s2">Improve communication between your sales and marketing teams."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"### Collaboration</span><span class="se">\n\n</span><span class="s2">Améliorez la communication entre vos équipes de vente et de marketing."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"bounce"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"desire"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Lo que dicen nuestros clientes"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"What our clients say"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Ce que disent nos clients"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-centered"</span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Historias reales de éxito con nuestro CRM"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Real success stories with our CRM"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Des histoires de réussite réelles avec notre CRM"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-centered"</span><span class="p">,</span><span class="s2">"mb-5"</span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"mediaObjects"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"width"</span><span class="p">:</span><span class="s2">"is-8"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"flipInX"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"items"</span><span class="p">:[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"imageL"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/social_proof_1.png"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Juan Pérez, Gerente de Ventas"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"John Smith, Sales Manager"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Jean Dupont, Directeur des Ventes"</span><span class="w">
+
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"_Desde que implementamos este CRM, hemos reducido nuestro ciclo de ventas en un 30%. La visibilidad que tenemos ahora es increíble._"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"_Since we implemented this CRM, we've reduced our sales cycle by 30%. The visibility we have now is incredible._"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"_Depuis que nous avons mis en place ce CRM, nous avons réduit notre cycle de vente de 30 %. La visibilité que nous avons maintenant est incroyable._"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"imageL"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/social_proof_2.png"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Sofía Ramírez, Emprendedora"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Sophia Johnson, Entrepreneur"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Sophie Martin, Entrepreneure"</span><span class="w">
+
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"_Como dueña de mi negocio, necesitaba una herramienta simple y potente. Este CRM superó mis expectativas, ¡es mi mano derecha!_"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"_As a business owner, I needed a simple yet powerful tool. This CRM exceeded my expectations, it's my right hand!_"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"_En tant que propriétaire d'entreprise, j'avais besoin d'un outil simple mais puissant. Ce CRM a dépassé mes attentes, c'est ma main droite !_"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"imageL"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/social_proof_3.png"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Carlos Gutiérrez, Director de Marketing"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Charles Brown, Marketing Director"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Charles Dubois, Directeur Marketing"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"_La integración entre marketing y ventas es perfecta. Ahora sé exactamente qué campañas generan los mejores clientes potenciales._"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"_The integration between marketing and sales is seamless. Now I know exactly which campaigns generate the best leads._"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"_L'intégration entre le marketing et les ventes est parfaite. Maintenant, je sais exactement quelles campagnes génèrent les meilleurs prospects._"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"imageL"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/social_proof_4.png"</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Ana Morales, Asesora de Negocios"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Anna White, Business Consultant"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Anne Lefèvre, Consultante en Affaires"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"_Me encanta la facilidad de uso y el soporte al cliente. Ha sido un cambio total en la forma en que organizo mis proyectos y doy seguimiento a mis clientes._"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"_I love the ease of use and customer support. It has been a total game-changer in how I organize my projects and follow up with my clients._"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"_J'adore la facilité d'utilisation et le support client. Cela a été un véritable changement dans la façon dont j'organise mes projets et fais le suivi de mes clients._"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"action"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Elige el plan perfecto para ti"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Choose the perfect plan for you"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Choisissez le plan parfait pour vous"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-centered"</span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Planes flexibles que se adaptan a las necesidades de tu negocio"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Flexible plans that adapt to your business needs"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Des plans flexibles qui s'adaptent aux besoins de votre entreprise"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"has-text-centered"</span><span class="p">,</span><span class="s2">"mb-5"</span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"cards"</span><span class="p">:[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"header"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Plan Básico"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Basic Plan"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Plan de Base"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"$29 USD / mes"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"$29 USD / month"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"29 $ USD / mois"</span><span class="w">
+                                    </span><span class="p">}</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Ideal para pequeñas empresas que están comenzando."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Ideal for small businesses that are starting out."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Idéal pour les petites entreprises qui débutent."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Características:</span><span class="se">\n\n</span><span class="s2">- Gestión ilimitada de contactos.</span><span class="se">\n\n</span><span class="s2">- Múltiples pipelines de ventas.</span><span class="se">\n\n</span><span class="s2">- Automatización de correos.</span><span class="se">\n\n</span><span class="s2">- Soporte prioritario. "</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Features:</span><span class="se">\n\n</span><span class="s2">- Unlimited contact management.</span><span class="se">\n\n</span><span class="s2">- Multiple sales pipelines.</span><span class="se">\n\n</span><span class="s2">- Email automation.</span><span class="se">\n\n</span><span class="s2">- Priority support."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Caractéristiques :</span><span class="se">\n\n</span><span class="s2">- Gestion illimitée des contacts.</span><span class="se">\n\n</span><span class="s2">- Multiples pipelines de vente.</span><span class="se">\n\n</span><span class="s2">- Automatisation des e-mails.</span><span class="se">\n\n</span><span class="s2">- Support prioritaire."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"footer"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"buttons"</span><span class="p">:[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Comienza tu prueba gratis!"</span><span class="p">,</span><span class="w">
+                                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Start your free trial!"</span><span class="p">,</span><span class="w">
+                                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Commencez votre essai gratuit!"</span><span class="w">
+                                    </span><span class="p">},</span><span class="w">
+                                    </span><span class="nl">"href"</span><span class="p">:</span><span class="s2">"/#thanks"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"rubberBand"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"header"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Plan Pro"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Pro Plan"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Plan Pro"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"$59 USD / mes"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"$59 USD / month"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"59 $ USD / mois"</span><span class="w">
+                                    </span><span class="p">}</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Perfecto para equipos de ventas en crecimiento."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Perfect for growing sales teams."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Parfait pour les équipes de vente en croissance."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Características:</span><span class="se">\n\n</span><span class="s2">- Todo en el Plan Básico.</span><span class="se">\n\n</span><span class="s2">- Informes avanzados.</span><span class="se">\n\n</span><span class="s2">- Integraciones con terceros.</span><span class="se">\n\n</span><span class="s2">- Automatización avanzada."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Features:</span><span class="se">\n\n</span><span class="s2">- Everything in the Basic Plan.</span><span class="se">\n\n</span><span class="s2">- Advanced reporting.</span><span class="se">\n\n</span><span class="s2">- Third-party integrations.</span><span class="se">\n\n</span><span class="s2">- Advanced automation."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Caractéristiques :</span><span class="se">\n\n</span><span class="s2">- Tout dans le plan de base.</span><span class="se">\n\n</span><span class="s2">- Rapports avancés.</span><span class="se">\n\n</span><span class="s2">- Intégrations tierces.</span><span class="se">\n\n</span><span class="s2">- Automatisation avancée."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"footer"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"buttons"</span><span class="p">:[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Comienza tu prueba gratis!"</span><span class="p">,</span><span class="w">
+                                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Start your free trial!"</span><span class="p">,</span><span class="w">
+                                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Commencez votre essai gratuit!"</span><span class="w">
+                                    </span><span class="p">},</span><span class="w">
+                                    </span><span class="nl">"href"</span><span class="p">:</span><span class="s2">"/#thanks"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"rubberBand"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"header"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Plan Empresarial"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Business Plan"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Plan d'Entreprise"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"title"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"$99 USD / mes"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"$99 USD / month"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"99 $ USD / mois"</span><span class="w">
+                                    </span><span class="p">}</span><span class="w">
+                                </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"subtitle"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"La solución definitiva para grandes equipos y empresas."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"The ultimate solution for large teams and enterprises."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"La solution ultime pour les grandes équipes et entreprises."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:{</span><span class="w">
+                                </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                    </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Características:</span><span class="se">\n\n</span><span class="s2">- Todo en el Plan Pro.</span><span class="se">\n\n</span><span class="s2">- Gestión avanzada de usuarios.</span><span class="se">\n\n</span><span class="s2">- Soporte dedicado.</span><span class="se">\n\n</span><span class="s2">- Capacitación personalizada."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Features:</span><span class="se">\n\n</span><span class="s2">- Everything in the Pro Plan.</span><span class="se">\n\n</span><span class="s2">- Advanced user management.</span><span class="se">\n\n</span><span class="s2">- Dedicated support.</span><span class="se">\n\n</span><span class="s2">- Personalized training."</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Caractéristiques :</span><span class="se">\n\n</span><span class="s2">- Tout dans le plan Pro.</span><span class="se">\n\n</span><span class="s2">- Gestion avancée des utilisateurs.</span><span class="se">\n\n</span><span class="s2">- Support dédié.</span><span class="se">\n\n</span><span class="s2">- Formation personnalisée."</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">}</span><span class="w"> 
+                        </span><span class="p">}</span><span class="w"> </span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"footer"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"buttons"</span><span class="p">:[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¡Comienza tu prueba gratis!"</span><span class="p">,</span><span class="w">
+                                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Start your free trial!"</span><span class="p">,</span><span class="w">
+                                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Commencez votre essai gratuit!"</span><span class="w">
+                                    </span><span class="p">},</span><span class="w">
+                                    </span><span class="nl">"href"</span><span class="p">:</span><span class="s2">"/#thanks"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"animation"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"effect"</span><span class="p">:</span><span class="s2">"rubberBand"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">     
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"footer"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"brand"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"src"</span><span class="p">:</span><span class="s2">"/images/cj.webp"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"srcDark"</span><span class="p">:</span><span class="s2">"/images/cj-light.webp"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"content"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Open Source CRM | Hecho con ❤️ con CustomerJourney.js"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Open Source CRM | Made with ❤️ with CustomerJourney.js"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"CRM Open Source | Fait avec ❤️ avec CustomerJourney.js"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"privacyPolicy"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"Política de Privacidad"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"Privacy Policy"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Politique de confidentialité"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"https://customerjourney.ninja/privacy-policy/"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"message"</span><span class="p">:{</span><span class="w">
+                    </span><span class="nl">"classList"</span><span class="p">:[</span><span class="s2">"is-warning"</span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"header"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"¿Te vas? 😏"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"You go? 😏"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"Tu t'en vas? 😏"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+            
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"body"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:{</span><span class="w">
+                            </span><span class="nl">"es"</span><span class="p">:</span><span class="s2">"__Espera:__</span><span class="se">\n\n</span><span class="s2"> _¿Ya sacaste tu cupón de descuento?_</span><span class="se">\n\n</span><span class="s2"> _¡Sacalo de volada que se acaban los muebles!_"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"en"</span><span class="p">:</span><span class="s2">"__Wait:__</span><span class="se">\n\n</span><span class="s2"> _Have you already taken out your discount coupon?_</span><span class="se">\n\n</span><span class="s2"> _Take it out quickly, we're running out of furniture!_"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"fr"</span><span class="p">:</span><span class="s2">"__Attendez :__</span><span class="se">\n\n</span><span class="s2"> _Avez-vous déjà reçu votre coupon de réduction ?_</span><span class="se">\n\n</span><span class="s2"> _Sortez-le vite car les meubles sont épuisés !_"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+            
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">       
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
     
+</span></code></pre></div></div>
+
+    </div>
+</div>
   </div>
 </main>
 
