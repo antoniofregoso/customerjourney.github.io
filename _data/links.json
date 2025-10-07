@@ -38,10 +38,10 @@
         "subtitle": "User behavior observability plus data to adapt and achieve hyper-personalization.",
         "path": "/usage-guide/concept/adaptive/"
       },
-      "concept-ai-integration":{
-        "name": "AI Integration",
-        "subtitle": "How an AI agent can facilitate hyper-personalization of the user experience.",
-        "path": "/usage-guide/concept/ai-integration/"
+      "concept-scroll-stopping-content":{
+        "name": "Scroll Stopping Content",
+        "subtitle": "How to measure content that prevents scrolling from stopping content.",
+        "path": "/usage-guide/concept/scroll-stopping-content/"
       },
       "concept-hyper-personalization":{
         "name": "Hyper-personalization",
@@ -304,7 +304,7 @@
         "concept-touchpoint",
         "concept-system",
         "concept-adaptable",
-        "concept-ai-integration",
+        "concept-scroll-stopping-content",
         "concept-hyper-personalization"
       ],
       "project":[

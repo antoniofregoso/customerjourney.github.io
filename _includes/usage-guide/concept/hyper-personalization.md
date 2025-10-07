@@ -5,4 +5,5 @@ Hyper-personalization goes beyond traditional personalization by using artificia
 2. Increased conversion rates.
 3. Improved customer retention and lifetime value.
 4. Optimized marketing spend.
+
 ## How does Customer Journey.js achieve this?
