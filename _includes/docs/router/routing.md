@@ -60,4 +60,5 @@ const unsubscribe = persistor.subscribe(() => {
         whithAnimations();  //Enable animations
     }
 });
+
 ```

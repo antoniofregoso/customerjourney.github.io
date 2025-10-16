@@ -43,48 +43,58 @@ The structure is very simple:
 ```javascript
 import config from './.env/conf.json';
 import { store, persistor } from './app/store/store';
-import { loading, whithAnimations } from "@customerjourney/cj-core"
+import { setSession } from './app/store/slices/contextSlice';
+import { generateSessionToken, loading, whithAnimations } from "@customerjourney/cj-core"
 import 'animate.css';
 import '@customerjourney/cj-core/src/pageloader.css';
 import { App } from './App';
-
 /**
- * Set loader element and its properties: Color and direction
+ * Set Loading element before app run
  */
 loading({color:"is-dark", direction:"is-right-to-left"});
 
-/**
- * Set theme from the store if exists
- */
-let currentValue = store.getState();
-    let theme = currentValue?.context?.theme;
-    if (theme) {
-        document.documentElement.setAttribute('data-theme', theme);
+let isRehydrated = false;
+
+function startApp() {
+    // If you haven't rehydrated, we're leaving.
+    if (!isRehydrated) {
+        console.warn('Attention! Rehydration is not complete. Waiting...');
+        return;
     }
 
-/**
- * rehydrate state from local storage
- */
-persistor.subscribe(()=>{
-    const rehydratedState = store.getState();  
-})
-/**
- * Run the app
- */
-App.run();
-/**
- * Init animations 
- */
-whithAnimations();
+    console.log('✅ Complete rehydration. Data is ready.');
+
+    const currentState = store.getState();
+    const session  = currentState?.context?.session;
+    if(!session){
+        const newSession = generateSessionToken(32);
+        store.dispatch(setSession(newSession));
+    }
+    if(currentState?.context?.theme){
+        document.documentElement.setAttribute('data-theme', currentState.context.theme);
+    }
+    
+    App.run();
+}
+
+const unsubscribe = persistor.subscribe(() => {
+
+    const persistorState = persistor.getState();
+
+    if (persistorState.bootstrapped && !isRehydrated) {
+        isRehydrated = true;
+        unsubscribe(); // Stop listening to avoid unnecessary future executions
+        startApp();    // Launch the main application!
+        whithAnimations();  //Enable animations
+    }
+});
+
 ```
 ### App.js
 ```javascript
 import { Router } from "@customerjourney/cj-router";
 import { home, bye } from "./app/pages";
 
-/**
- * Main application router
- */
 export const App = new Router({ hashSensitive:true});
 App.on('/', home);
 App.on('/#thanks', bye).setName("bye");
@@ -97,58 +107,50 @@ import storage from 'redux-persist/lib/storage';
 import contextSlice from "./slices/contextSlice";
 import homeSlice from "./slices/homeSlice";
 import byeSlice from "./slices/byeSlice";
-
 /**
- * Configure Redux store with persistence
+ * Configure the Redux store with slices and persistence.
  */
 const persistConfig = {
     key: 'root',
     storage
   };
-
-  /**
-   * Combine all slices into a root reducer
-   */
+/**
+ * Combine the slices into a root reducer.
+ */
   const rootReducer = combineReducers({
     context: contextSlice,
     home: homeSlice,
     bye: byeSlice
   });
-
-  /**
-   * Create a persisted reducer
-   */
+/**
+ * Create a persisted reducer using the root reducer and persistence configuration.
+ */
   const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-  /**
-   * Configure the Redux store with the persisted reducer
-   */
-
+/**
+ * Configure the Redux store with the persisted reducer.
+ */
   const store = configureStore({
     reducer: persistedReducer
   });
-
-  /**
-   * Create a persistor to manage persistence
-   */
+/**
+ * Create a persistor to manage the persistence of the store.
+ */
   const persistor = persistStore(store); 
 
   export { store, persistor };
+
 ```
 ### contextSlice.js
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
-import { generateSessionToken } from '@customerjourney/cj-core';
-
 /**
- * Context slice to manage global settings like language, theme, and session token.
+ * Context slice to manage application context such as language, theme, and session token.
  */
 const contextSlice = createSlice({
     name: 'context',
     initialState:{
         lang:'es',
-        theme:'light',
-        sessionToken:generateSessionToken(32)
+        theme:'light'
     },
     reducers:{
         setLanguaje:(state, action) => {
@@ -156,79 +158,88 @@ const contextSlice = createSlice({
         },
         setTheme:(state, action) => {
             state.theme = action.payload;
-            document.documentElement.setAttribute('data-theme', action.payload);
+        },
+        setSession:(state, action) => {
+            state.session = action.payload;
         }
     }
 });
 
-export const { setLanguaje,  setTheme } =  contextSlice.actions;
+export const { setLanguaje,  setTheme, setSession } =  contextSlice.actions;
 export default contextSlice.reducer;
 ```
-
 ### homeSlice.js
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
-
 /**
- * Home slice to manage the state of the home component, including stage and breadcrumb.
+ * Home slice to manage the state of the home component, including stage and scroll stoping.
  */
 const homeSlice = createSlice({
     name: 'home',
     initialState:{
         stage:'awaiting',
-        breadcrumb:[]
+        scrollStopping:{
+            page:{
+                req:{},
+                name:'',
+                session:'',
+                start:0,
+                end:0,
+                time:0,
+                leavingApp:0,
+                views:0
+            },
+        }
         
     },
     reducers:{
         setStage:(state, action) => {
             state.stage = action.payload;
         },
-        setBreadcrumb:(state, action) => {
-            state.breadcrumb = action.payload;
-        } 
+        setScrollStopping:(state, action) => {
+            state.scrollStopping = action.payload;
+        },
+        setSectionTracking:(state, action) => {
+            let section = Object.keys(action.payload)[0];
+            state.scrollStopping.sections[section] = action.payload[section];
+        },
+        setEscapeAttempt:(state, action) => {
+            state.scrollStopping.page.leavingapp = action.payload;
+        },
+        setPageQuit:(state, action) => {
+            state.scrollStopping.page = action.payload;
+        }
     }
 });
 
-export const { setStage, setBreadcrumb } =  homeSlice.actions;
+export const { setStage, setScrollStopping, setSectionTracking, setEscapeAttempt, setPageQuit } =  homeSlice.actions;
 export default homeSlice.reducer;
 ```
-
-
 ### home.js
 ```javascript
 import { AppPage, PageHeader, PageFooter } from "@customerjourney/cj-core";
 import { HeroBanner, LevelCentered, MediaList, CardsList, ModalBox } from "@customerjourney/cj-components";
-import { setStage, setBreadcrumb } from "../store/slices/homeSlice";
+import { setStage, setScrollStopping } from "../store/slices/homeSlice";
 import { setLanguaje, setTheme } from "../store/slices/contextSlice"
 import { store } from "../store/store";
 import { homeUpdater } from "./updaters/homeUpdater";
 /**
- * Import design, content and animation for the home page
+ * home.json data describe the content of the page, design and animations
+ * @type {object}
  */
 import data from "../data/home.json";
-
 /**
- * Declare home function
- * This function will be called by the router when the user navigates to the home page.
- * @param {*} req : request object  with path params and  query params
- * @param {*} router : router object
+ * Declare callback funtion for home page
+ * @param {object} req 
+ * @param {object} router 
  */
 export function home(req, router){
     /**
-     * Date time when the user enters the page
-     */
-    let go = Date.now();
-
-    /**
-     * Counter describes the customer's behavior on the page
-    */
-    let counter = {go:go, time:0, atention:0, interest:0, desire:0, action:0, conversion:0, leavingapp:0, leavedapp:0 }
-    /**
-     * Page template
+     * Template for the page
      */
     let template =`
     <page-header id="header"></page-header>
-    <hero-banner id="atention"></hero-banner>
+    <hero-banner id="attention"></hero-banner>
     <cards-list id="interest"></cards-list>
     <media-list id="desire"></media-list>
     <cards-list id="action"></cards-list>
@@ -236,21 +247,42 @@ export function home(req, router){
     <modal-box id="message"></modal-box>
     `;
     /**
-     * The state is recovered from the store
+     * current state of the app
+     * @type {object}
      */
-    let currentValue = store.getState();
-    store.dispatch(setStage('start'));
-    data.context = currentValue;
+    let currentState = store.getState();
     /**
-     * Page creation
+     * dispath start stage
+     */
+    store.dispatch(setStage('start'));
+    /**
+     * Add context to the data
+     */
+    data.context = currentState.context;
+    /**
+     * Page object created with the data and the template
      */
     page =  new AppPage(data, template);
     /**
-     * Eventes handler for the page
+     * Initialize scrollStopping tracking object
+     */ 
+    let track = page.scrollStopping;
+    if (!currentState.home.scrollStopping){
+        track.page.views = 0;
+    }else{
+        track.page.views = currentState.home.scrollStopping.page.views + 1;
+    }
+    track.page.req=req;
+    track.name=data.props.title.en;
+    track.session=currentState.context.session;
+    store.dispatch(setScrollStopping(track));
+    /**
+     * event handlers for the page
      */
     const pageEvents = {
         handleEvent: (e) => {
             switch(e.type){
+                /* User change language or theme */
                 case 'user:select-lang':
                     store.dispatch(setLanguaje(e.detail));
                     break;
@@ -259,159 +291,167 @@ export function home(req, router){
                     break;
                 case 'app-click':
                     switch (e.detail.source){
-                        case "appoinment-button":
-                            counter.leavingapp++; 
-                            store.dispatch(setStage('action/open'));
-                            break;
-                        case "landing-button":
-                            store.dispatch(setStage('landing/click'));
+                        case "attention-button":
+                            store.dispatch(setStage('attention/click'));
                             break;
                     }
                     break;
+                case 'cta-click':
+                    store.dispatch(setStage(`action/click-${e.detail.source}`));
+                    break;
+                /* User interaction with the page: User view a section */
                 case 'viewedelement':
                     switch (e.detail.source){
-                        case 'landing':
-                            if (counter.landing===0) {
-                                store.dispatch(setStage('landing/viewed'));
-                                counter.landing++;
-                            }
-                            break;
                         case 'attention':
-                            if (counter.atention===0) {
-                                store.dispatch(setStage('attention/viewed'));
-                                counter.atention++;
-                            }
+                            store.dispatch(setStage('attention/viewed'));
                             break;
                         case 'interest':
-                            if (counter.interest===0) {
-                                store.dispatch(setStage('interest/viewed'));
-                                counter.interest++;
-                            }
+                            store.dispatch(setStage('interest/viewed'));
                             break;
                         case 'desire':
-                            if (counter.desire===0) {
-                                store.dispatch(setStage('desire/viewed'));
-                                counter.desire++;
-                            }
+                            store.dispatch(setStage('desire/viewed'));
                             break;
                         case 'action':
-                            if (counter.action===0) {
-                                store.dispatch(setStage('action/viewed'));
-                                counter.action++;
-                            }
+                            store.dispatch(setStage('action/viewed'));
                             break;
                         case 'conversion':
-                            if (counter.conversion===0) {
-                                store.dispatch(setStage('conversion/viewed'));
-                                counter.conversion++;
-                            }
+                            store.dispatch(setStage('conversion/viewed'));
                             break;
                         }
                     break;
+                /* User interaction with the page: User leave a section */
                 case 'unviewedelement':
                     switch (e.detail.source){
-                        case 'landing':
-                            if (counter.landing>0) {
-                                store.dispatch(setStage('landing/unviewed'));
-                            }
-                            break;
                         case 'attention':
-                            if (counter.atention>0) {
-                                store.dispatch(setStage('attention/unviewed'));
-                            }
+                            store.dispatch(setStage('attention/unviewed'));
                             break;
                         case 'interest':
-                            if (counter.interest>0) {
-                                store.dispatch(setStage('interest/unviewed'));
-                            }
+                            store.dispatch(setStage('interest/unviewed'));
                             break;
                         case 'desire':
-                            if (counter.desire>0) {
-                                store.dispatch(setStage('desire/unviewed'));
-                            }
+                            store.dispatch(setStage('desire/unviewed'));
                             break;
                         case 'action':
-                            if (counter.action>0) {
-                                store.dispatch(setStage('action/unviewed'));
-                            }
+                            store.dispatch(setStage('action/unviewed'));
                             break;
                         }
                     break;
+                /* User is leaving the app */
                 case 'leavingapp':
-                    if (counter.leavingapp===0)
-                        {
-                            store.dispatch(setStage('escape'));
-                            document.getElementById("message").setAttribute("active", "")
-                            counter.leavingapp++;
-                        };
+                    store.dispatch(setStage('escape'));
                     break;
+                /* User has left the app */
                 case 'leavedapp':
-                    counter.leavedapp++;
-                    counter.time = Math.round((Date.now() - go) / 1000);
-                    store.dispatch(setBreadcrumb(counter));
+                    store.dispatch(setStage('quit'));
                     break;
-            }}
+            }
+        }
             
         }
     /**
-     * Function to handle state changes in the store
-     * It compares the previous state with the current state and calls the homeUpdater function if there are changes.
-     */    
+      * Handle state changes in the store
+      */   
     function handleChange(){
-            let previousValue = currentValue;
-            currentValue = store.getState();
-            if (previousValue !== currentValue) {
-                homeUpdater(previousValue, currentValue);
-              }
-              console.log(counter)
+            let previousState = currentState;
+            currentState = store.getState();
+            if (previousState !== currentState) {
+                homeUpdater(previousState, currentState);
+            }
         }
-
     /**
-     * Set page events handler
-     */
+     * set event handlers for the page
+     */ 
     page.setEvents(pageEvents);
-
     /**
-     * Suscribe to store changes
-     * The handleChange function will be called whenever the state in the store changes.
+     * Suscribe to the store to listen for state changes
      */
     store.subscribe(handleChange);
+    
 }
 ```
 
 ## homeUpdater.js
 ```javascript
-export function homeUpdater(previousValue, currentValue){
-
+import { store } from "../../store/store";
+import { setSectionTracking, setEscapeAttempt, setPageQuit } from "../../store/slices/homeSlice";
+/**
+ * Manage changes in the home page state
+ * @param {object} previousState 
+ * @param {object} currentState 
+ */ 
+export function homeUpdater(previousState, currentState){
     /**
-     * Home updater to handle changes in context and home state.
+     * Page instance
+     * @type {object}
      */
     let page = document.querySelector('app-page');
     /**
      * If there are changes in language or theme, update the context and reload data.
      * If there are changes in the home stage, update the appoinment component accordingly.
      */
-    if (previousValue.context.lang!=currentValue.context.lang||previousValue.context.theme!=currentValue.context.theme){
-        page.data.context = currentValue.context;
+    if (previousState.context.lang!=currentState.context.lang||previousState.context.theme!=currentState.context.theme){
+        page.data.context = currentState.context;
         page.loadData();
-    }else if(previousValue.home.stage!=currentValue.home.stage){
-        let appoinment = page.querySelector('#appoinment');
-        switch (currentValue.home.stage){
-            case 'landing/click':
+    }else if(previousState.home.stage!=currentState.home.stage){
+        let track = currentState.home.scrollStopping;
+        let payload = {};
+        console.log(`Home stage changed to ${currentState.home.stage}`);
+        switch (true){
+            case currentState.home.stage === 'attention/click':
                 document.getElementById("action").scrollIntoView({ behavior: "smooth"});
                 break;
-            case 'action/open':
-               appoinment.setAttribute('stage', 'open');
+            case currentState.home.stage.startsWith('action/click-'):
+                payload = page.setPageQuit(track.page);
+                store.dispatch(setPageQuit(payload));
+                window.location.href = `/#thanks?product=${currentState.home.stage.match(/click-([\w-]+)$/)?.[1]}`
                 break;
-            case 'action/close':
-                appoinment.setAttribute('stage', 'awaiting');
+            case currentState.home.stage === 'atenttion/viewed':
+                payload = page.setSectionViewed('attention',track.sections.attention);
+                store.dispatch(setSectionTracking(payload));
                 break;
-            case 'action/appoinment':
-                appoinment.setAttribute('stage', 'appoinment');
+            case currentState.home.stage === 'interest/viewed':
+                payload = page.setSectionViewed('interest',track.sections.interest);
+                store.dispatch(setSectionTracking(payload));
+                break;
+            case currentState.home.stage === 'desire/viewed':
+                payload = page.setSectionViewed('desire',track.sections.desire);
+                store.dispatch(setSectionTracking(payload));
+                break;
+            case currentState.home.stage === 'action/viewed':
+                payload = page.setSectionViewed('action',track.sections.action);
+                store.dispatch(setSectionTracking(payload));
+                break;
+            case currentState.home.stage === 'attention/unviewed':
+                payloasd = page.setSectionUnviewed('attention',track.sections.attention);
+                store.dispatch(setSectionTracking(payload));
+                break;
+            case currentState.home.stage === 'interest/unviewed':
+                payload = page.setSectionUnviewed('interest',track.sections.interest);
+                store.dispatch(setSectionTracking(payload));
+                break;
+            case currentState.home.stage === 'desire/unviewed':
+                payload = page.setSectionUnviewed('desire',track.sections.desire);
+                store.dispatch(setSectionTracking(payload));
+                break;
+            case currentState.home.stage === 'action/unviewed':
+                payload = page.setSectionUnviewed('action',track.sections.action);
+                store.dispatch(setSectionTracking(payload));
+                break;                
+            case currentState.home.stage === 'escape':
+                let leavingApp = track.page.leavingapp + 1;
+                store.dispatch(setEscapeAttempt(leavingApp));
+                if (leavingApp===1){
+                    document.getElementById("message").setAttribute("active", "")
+                }
+                break;
+            case currentState.home.stage === 'quit':
+                payload = page.setPageQuit(track.page);
+                store.dispatch(setPageQuit(payload));
                 break;
         }
     }
 }
+
 ```
 ## assets.scss
 ```css

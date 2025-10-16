@@ -212,7 +212,7 @@ navbar-item
     <section class="hero is-medium is-cj" >
   <div class="hero-body">
     <h1 class="title has-text-light" data-animation="fadeInDown"> Scroll Stopping Content</h1>
-    <p class="subtitle has-text-light" data-animation="fadeInUp">How to measure content that prevents scrolling from stopping content</p>
+    <p class="subtitle has-text-light" data-animation="fadeInUp">How to measure content that captures customer attention</p>
 </section>
     <nav class="breadcrumb is-right" aria-label="breadcrumbs">
     <ul  class="breadcrumb-items">
@@ -222,7 +222,114 @@ navbar-item
     <div class="container">
     <div class="content my-4">
         
-        
+        <p>CustumerJourney.js handles a state per page with two components: the stage and the scrollStopping object.</p>
+
+<p>The scrollStopping object measures the time each user spends on each page of the funnel and the time each user spends on each section of each page.</p>
+
+<p>The events to be measured are configured in the page object.</p>
+
+<p>Let’s assume the funnel page is made with the Attention-Interest-Desire-Action framework. Each section has a name that corresponds to the content.</p>
+<h2 id="page-template">Page Template</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">let</span> <span class="nx">template</span> <span class="o">=</span><span class="s2">`
+        &lt;page-header id="header"&gt;&lt;/page-header&gt;
+        &lt;hero-banner id="atention"&gt;&lt;/hero-banner&gt;
+        &lt;cards-list id="interest"&gt;&lt;/cards-list&gt;
+        &lt;media-list id="desire"&gt;&lt;/media-list&gt;
+        &lt;cards-list id="action"&gt;&lt;/cards-list&gt;
+        &lt;page-footer id=c&gt;&lt;/page-footer&gt;
+        &lt;modal-box id="message"&gt;&lt;/modal-box&gt;
+        `</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="page-object">Page Object</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">props</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">home</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">noCache</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">events</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="dl">"</span><span class="s2">trackViewed</span><span class="dl">"</span><span class="p">:[</span><span class="dl">"</span><span class="s2">attention</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">interest</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">desire</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">action</span><span class="dl">"</span><span class="p">],</span>
+            <span class="dl">"</span><span class="s2">leavingapp</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">leavedapp</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span>
+            <span class="p">},</span>
+        <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="dl">"</span><span class="s2">es</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Demo|CustumerJourney.js</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Demo|CustumerJourney.js</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">fr</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Démo|CustumerJourney.js</span><span class="dl">"</span>
+
+        <span class="p">},</span>
+        <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="dl">"</span><span class="s2">es</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Demo de CustomerJourney.js - La herramienta definitiva para crear embudos de ventas hiper-personalizables.</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">CustomerJourney.js Demo - The ultimate tool to create hyper-customizable sales funnels.</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">fr</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Démo de CustomerJourney.js - L'outil ultime pour créer des entonnoirs de vente hyper-personnalisables.</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="dl">"</span><span class="s2">components</span><span class="dl">"</span><span class="p">:[...]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>In the events attribute, we configure:</p>
+<ol>
+  <li><strong>trackViewed</strong>: The sections to measure.</li>
+  <li><strong>leavingapp</strong>: Whether to trigger an event when the user moves the mouse away from the window.</li>
+  <li><strong>leavedapp</strong>: When the user leaves the funnel.</li>
+</ol>
+
+<p>All values ​​are optional.</p>
+<h2 id="scrollstopping-object">scrollStopping Object</h2>
+<p>The status of the sales funnel home page is shown here.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="nl">home</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">stage</span><span class="p">:</span> <span class="dl">'</span><span class="s1">escape</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">scrollStopping</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Demo|CustumerJourney.js</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">session</span><span class="p">:</span> <span class="dl">'</span><span class="s1">wORLbwyo9TNWpGm6SDmZXoBf4MeXYrcN</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">page</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">start</span><span class="p">:</span> <span class="mi">1760590597627</span><span class="p">,</span>
+            <span class="na">end</span><span class="p">:</span> <span class="mi">1760590615288</span><span class="p">,</span>
+            <span class="na">time</span><span class="p">:</span> <span class="mi">17661</span><span class="p">,</span>
+            <span class="na">leavingapp</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="na">views</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="na">req</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">uri</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">referrer</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+            <span class="na">query</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="na">params</span><span class="p">:</span> <span class="p">{}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="na">sections</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">attention</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">order</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="na">start</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="na">end</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="na">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="na">views</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+            <span class="na">interest</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">order</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="na">start</span><span class="p">:</span> <span class="mi">1760590603459</span><span class="p">,</span>
+                <span class="na">end</span><span class="p">:</span> <span class="mi">1760590606457</span><span class="p">,</span>
+                <span class="na">time</span><span class="p">:</span> <span class="mi">2998</span><span class="p">,</span>
+                <span class="na">views</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+            <span class="na">desire</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">order</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="na">start</span><span class="p">:</span> <span class="mi">1760590605789</span><span class="p">,</span>
+                <span class="na">end</span><span class="p">:</span> <span class="mi">1760590608592</span><span class="p">,</span>
+                <span class="na">time</span><span class="p">:</span> <span class="mi">2803</span><span class="p">,</span>
+                <span class="na">views</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+            <span class="na">action</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">order</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="na">start</span><span class="p">:</span> <span class="mi">1760590607043</span><span class="p">,</span>
+                <span class="na">end</span><span class="p">:</span> <span class="mi">1760590615317</span><span class="p">,</span>
+                <span class="na">time</span><span class="p">:</span> <span class="mi">8274</span><span class="p">,</span>
+                <span class="na">views</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
     </div>
 </div>

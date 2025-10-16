@@ -435,19 +435,56 @@ navbar-item
 <span class="nx">App</span><span class="p">.</span><span class="nx">onNotFound</span><span class="p">(</span><span class="nx">notFound</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>In the index.js file using redux persistent state and the loading function to enable Bulma’s Page-loader extension for styling :)</p>
+<p>In the index.js file, redux persistent state and the load function are used to enable Bulma’s Page-loader extension to apply styling, and a session id is also assigned if it didn’t exist:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">persistor</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/store/store</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">loading</span> <span class="p">}</span> <span class="k">from</span>  <span class="dl">"</span><span class="s2">@customerjourney/core</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">@customerourney/core/src/bj.css</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">config</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./.env/conf.json</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">persistor</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/store/store</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">setSession</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/store/slices/contextSlice</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">generateSessionToken</span><span class="p">,</span> <span class="nx">loading</span><span class="p">,</span> <span class="nx">whithAnimations</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-core</span><span class="dl">"</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">animate.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">@customerjourney/cj-core/src/pageloader.css</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
-
+<span class="cm">/**
+ * Set Loading element before app run
+ */</span>
 <span class="nx">loading</span><span class="p">({</span><span class="na">color</span><span class="p">:</span><span class="dl">"</span><span class="s2">is-dark</span><span class="dl">"</span><span class="p">,</span> <span class="na">direction</span><span class="p">:</span><span class="dl">"</span><span class="s2">is-right-to-left</span><span class="dl">"</span><span class="p">});</span>
 
-<span class="nx">persistor</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">rehydratedState</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>  
+<span class="kd">let</span> <span class="nx">isRehydrated</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">startApp</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// If you haven't rehydrated, we're leaving.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isRehydrated</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">Attention! Rehydration is not complete. Waiting...</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">✅ Complete rehydration. Data is ready.</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">currentState</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">session</span>  <span class="o">=</span> <span class="nx">currentState</span><span class="p">?.</span><span class="nx">context</span><span class="p">?.</span><span class="nx">session</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">session</span><span class="p">){</span>
+        <span class="kd">const</span> <span class="nx">newSession</span> <span class="o">=</span> <span class="nx">generateSessionToken</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+        <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">setSession</span><span class="p">(</span><span class="nx">newSession</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">currentState</span><span class="p">?.</span><span class="nx">context</span><span class="p">?.</span><span class="nx">theme</span><span class="p">){</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-theme</span><span class="dl">'</span><span class="p">,</span> <span class="nx">currentState</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">theme</span><span class="p">);</span>
+    <span class="p">}</span>
+    
     <span class="nx">App</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
-<span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">unsubscribe</span> <span class="o">=</span> <span class="nx">persistor</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="kd">const</span> <span class="nx">persistorState</span> <span class="o">=</span> <span class="nx">persistor</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">persistorState</span><span class="p">.</span><span class="nx">bootstrapped</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">isRehydrated</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">isRehydrated</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">unsubscribe</span><span class="p">();</span> <span class="c1">// Stop listening to avoid unnecessary future executions</span>
+        <span class="nx">startApp</span><span class="p">();</span>    <span class="c1">// Launch the main application!</span>
+        <span class="nx">whithAnimations</span><span class="p">();</span>  <span class="c1">//Enable animations</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
 </code></pre></div></div>
 
     </div>
