@@ -51,8 +51,9 @@ The req object is passed by bj-router to the callback function. It contains the 
 With the router configuration above we make the following request: http://localhost:8000/store/headphones/JVC-0HAFX29BTW?utm_source=facebook&utm_medium=landingpage&utm_campaign=christmas&utm_content=op-23 
 ```json
 {
-    "uri": "/store/headphones/JVC-0HAFX29BTW",
-    "referrer": "",
+    "hostname":"www.mydomain.com",
+    "pathname": "/store/headphones/JVC-0HAFX29BTW",
+    "referrer":"",
     "query": {
         "utm_source": "facebook",
         "utm_medium": "landingpage",

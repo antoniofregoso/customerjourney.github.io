@@ -249,9 +249,14 @@ navbar-item
 <h4 id="capturing-the-route-parameter">Capturing the route parameter</h4>
 <p>The values ​​of req are</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/average"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"referrer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"hostname"</span><span class="p">:</span><span class="s2">"www.mydomain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/average/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"referrer"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="s2">"newsletter"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="s2">"black-friday"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="w">
     </span><span class="p">}</span><span class="w">

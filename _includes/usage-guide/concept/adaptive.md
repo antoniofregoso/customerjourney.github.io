@@ -29,9 +29,14 @@ export function home(req, router){
 The values ​​of req are
 ```json
 {
-    "uri": "/average",
-    "referrer": "",
-    "query": {},
+    "hostname":"www.mydomain.com",
+    "pathname": "/average/",
+    "referrer":"",
+    "query": {
+        "utm_source":"newsletter",
+        "utm_medium":"email",
+        "utm_campaign":"black-friday"
+    },
     "params": {
         "profile": "average"
     }
