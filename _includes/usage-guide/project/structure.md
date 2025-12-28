@@ -17,7 +17,9 @@ The structure is very simple:
  ┃ ┣ 📂app
  ┃ ┃ ┣ 📂data
  ┃ ┃ ┃ ┣ 📜bye.json
+ ┃ ┃ ┃ ┣ 📜bye.toon
  ┃ ┃ ┃ ┗ 📜home.json
+ ┃ ┃ ┃ ┣ 📜home.toon
  ┃ ┃ ┣ 📂pages
  ┃ ┃ ┃ ┣ 📂updaters
  ┃ ┃ ┃ ┃ ┣ 📜byeUpdater.js
@@ -102,7 +104,7 @@ App.on('/#thanks', bye).setName("bye");
 ### store.js
 ```javascript
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { persistStore, persistReducer} from 'redux-persist';
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import contextSlice from "./slices/contextSlice";
 import homeSlice from "./slices/homeSlice";
@@ -129,8 +131,14 @@ const persistConfig = {
 /**
  * Configure the Redux store with the persisted reducer.
  */
-  const store = configureStore({
-    reducer: persistedReducer
+   const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          }
+        })
   });
 /**
  * Create a persistor to manage the persistence of the store.
@@ -505,7 +513,9 @@ export function homeUpdater(previousState, currentState){
  ┃ ┣ 📂app
  ┃ ┃ ┣ 📂data
  ┃ ┃ ┃ ┣ 📜bye.json
+ ┃ ┃ ┃ ┣ 📜bye.toon
  ┃ ┃ ┃ ┗ 📜home.json
+ ┃ ┃ ┃ ┗ 📜home.toon
  ┃ ┃ ┣ 📂pages
  ┃ ┃ ┃ ┣ 📂updaters
  ┃ ┃ ┃ ┃ ┣ 📜byeUpdater.js

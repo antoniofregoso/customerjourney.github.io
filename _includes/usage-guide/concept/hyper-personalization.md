@@ -18,7 +18,7 @@ Using customer classification, customer data available in business systems, and 
 
 The scrollStopping object allows you to understand a customer's historical behavior within the sales funnel, making it a very powerful tool for AI-powered hyper-personalization.
 
-## hyperpersonalization prompt
+## Hyperpersonalization prompt
 Any pro-level AI agent can generate a set of pageObjects to fit any customer profile within the contexts considered in the strategy.
 
 ### Points to consider when generating the prompt

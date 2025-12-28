@@ -43,7 +43,7 @@
       <img src="/assets/images/cj-js.png" alt="CustumerJourney.js">
     </a>
 
-    <a  id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <a id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -54,7 +54,7 @@
   <div id="navMenu" class="navbar-menu">
     <div class="navbar-start">
       
-        <a class="
+      <a class="
 navbar-item
 
 " 
@@ -64,7 +64,7 @@ navbar-item
     Getting Started
   </a>
       
-        <a class="
+      <a class="
 navbar-item
 
 " 
@@ -74,7 +74,7 @@ navbar-item
     Usage Guide
   </a>
       
-        <a class="
+      <a class="
 navbar-item
 
 " 
@@ -84,7 +84,7 @@ navbar-item
     Documentation
   </a>
       
-        <a class="
+      <a class="
 navbar-item
 
 " 
@@ -116,7 +116,7 @@ navbar-item
           </a>
         </div>
       </div>
-      
+
     </div>
   </div>
 </nav>
@@ -162,48 +162,132 @@ navbar-item
 </section>
 <div class="section">
     <div class="container content p4">
-    <div class="message">
-        <div class="message-header">
-        <p>Code for No-Code</p>
+        <div class="message is-link">
+            <div class="message-header">
+                <p>Code for No-Code</p>
+            </div>
+            <div class="message-body">
+                <p>CustomerJourney.js has a code section that defines the structure of the sales funnel and a JSON
+                    object that defines the content, design, and animations. This JSON object is easily understood by
+                    any <b>generative AI</b>, allowing the sales funnel's appearance and behavior to be adapted based on
+                    the available data. It also provides a prompt for an AI agent that will generate the necessary
+                    variations based on the sales strategy.</p>
+                <p>CustomerJourney uses macro components, each representing a section of a funnel page. Content, design,
+                    and animations can be generated in workflow systems with AI agents like n8n, with the level of
+                    customization limited only by your data and your imagination.</p>
+            </div>
         </div>
-        <div class="message-body">
-        <p>CustomerJourney.js has a code section that defines the structure of the sales funnel and a JSON object that defines the content, design, and animations. This JSON object is easily understood by any <b>generative AI</b>, allowing the sales funnel's appearance and behavior to be adapted based on the available data. It also provides a prompt for an AI agent that will generate the necessary variations based on the sales strategy.</p>
-        <p>CustomerJourney uses macro components, each representing a section of a funnel page. Content, design, and animations can be generated in workflow systems with AI agents like n8n, with the level of customization limited only by your data and your imagination.</p>
-        </div>
-    </div>
-        <p>CustomerJourney.js is a set of JavaScript libraries designed to create landing pages, funnels, and touchpoints with one goal in mind: <b>hyper-personalization</b> of the user experience with AI.</p>
+        <h2>CustomerJourney.js — Design, Measure, and Personalize Experiences, Not Just Pages</h2>
+        <p><strong>CustomerJourney.js</strong> is a library for building web experiences as living systems, not static
+            pages. Instead of
+            simply rendering content, it treats each visit as an observable, persistent, and actionable user session,
+            ready to be optimized in real time.</p>
+        <p><strong>CustomerJourney.js</strong> architecture radically separates logic and data, using JSON as the Single
+            Source of Truth. This allows
+            entire funnels, copy, animations, and navigation flows to evolve without touching the code, even when
+            generated or adjusted by AI agents. The result: a solid foundation for the Code for No-Code approach.</p>
+        <p><strong>CustomerJourney.js</strong> The <strong>JSON objects</strong> that define the structure and behavior
+            of each page in the funnel can be transformed into
+            <strong>TOON (Token-Oriented Object Notation)</strong>, reducing semantic ambiguity and improving the
+            efficiency of
+            processing by AI models, enabling the implementation of <strong>hyper-personalized and adaptive UX</strong>
+            in real time.
+        </p>
+        <p><strong>CustomerJourney.js</strong> incorporates granular customer journey tracking, reactive state
+            management with Redux, and
+            session persistence, turning every interaction—views, clicks, decisions—into signals that can trigger
+            immediate personalization, automation, and in-depth marketing analytics.</p>
+        <p> <strong>CustomerJourney.js</strong> From the user's perspective, the experience is seamless and
+            professional: SPA-style navigation, intent-based
+            animations, and instant language and theme changes, all controlled through declarative configuration.</p>
+        <p><strong>CustomerJourney.js</strong> In short, CustomerJourney.js is a tool for those who want to move beyond
+            passive landing pages and start
+            building <span class="has-text-link has-text-weight-bold">measurable, adaptive, and conversion-oriented
+                experiences</span>,
+            ready to scale with AI, automation, and
+            real growth.</p>
         <h2>The concept is based on macro components:</h2>
         <ol>
-            <li><p>Approach as a Web App as a system</p></li>
-            <li><p>Each macro component represents an HTML5 section with a layout based on the Bulma style library.</p></li>
-            <li><p>The component has no classes, animations, or text.</p></li>
-            <li><p>The content, Bulma and custom classes, and animations are passed as a JSON object.</p></li>
-            <li><p>Each page detects user behavior and stores it in a Redux state.</p></li>
-            <li><p>The page receives information through route parameters and query parameters.</p></li>
-            <li><p>The behavior is sent to the backend along with the route and query parameters.</p></li>
-            <li><p>From these parameters, the behavior history, and customer information stored in the business management system, an AI can generate a JSON that represents the content, styles, and animations according to the customer profile.</p></li>
-            <li><p>CustumerJourney.js is multilingual, has light and dark themes, and animations based on the Animate.css library.</p></li>
-            <li><p>CustumerJourney.js is a free, open-source library.</p></li>
+            <li>
+                <p>Approach as a Web App as a system</p>
+            </li>
+            <li>
+                <p>Each macro component represents an HTML5 section with a layout based on the Bulma style library.</p>
+            </li>
+            <li>
+                <p>The component has no classes, animations, or text.</p>
+            </li>
+            <li>
+                <p>The content, Bulma and custom classes, and animations are passed as a JSON object.</p>
+            </li>
+            <li>
+                <p>Each page detects user behavior and stores it in a Redux state.</p>
+            </li>
+            <li>
+                <p>The page receives information through route parameters and query parameters.</p>
+            </li>
+            <li>
+                <p>The behavior is sent to the backend along with the route and query parameters.</p>
+            </li>
+            <li>
+                <p>From these parameters, the behavior history, and customer information stored in the business
+                    management system, an AI can generate a JSON that represents the content, styles, and animations
+                    according to the customer profile.</p>
+            </li>
+            <li>
+                <p>CustumerJourney.js is multilingual, has light and dark themes, and animations based on the
+                    Animate.css library.</p>
+            </li>
+            <li>
+                <p>CustumerJourney.js is a free, open-source library.</p>
+            </li>
         </ol>
         <h2>What are the benefits of hyper-personalization?</h2>
         <ol>
-            <li><p>Increased conversion rates: Personalized experiences can lead to higher conversion rates as users are more likely to engage with content that resonates with their interests and needs.</p></li>
-            <li><p>Improved customer satisfaction: When users feel that a website or application understands their preferences, they are more likely to have a positive experience, leading to increased satisfaction and loyalty.</p></li>
-            <li><p>Enhanced user engagement: Hyper-personalized content can capture users' attention and encourage them to spend more time on the site, exploring different sections and offerings.</p></li>
-            <li><p>Better targeting of marketing efforts: By understanding user behavior and preferences, businesses can tailor their marketing strategies to reach the right audience with the right message at the right time.</p></li>
-            <li><p>Increased revenue: Personalized experiences can lead to higher sales and revenue as users are more likely to make purchases when they feel that the offerings are relevant to their needs.</p></li>
-            <li><p>Competitive advantage: Businesses that leverage hyper-personalization can differentiate themselves from competitors by providing unique and tailored experiences that meet the specific needs of their customers.</p></li>
-            <li><p>Data-driven insights: Hyper-personalization relies on data collection and analysis, providing businesses with valuable insights into customer behavior and preferences that can inform future strategies and decisions.</p></li>
-            <li><p>Scalability: With the use of AI and automation, hyper-personalization can be scaled to accommodate a large number of users, allowing businesses to provide personalized experiences
+            <li>
+                <p>Increased conversion rates: Personalized experiences can lead to higher conversion rates as users are
+                    more likely to engage with content that resonates with their interests and needs.</p>
+            </li>
+            <li>
+                <p>Improved customer satisfaction: When users feel that a website or application understands their
+                    preferences, they are more likely to have a positive experience, leading to increased satisfaction
+                    and loyalty.</p>
+            </li>
+            <li>
+                <p>Enhanced user engagement: Hyper-personalized content can capture users' attention and encourage them
+                    to spend more time on the site, exploring different sections and offerings.</p>
+            </li>
+            <li>
+                <p>Better targeting of marketing efforts: By understanding user behavior and preferences, businesses can
+                    tailor their marketing strategies to reach the right audience with the right message at the right
+                    time.</p>
+            </li>
+            <li>
+                <p>Increased revenue: Personalized experiences can lead to higher sales and revenue as users are more
+                    likely to make purchases when they feel that the offerings are relevant to their needs.</p>
+            </li>
+            <li>
+                <p>Competitive advantage: Businesses that leverage hyper-personalization can differentiate themselves
+                    from competitors by providing unique and tailored experiences that meet the specific needs of their
+                    customers.</p>
+            </li>
+            <li>
+                <p>Data-driven insights: Hyper-personalization relies on data collection and analysis, providing
+                    businesses with valuable insights into customer behavior and preferences that can inform future
+                    strategies and decisions.</p>
+            </li>
+            <li>
+                <p>Scalability: With the use of AI and automation, hyper-personalization can be scaled to accommodate a
+                    large number of users, allowing businesses to provide personalized experiences
         </ol>
+        <h2>CustumerJourney.js is made with:</h2>
     </div>
-<section class="section">
+    <section class="section">
     <div class="container">
-        <h2 class="is-size-3 has-text-centered" data-animation="fadeIn" data-speed="slow">CustumerJourney.js is made with:</h2>
         <div id="partners" class="swiper mt-6" data-effect="coverflow" data-autoplay="2500" pagination>
             <div class="swiper-wrapper mb-5">
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/js.webp" alt="Placeholder image"/>
@@ -221,8 +305,8 @@ navbar-item
     </footer>
   </div>
   
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/redux.webp" alt="Placeholder image"/>
@@ -240,8 +324,8 @@ navbar-item
     </footer>
   </div>
   
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/animate.webp" alt="Placeholder image"/>
@@ -259,8 +343,8 @@ navbar-item
     </footer>
   </div>
   
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/fontawsome.webp" alt="Placeholder image"/>
@@ -278,8 +362,8 @@ navbar-item
     </footer>
   </div>
   
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/remarkable.webp" alt="Placeholder image"/>
@@ -297,8 +381,8 @@ navbar-item
     </footer>
   </div>
   
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/simpleparalax.webp" alt="Placeholder image"/>
@@ -316,8 +400,8 @@ navbar-item
     </footer>
   </div>
   
-            
-            <div class="card swiper-slide coverflow">
+                
+                <div class="card swiper-slide coverflow">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="/assets/images/swiper.webp" alt="Placeholder image"/>
@@ -335,13 +419,13 @@ navbar-item
     </footer>
   </div>
   
-            
+                
             </div>
             <div class="swiper-pagination"></div>
-          </div>
+        </div>
     </div>
 </section>
-<div class="container mt-5">
+    <div class="container mt-5">
     <div class="buttons is-centered pr-6"><a class="button is-rounded" href="/sponsor/" data-animation="heartBeat" data-repeat="2">
     <span class="icon has-text-danger" data-animation="heartBeat" data-repeat="infinite" data-delay="2s">
         <i class="fas fa-heart"></i>
@@ -364,6 +448,6 @@ navbar-item
       <p><a href="/privacy-policy">Privacy Policy</a> - <a href="/terms-of-use">Terms of Use</a> - <a type="button" data-cc="show-preferencesModal">Cookie Preferences</a></p>      
     </div>
   </footer>
-     <script type="module" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
   </body>
 </html>

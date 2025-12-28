@@ -167,6 +167,11 @@
         "subtitle": "A Level bulma with icons, heading and title centered.",
         "path": "/documentation/components/level-centered/"
       },
+      "components-media-grid":{
+        "name": "MediaGrid",
+        "subtitle": "Bulma's Media Object Grid component made easy.",
+        "path": "/documentation/components/media-grid/"
+      },
       "components-media-list":{
         "name": "MediaList",
         "subtitle": "Bulma's Media Object List component made easy.",
@@ -334,6 +339,7 @@
         "components-image-banner",
         "components-image-text",
         "components-level-centered",
+        "components-media-grid",
         "components-media-list",
         "components-modal-box",
         "components-omnichannel-chat",

@@ -4,7 +4,7 @@
       <img src="/assets/images/cj-js.png" alt="CustumerJourney.js">
     </a>
 
-    <a  id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <a id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -15,7 +15,7 @@
   <div id="navMenu" class="navbar-menu">
     <div class="navbar-start">
       {% for link in site.data.links.navbar %}
-        {% include /website/nav-item.html link=link %}
+      {% include /website/nav-item.html link=link %}
       {% endfor %}
       <a class="navbar-item" href="/github">
         <i class="fa-brands fa-lg fa-github"></i>
@@ -39,7 +39,7 @@
           </a>
         </div>
       </div>
-      
+
     </div>
   </div>
 </nav>

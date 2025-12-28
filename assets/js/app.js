@@ -5,100 +5,101 @@ document.addEventListener('DOMContentLoaded', () => {
 class App {
 
   cookieConsent = {
-        cookie: {
-        name: 'cc_cj',
-          },
-           guiOptions: {
+    cookie: {
+      name: 'cc_cj',
+    },
+    guiOptions: {
+      consentModal: {
+        layout: 'box wide',
+        position: 'bottom right',
+        equalWeightButtons: false
+      },
+      preferencesModal: {
+        layout: 'bar',
+        position: 'left',
+      }
+    },
+    categories: {
+      necessary: {
+        enabled: true,
+        readOnly: true
+      },
+      performance: {
+        enabled: true
+      },
+      functional: {
+        enabled: true
+      },
+      targeting: {
+        enabled: true
+      }
+    },
+
+    language: {
+      default: 'en',
+      translations: {
+        en: {
           consentModal: {
-              layout: 'box wide',
-              position: 'bottom right',
-              equalWeightButtons: false
+            title: 'We use cookies',
+            description: 'This website uses cookies and similar technologies to ensure functionality, evaluate website usage, and to serve marketing content.',
+            showPreferencesBtn: 'Cookie Preferences',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Reject all'
           },
           preferencesModal: {
-              layout: 'bar',
-              position: 'left',
+            title: 'Cookie preferences',
+            savePreferencesBtn: 'Accept current selection',
+            closeIconLabel: 'Close modal',
+            sections: [
+              {
+                title: 'Privacy Preference',
+                description: 'When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.'
+              },
+              {
+                title: 'Strictly Necessary Cookies',
+                description: 'These cookies are necessary for the website to function. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.',
+                linkedCategory: 'necessary'
+              },
+              {
+                title: 'Performance Cookies',
+                description: 'These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us understand how visitors move around the site and which pages are most frequently visited.',
+                linkedCategory: 'performance'
+              },
+              {
+                title: 'Functional Cookies',
+                description: 'These cookies are used to record your choices and settings, maintain your preferences over time and recognize you when you return to our website. These cookies help us to personalize our content for you and remember your preferences.',
+                linkedCategory: 'functional'
+              },
+              {
+                title: 'Targeting Cookies',
+                description: 'These cookies are deployed to our site by our advertising partners to build a profile of your interests and provide you with content that is relevant to you, including to show you relevant ads on other sites.',
+                linkedCategory: 'targeting'
+              }
+            ]
           }
-      },
-        categories: {
-            necessary: {
-                enabled: true,  
-                readOnly: true
-            },
-            performance: {
-              enabled: true
-            },
-            functional: {
-              enabled: true
-            },
-            targeting: {
-              enabled: true
-            }
-        },
-
-        language: {
-            default: 'en',
-            translations: {
-                en: {
-                    consentModal: {
-                        title: 'We use cookies',
-                        description: 'This website uses cookies and similar technologies to ensure functionality, evaluate website usage, and to serve marketing content.',
-                        showPreferencesBtn: 'Cookie Preferences',
-                        acceptAllBtn: 'Accept all',
-                        acceptNecessaryBtn: 'Reject all'
-                    },
-                    preferencesModal: {
-                        title: 'Cookie preferences',
-                        savePreferencesBtn: 'Accept current selection',
-                        closeIconLabel: 'Close modal',
-                        sections: [
-                            {
-                                title: 'Privacy Preference',
-                                description: 'When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.'
-                            },
-                            {
-                                title: 'Strictly Necessary Cookies',
-                                description: 'These cookies are necessary for the website to function. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.',
-                                linkedCategory: 'necessary'
-                            },
-                            {
-                                title: 'Performance Cookies',
-                                description: 'These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us understand how visitors move around the site and which pages are most frequently visited.',
-                                linkedCategory: 'performance'
-                            },
-                            {
-                                title: 'Functional Cookies',
-                                description: 'These cookies are used to record your choices and settings, maintain your preferences over time and recognize you when you return to our website. These cookies help us to personalize our content for you and remember your preferences.',
-                                linkedCategory: 'functional'
-                            },
-                            {
-                                title: 'Targeting Cookies',
-                                description: 'These cookies are deployed to our site by our advertising partners to build a profile of your interests and provide you with content that is relevant to you, including to show you relevant ads on other sites.',
-                                linkedCategory: 'targeting'
-                            }
-                        ]
-                    }
-                }
-            }
         }
+      }
     }
-  
-  constructor(){
+  }
+
+  constructor() {
     this.setTheme();
     this.addEvents();
-    this.addCopyCodeButtons(); 
+    this.addCopyCodeButtons();
     this.setupSliders();
-    this.detectMenuActive();   
+    this.detectMenuActive();
     this.whithAnimations();
     CookieConsent.run(this.cookieConsent);
     this.setUpPreferences();
   }
 
-  handleEvent(e){
-    if (e.type=='click'){
-      switch(e.currentTarget.id){
+  handleEvent(e) {
+    if (e.type == 'click') {
+      let themes = document.getElementById("themes");
+      switch (e.currentTarget.id) {
         case 'main-menu':
           let targetId = e.target.dataset.target;
-          if (!targetId) break; 
+          if (!targetId) break;
           let source = document.getElementById(e.currentTarget.id);
           let target = document.getElementById(targetId);
           if (!target) break;
@@ -106,30 +107,41 @@ class App {
           target.classList.toggle('is-active');
           break;
         case 'themes':
-          let themes = document.getElementById(e.currentTarget.id);
           themes.parentNode.classList.toggle('is-active');
           break;
         case 'light-theme':
-          document.getElementById('themes').innerHTML = '<i class="fas fa-sun">'
-          document.getElementById('themes').parentNode.classList.toggle('is-active');
+          themes.innerHTML = '<i class="fas fa-sun">'
+          document.getElementById('light-theme').classList.add('is-active');
+          document.getElementById('dark-theme').classList.remove('is-active');
+          document.getElementById('system-theme').classList.remove('is-active');
           document.documentElement.setAttribute('data-theme', 'light');
           localStorage.setItem('theme', 'light');
+          themes.parentNode.classList.toggle('is-active');
+          setupMindmap();
           break;
         case 'dark-theme':
-          document.getElementById('themes').innerHTML = '<i class="fas fa-moon">'
-          document.getElementById('themes').parentNode.classList.toggle('is-active');
+          themes.innerHTML = '<i class="fas fa-moon">'
+          document.getElementById('dark-theme').classList.add('is-active');
+          document.getElementById('light-theme').classList.remove('is-active');
+          document.getElementById('system-theme').classList.remove('is-active');
           document.documentElement.setAttribute('data-theme', 'dark');
           document.documentElement.classList.add('cc--darkmode');
           localStorage.setItem('theme', 'dark');
+          themes.parentNode.classList.toggle('is-active');
+          setupMindmap();
           break;
         case 'system-theme':
-          document.getElementById('themes').innerHTML = '<i class="fas fa-desktop">'
-          document.getElementById('themes').parentNode.classList.toggle('is-active');
+          themes.innerHTML = '<i class="fas fa-desktop">'
+          document.getElementById('system-theme').classList.add('is-active');
+          document.getElementById('light-theme').classList.remove('is-active');
+          document.getElementById('dark-theme').classList.remove('is-active');
           document.documentElement.removeAttribute('data-theme');
           localStorage.removeItem('theme');
+          themes.parentNode.classList.toggle('is-active');
+          setupMindmap();
           break;
       }
-    } 
+    }
   }
 
   addEvents() {
@@ -146,26 +158,26 @@ class App {
     darkTheme.addEventListener('click', this)
     let systemTheme = document.querySelector('#system-theme');
     systemTheme.addEventListener('click', this)
-    window.addEventListener('cc:onFirstConsent', ({detail}) => {
+    window.addEventListener('cc:onFirstConsent', ({ detail }) => {
       this.updatePreferences(CookieConsent.getCookie().categories);
     });
-    window.addEventListener('cc:onChange', ({detail}) => {
+    window.addEventListener('cc:onChange', ({ detail }) => {
       this.updatePreferences(CookieConsent.getCookie().categories);
     });
 
   }
 
-  setUpPreferences(){
+  setUpPreferences() {
     let preferences = CookieConsent.getCookie()
-    if (preferences.categories!=undefined){ 
+    if (preferences.categories != undefined) {
       this.updatePreferences(preferences.categories);
     }
   }
 
-  updatePreferences(preferences){
+  updatePreferences(preferences) {
     //['necessary', 'performance', 'functional', 'targeting']
     let analyticsConsent = 'granted';
-    if (preferences.performance == undefined){
+    if (preferences.performance == undefined) {
       analyticsConsent = 'denied';
     }
     gtag('consent', 'update', {
@@ -174,17 +186,17 @@ class App {
 
   }
 
-  addCopyCodeButtons(){
+  addCopyCodeButtons() {
     const codeBlocks = document.querySelectorAll('pre > code');
     codeBlocks.forEach((codeBlock, index) => {
       const wrapper = document.createElement('div');
       wrapper.classList.add('is-relative');
-      wrapper.style.position = 'relative'; 
+      wrapper.style.position = 'relative';
       codeBlock.parentNode.parentNode.insertBefore(wrapper, codeBlock.parentNode);
       wrapper.appendChild(codeBlock.parentNode);
 
       const copyButton = document.createElement('button');
-      copyButton.classList.add('button','small');
+      copyButton.classList.add('button', 'small');
       copyButton.style.position = 'absolute';
       copyButton.style.top = '0.5rem';
       copyButton.style.right = '0.5rem';
@@ -203,36 +215,41 @@ class App {
           })
           .catch(err => {
             console.error('Failed to copy text: ', err);
-          }); 
+          });
       })
-       
+
 
     });
   }
 
-  setTheme(){
+  setTheme() {
     let theme = localStorage.getItem('theme');
-    if (theme==='dark'){
+    if (theme === null) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    }
+    if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.getElementById('themes').innerHTML = '<i class="fas fa-moon">';
       document.getElementById('dark-theme').classList.add('is-active');
       document.documentElement.classList.add('cc--darkmode');
-    }else if (theme==='light'){
+    } else if (theme === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       document.getElementById('themes').innerHTML = '<i class="fas fa-sun">';
       document.getElementById('light-theme').classList.add('is-active');
-    }else {
+    } else {
       document.documentElement.removeAttribute('data-theme');
       document.getElementById('themes').innerHTML = '<i class="fas fa-desktop">';
       document.getElementById('system-theme').classList.add('is-active');
     }
+    setupMindmap();
   }
 
-  setupSliders(){
+  setupSliders() {
     let sliders = document.querySelectorAll('.swiper');
-    sliders.forEach(slider=>{
+    sliders.forEach(slider => {
       let config = {};
-      if (slider.hasAttribute('pagination')){
+      if (slider.hasAttribute('pagination')) {
         config.pagination = {
           el: ".swiper-pagination",
           clickable: true,
@@ -241,7 +258,7 @@ class App {
           },
         }
       }
-      switch(slider.dataset.effect){
+      switch (slider.dataset.effect) {
         case 'coverflow':
           config.grabCursor = true;
           config.centeredSlides = true;
@@ -256,18 +273,18 @@ class App {
           }
           break;
       };
-      if ( slider.dataset.autoplay ){
+      if (slider.dataset.autoplay) {
         config.autoplay = {
           delay: slider.dataset.autoplay,
           disableOnInteraction: false
         }
       }
-      var swiper = new Swiper(`#${slider.id}`,config);
+      var swiper = new Swiper(`#${slider.id}`, config);
     });
   }
 
 
-  detectMenuActive(){
+  detectMenuActive() {
     const currentPath = window.location.pathname;
     if (currentPath.includes('/usage-guide') || currentPath.includes('/documentation')) {
       let menuLinks = document.querySelectorAll('.is-lateral-link');
@@ -275,7 +292,7 @@ class App {
         let linkPath = link.getAttribute('href');
         if (currentPath === linkPath) {
           link.classList.add('is-active');
-      }
+        }
       })
       let crums = currentPath.split('/').filter(part => part !== '');
       let crumHref = '/';
@@ -284,11 +301,11 @@ class App {
         let crum = document.createElement('li');
         let crumLink = document.createElement('a');
         crumHref += crums[i] + '/';
-        crumLink.href = crumHref;   
-        if (i<crums.length-1){
+        crumLink.href = crumHref;
+        if (i < crums.length - 1) {
           let unslug = crums[i].replace(/-/g, ' ');
           crumLink.textContent = unslug.charAt(0).toUpperCase() + unslug.slice(1).toLowerCase();
-        }else{
+        } else {
           crumLink.textContent = document.title;
           crum.classList.add('is-active');
         }
@@ -299,40 +316,54 @@ class App {
     }
   }
 
-  whithAnimations(){
+  whithAnimations() {
     let objs = document.querySelectorAll('[data-animation]')
-    let options = { threshold: 0.1}   
-    var observer = new IntersectionObserver(entries=>{
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setupAnimation(entry.target)
-                return
-            }
-            entry.target.classList.forEach(_class => {
-                if (_class.startsWith('animate__')){
-                    entry.target.classList.remove(_class)
-                }
-            })
+    let options = { threshold: 0.1 }
+    var observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setupAnimation(entry.target)
+          return
+        }
+        entry.target.classList.forEach(_class => {
+          if (_class.startsWith('animate__')) {
+            entry.target.classList.remove(_class)
+          }
         })
+      })
     })
     objs.forEach(obj => {
-        observer.observe(obj);
+      observer.observe(obj);
     })
-}
+  }
 
 }
 
 
-function setupAnimation(el){
+function setupAnimation(el) {
   el.classList.add("animate__animated", `animate__${el.getAttribute('data-animation')}`);
-  if (el.hasAttribute('data-delay')){
-      el.classList.add(`animate__delay-${el.getAttribute('data-delay')}`);
+  if (el.hasAttribute('data-delay')) {
+    el.classList.add(`animate__delay-${el.getAttribute('data-delay')}`);
   }
-  if (el.hasAttribute('data-speed')){
-      el.classList.add(`animate__${el.getAttribute('data-speed')}`);
+  if (el.hasAttribute('data-speed')) {
+    el.classList.add(`animate__${el.getAttribute('data-speed')}`);
   }
-  if (el.hasAttribute('data-repeat')){
-      el.getAttribute('data-repeat') === "infinite"?el.classList.add("animate__infinite"):el.classList.add(`animate__repeat-${el.getAttribute('data-repeat')}`);
+  if (el.hasAttribute('data-repeat')) {
+    el.getAttribute('data-repeat') === "infinite" ? el.classList.add("animate__infinite") : el.classList.add(`animate__repeat-${el.getAttribute('data-repeat')}`);
   }
 }
 
+function setupMindmap() {
+  let theme = localStorage.getItem('theme');
+  let mindmapWrapper = document.getElementById('mindmap-wrapper');
+  if (theme === null) {
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  if (mindmapWrapper) {
+    if (theme != 'light') {
+      mindmapWrapper.classList.add('markmap-dark');
+    } else {
+      mindmapWrapper.classList.remove('markmap-dark');
+    }
+  }
+}

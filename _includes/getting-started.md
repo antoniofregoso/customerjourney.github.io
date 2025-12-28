@@ -33,7 +33,7 @@ Open the Redux DevTools extension in your browser and watch the magic happen.
 
 ## 8. Modify the code
 ```bash
-npm run watch
+npm run dev
 ```
 Inside the src/app/data/home.json file make changes and observe the results.
 ## Project structure

@@ -3,3 +3,8 @@
   width: 100%;
   min-height:50vh;
 }
+
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
