@@ -29,7 +29,7 @@ Go to http://localhost:8000/
 ## 7. Observe status changes as you navigate the landing page
 Open the Redux DevTools extension in your browser and watch the magic happen.
 
-![Texto de ejemplo que aparece si la imagen falla](/assets/images/redux.webp)
+![Texto de ejemplo que aparece si la imagen falla](/assets/images/redux_usage.webp)
 
 ## 8. Modify the code
 ```bash
