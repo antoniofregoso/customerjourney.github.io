@@ -1,376 +1,382 @@
 {
-    "navbar":[
-        {
-        "name": "Getting Started",
-        "path": "/getting-started/"
-        },
-        {
-        "name": "Usage Guide",
-        "path": "/usage-guide/"
-        },
-        {
-        "name": "Documentation",
-        "path": "/documentation/"
-        },
-        {
-        "name": "Sponsor",
-        "path": "/sponsor/"
-        }
-    ],
-    "by_id": {
-      "concept":{
-        "name": "Concept",
-        "subtitle": "The concepts behind CJjs",
-        "path": "/usage-guide/concept/"
-      },
-      "concept-touchpoint":{
-        "name": "Vanilla flavor touchponts",
-        "subtitle": "Vanilla philosophy in generating HTML components with JavaScript.",
-        "path": "/usage-guide/concept/touchpoint/"
-      },
-      "concept-system":{
-        "name": "App as system",
-        "subtitle": "Systems thinking applied to CJs apps.",
-        "path": "/usage-guide/concept/system/"
-      },
-      "concept-adaptable":{
-        "name": "Adaptive apps",
-        "subtitle": "User behavior observability plus data to adapt and achieve hyper-personalization.",
-        "path": "/usage-guide/concept/adaptive/"
-      },
-      "concept-scroll-stopping-content":{
-        "name": "Scroll Stopping Content",
-        "subtitle": "How to measure content that captures customer attention",
-        "path": "/usage-guide/concept/scroll-stopping-content/"
-      },
-      "concept-hyper-personalization":{
-        "name": "Hyper-personalization",
-        "subtitle": "Enhanced customer experience.",
-        "path": "/usage-guide/concept/hyper-personalization/"
-      },
-      "project":{
-        "name": "CJjs Project",
-        "subtitle": "How to create a CJjs project from scratch.",
-        "path": "/usage-guide/proyect/"},
-      "project-structure":{
-        "name": "Structure",
-        "subtitle": "Layout of a CJjs App with hyper-personalization and state management.",
-        "path": "/usage-guide/project/structure/"},
-      "project-titles":{
-        "name": "Titles",
-        "subtitle": "How titles are generated within CJjs components.",
-        "path": "/usage-guide/project/titles/"},
-      "project-markdonwn-text":{
-        "name": "Markdonwn Text",
-        "subtitle": "CJjs uses markdown to generate HTML content.",
-        "path": "/usage-guide/project/markdonwn-text/"},
-      "project-animations":{
-        "name": "Animations",
-        "subtitle": "Integrating Animate.css animations into CJjs components",
-        "path": "/usage-guide/project/animations/"},
-      "project-buttons":{
-        "name": "Buttons",
-        "subtitle": "How to generate CTA buttons in BJjs components",
-        "path": "/usage-guide/project/buttons/"},
-      "project-i18n":{
-        "name": "i18n",
-        "subtitle": "Multi-language internationalization i8n in CJjs apps",
-        "path": "/usage-guide/project/i18n/"},
-      "core": {
-        "name": "Core",
-        "subtitle": "The core CJjs package",
-        "path": "/documentation/core/"
-      },
-      "core-app-page":{
-        "name": "AppPage",
-        "subtitle": "The container for all the page components, event controller and data management.",
-        "path": "/documentation/core/app-page/"
-
-      },
-        "core-page-header":{
-          "name": "PageHeader",
-          "subtitle": "Header with language and theme selectors.",
-          "path": "/documentation/core/page-header/"
-        
-      },
-        "core-page-footer":{
-          "name": "PageFooter",
-          "subtitle": "Footer of the page with logo and privacy policies",
-          "path": "/documentation/core/page-footer/"
-        
-        },
-        "core-app-element":{
-          "name": "AppElement",
-          "subtitle": "Base component for creating CJjs macro-components",
-          "path": "/documentation/core/app-element"
-        
-        },
-        "core-functions":{
-          "name": "Functions",
-          "subtitle": "Toolbox for adding CJjs functionality",
-          "path": "/documentation/core/functions/"
-        
-        },
-      "router": {
-        "name": "Router",
-        "subtitle": "All CJjs apps start here. The router is the heart of a CJjs app with persistent state management.",
-        "path": "/documentation/router/"
-      },
-      "router-router":{
-        "name": "Router",
-        "subtitle": "Simple, light and flexible routing for your CJjs applications",
-        "path": "/documentation/router/router/"
-      },
-      "router-routing":{
-        "name": "Routing CJ style",
-        "subtitle": "The router as the heart of a CJjs app with persistent state management.",
-        "path": "/documentation/router/routing"
-        
-      },
-      "components": {
-        "name": "Components",
-        "subtitle": "Reusable UI macro-components for CJjs apps",
-        "path": "/documentation/components/"
-      },
-      "components-cards-list":{
-        "name": "CardsList",
-        "subtitle": "Generate highly customizable Bulma-style cards lists with ease.",
-        "path": "/documentation/components/cards-list/"
-      },
-      "components-cta-banner":{
-        "name": "CtaBanner",
-        "subtitle": "A classic CTA with text and buttons.",
-        "path": "/documentation/components/cta-banner/"
-      },
-      "components-countdown-timer":{
-        "name": "CountdownTimer",
-        "subtitle": "Countdown timer in days, hours and minutes for temporary promotions.",
-        "path": "/documentation/components/countdown-timer/"
-      },
-      "components-hero-banner":{
-        "name": "HeroBanner",
-        "subtitle": "Highly customizable Bulma-style hero banner.",
-        "path": "/documentation/components/hero-banner/"
-      },
-      "components-image-banner":{
-        "name": "ImageBanner",
-        "subtitle": "One-image banner with titles at the top, descriptions, and buttons at the bottom.",
-        "path": "/documentation/components/image-banner/"
-      },
-      "components-image-text":{
-        "name": "ImageText",
-        "subtitle": "Highly configurable two-column component. One for an image and the other for information and CTA buttons.",
-        "path": "/documentation/components/image-text/"
-      },
-      "components-level-centered":{
-        "name": "LevelCentered",
-        "subtitle": "A Level bulma with icons, heading and title centered.",
-        "path": "/documentation/components/level-centered/"
-      },
-      "components-media-grid":{
-        "name": "MediaGrid",
-        "subtitle": "Bulma's Media Object Grid component made easy.",
-        "path": "/documentation/components/media-grid/"
-      },
-      "components-media-list":{
-        "name": "MediaList",
-        "subtitle": "Bulma's Media Object List component made easy.",
-        "path": "/documentation/components/media-list/"
-      },
-      "components-modal-box":{
-
-        "name": "ModalBox",
-        "subtitle": "A Modal Box with a card, image, or message options.",
-        "path": "/documentation/components/modal-box/"
-      },
-      "components-omnichannel-chat":{
-
-        "name": "OmnichannelChat",
-        "subtitle": "Multi-channel chat button with WhatsApp, Messenger, Telegram, and more.",
-        "path": "/documentation/components/omnichannel-chat/"
-      },
-      "components-text-accordion":{
-        "name": "TextAccordion",
-        "subtitle": "Animated accordion to present information one by one.",
-        "path": "/documentation/components/text-accordion/"
-      },
-      "components-text-columns":{
-        "name": "TextColumns",
-        "subtitle": "Two-column text with CTA buttons.",
-        "path": "/documentation/components/text-columns/"
-      },
-      "components-text-message":{
-
-        "name": "TextMessage",
-        "subtitle": "Colored message blocks, to emphasize part of your page's content.",
-        "path": "/documentation/components/text-message/"
-      },
-      "components-text-notification":{
-
-        "name": "TextNotification",
-        "subtitle": "Bold notification blocks, to alert your users of something important.",
-        "path": "/documentation/components/text-notification/"
-      },
-      "components-text-section":{
-        "name": "TextSection",
-        "subtitle": "Text section with titles and CTA buttons.",
-        "path": "/documentation/components/text-section/"
-      },
-      "components-video-player":{
-
-        "name": "VideoPlayer",
-        "subtitle": "Video player with titles and CTA buttons.",
-        "path": "/documentation/components/video-player/"
-      },
-      "components-webinar-invitation":{
-        "name": "WebinarInvitation",
-        "subtitle": "Webinar banner with start date, duration, price, and iCal button.",
-        "path": "/documentation/components/webinar-invitation/"
-      },
-      "forms": {
-        "name": "Forms",
-        "subtitle": "Forms and form components for CJjs apps",
-        "path": "/documentation/forms/"
-      },
-      "forms-form-hero": {
-        "name": "FormHero",
-        "subtitle": "Two columns, one for the form and one for titles and CTA buttons",
-        "path": "/documentation/forms/form-hero"
-      },
-      "forms-form-lead": {
-        "name": "FormLead",
-        "subtitle": "Base form for all components with form",
-        "path": "/documentation/forms/form-lead"
-      },
-      "forms-form-modal": {
-        "name": "FormModal",
-        "subtitle": "A modal with a form inside.",
-        "path": "/documentation/forms/form-modal"
-      },
-      "forms-form-appoinment": {
-        "name": "FormAppoinment",
-        "subtitle": "Practical form to generate appointments.",
-        "path": "/documentation/forms/form-appoinment"
-      },
-      "sliders": {
-        "name": "Sliders",
-        "subtitle": "Sliders and carousels for CJjs apps",
-        "path": "/documentation/sliders/"
-      },
-      "sliders-multi-slider":{
-        "name": "MultiSlider",
-        "subtitle": "Multi-slider based on Swiper. Can generate sliders of different types stacked together.",
-        "path": "/documentation/sliders/multi-slider/"
-        },
-      "sliders-cj-swiper": {
-        "name": "CjSwiper",
-        "subtitle": "Base component for generating macro-components with sliders based on Swiper",
-        "path": "/documentation/sliders/cj-swiper/"
-        },
-      "linkin-bio": {
-        "name": "Link in Bio",
-        "subtitle": "Link In Bio App.",
-        "path": "/documentation/linkin-bio/"
-      },
-      "linkin-bio-linkin-bio":{
-        "name": "LinkinBio",
-        "subtitle": "A highly customizable Link In Bio page.",
-        "path": "/documentation/linkin-bio/linkin-bio/"
-
-      },
-      "gamification": {
-        "name": "Gamification",
-        "subtitle": "Gamification components to increase conversions.",
-        "path": "/documentation/gamification/"
-      },
-      "gamification-activation-modal":{
-        "name": "ActivationModal",
-        "subtitle": "A modal for activations with name and email fields.",
-        "path": "/documentation/gamification/activation-modal/"
-      },
-        "gamification-social-proof":{
-          "name": "SocialProof",
-          "subtitle": "Stackable social proof that slides across the screen.",
-          "path": "/documentation/gamification/social-proof/"
-        },
-      "odoo": {
-        "name": "Odoo",
-        "subtitle": "Odoo integration components for CJjs apps",
-        "path": "/documentation/odoo/"
-      },
-      "odoo-odoo-client":{
-        "name": "OdooClient",
-        "subtitle": "Full integration with Odoo's JSON-RPC API",
-        "path": "/documentation/odoo/odoo-client/"
-      }
+  "navbar": [
+    {
+      "name": "Getting Started",
+      "path": "/getting-started/"
     },
-    "categories": {
-      "concept":[
-        "concept-touchpoint",
-        "concept-system",
-        "concept-adaptable",
-        "concept-scroll-stopping-content",
-        "concept-hyper-personalization"
-      ],
-      "project":[
-        "project-structure",
-        "project-titles",
-        "project-markdonwn-text",
-        "project-animations",
-        "project-buttons",
-        "project-i18n"
-      ],
-      "core": [
-        "core-app-page",
-        "core-page-header",
-        "core-page-footer",
-        "core-app-element",
-        "core-functions"
-      ],
-      "router": [
-        "router-router",
-        "router-routing"
-      ],
-      "components": [
-        "components-cards-list",
-        "components-cta-banner",
-        "components-countdown-timer",
-        "components-hero-banner",
-        "components-image-banner",
-        "components-image-text",
-        "components-level-centered",
-        "components-media-grid",
-        "components-media-list",
-        "components-modal-box",
-        "components-omnichannel-chat",
-        "components-text-accordion",
-        "components-text-columns",
-        "components-text-message",
-        "components-text-notification",
-        "components-text-section",
-        "components-video-player",
-        "components-webinar-invitation"
-      ],
-      
-      "forms": [
-        "forms-form-hero",
-        "forms-form-lead",
-        "forms-form-modal",
-        "forms-form-appoinment"
-      ],
-      "sliders": [
-        "sliders-multi-slider",
-        "sliders-cj-swiper"
-      ],
-      "linkin-bio": [
-        "linkin-bio-linkin-bio"
-      ],
-      "gamification": [
-        "gamification-activation-modal",
-        "gamification-social-proof"
-      ],
-      "odoo": [
-        "odoo-odoo-client"
-      ]
+    {
+      "name": "Usage Guide",
+      "path": "/usage-guide/"
+    },
+    {
+      "name": "Documentation",
+      "path": "/documentation/"
+    },
+    {
+      "name": "Sponsor",
+      "path": "/sponsor/"
+    }
+  ],
+  "by_id": {
+    "concept": {
+      "name": "Concept",
+      "subtitle": "The concepts behind CJjs",
+      "path": "/usage-guide/concept/"
+    },
+    "concept-touchpoint": {
+      "name": "Vanilla flavor touchponts",
+      "subtitle": "Vanilla philosophy in generating HTML components with JavaScript.",
+      "path": "/usage-guide/concept/touchpoint/"
+    },
+    "concept-system": {
+      "name": "App as system",
+      "subtitle": "Systems thinking applied to CJs apps.",
+      "path": "/usage-guide/concept/system/"
+    },
+    "concept-adaptable": {
+      "name": "Adaptive apps",
+      "subtitle": "User behavior observability plus data to adapt and achieve hyper-personalization.",
+      "path": "/usage-guide/concept/adaptive/"
+    },
+    "concept-scroll-stopping-content": {
+      "name": "Scroll Stopping Content",
+      "subtitle": "How to measure content that captures customer attention",
+      "path": "/usage-guide/concept/scroll-stopping-content/"
+    },
+    "concept-hyper-personalization": {
+      "name": "Hyper-personalization",
+      "subtitle": "Enhanced customer experience.",
+      "path": "/usage-guide/concept/hyper-personalization/"
+    },
+    "project": {
+      "name": "CJjs Project",
+      "subtitle": "How to create a CJjs project from scratch.",
+      "path": "/usage-guide/proyect/"
+    },
+    "project-structure": {
+      "name": "Structure",
+      "subtitle": "Layout of a CJjs App with hyper-personalization and state management.",
+      "path": "/usage-guide/project/structure/"
+    },
+    "project-titles": {
+      "name": "Titles",
+      "subtitle": "How titles are generated within CJjs components.",
+      "path": "/usage-guide/project/titles/"
+    },
+    "project-markdonwn-text": {
+      "name": "Markdonwn Text",
+      "subtitle": "CJjs uses markdown to generate HTML content.",
+      "path": "/usage-guide/project/markdonwn-text/"
+    },
+    "project-animations": {
+      "name": "Animations",
+      "subtitle": "Integrating Animate.css animations into CJjs components",
+      "path": "/usage-guide/project/animations/"
+    },
+    "project-buttons": {
+      "name": "Buttons",
+      "subtitle": "How to generate CTA buttons in BJjs components",
+      "path": "/usage-guide/project/buttons/"
+    },
+    "project-i18n": {
+      "name": "i18n",
+      "subtitle": "Multi-language internationalization i8n in CJjs apps",
+      "path": "/usage-guide/project/i18n/"
+    },
+    "core": {
+      "name": "Core",
+      "subtitle": "The core CJjs package",
+      "path": "/documentation/core/"
+    },
+    "core-page": {
+      "name": "Page",
+      "subtitle": "The router's callback function that controls each page of the web app",
+      "path": "/documentation/core/page/"
+    },
+    "core-state-management": {
+      "name": "State Management",
+      "subtitle": "State management for CJjs apps",
+      "path": "/documentation/core/state-management/"
+    },
+    "core-app-page": {
+      "name": "AppPage",
+      "subtitle": "The container for all the page components, event controller and data management.",
+      "path": "/documentation/core/app-page/"
+    },
+    "core-page-header": {
+      "name": "PageHeader",
+      "subtitle": "Header with language and theme selectors.",
+      "path": "/documentation/core/page-header/"
+    },
+    "core-page-footer": {
+      "name": "PageFooter",
+      "subtitle": "Footer of the page with logo and privacy policies",
+      "path": "/documentation/core/page-footer/"
+    },
+    "core-app-element": {
+      "name": "AppElement",
+      "subtitle": "Base component for creating CJjs macro-components",
+      "path": "/documentation/core/app-element"
+    },
+    "core-functions": {
+      "name": "Functions",
+      "subtitle": "Toolbox for adding CJjs functionality",
+      "path": "/documentation/core/functions/"
+    },
+    "router": {
+      "name": "Router",
+      "subtitle": "All CJjs apps start here. The router is the heart of a CJjs app with persistent state management.",
+      "path": "/documentation/router/"
+    },
+    "router-router": {
+      "name": "Router",
+      "subtitle": "Simple, light and flexible routing for your CJjs applications",
+      "path": "/documentation/router/router/"
+    },
+    "router-routing": {
+      "name": "Routing CJ style",
+      "subtitle": "The router as the heart of a CJjs app with persistent state management.",
+      "path": "/documentation/router/routing"
+    },
+    "components": {
+      "name": "Components",
+      "subtitle": "Reusable UI macro-components for CJjs apps",
+      "path": "/documentation/components/"
+    },
+    "components-cards-list": {
+      "name": "CardsList",
+      "subtitle": "Generate highly customizable Bulma-style cards lists with ease.",
+      "path": "/documentation/components/cards-list/"
+    },
+    "components-cta-banner": {
+      "name": "CtaBanner",
+      "subtitle": "A classic CTA with text and buttons.",
+      "path": "/documentation/components/cta-banner/"
+    },
+    "components-countdown-timer": {
+      "name": "CountdownTimer",
+      "subtitle": "Countdown timer in days, hours and minutes for temporary promotions.",
+      "path": "/documentation/components/countdown-timer/"
+    },
+    "components-hero-banner": {
+      "name": "HeroBanner",
+      "subtitle": "Highly customizable Bulma-style hero banner.",
+      "path": "/documentation/components/hero-banner/"
+    },
+    "components-image-banner": {
+      "name": "ImageBanner",
+      "subtitle": "One-image banner with titles at the top, descriptions, and buttons at the bottom.",
+      "path": "/documentation/components/image-banner/"
+    },
+    "components-image-text": {
+      "name": "ImageText",
+      "subtitle": "Highly configurable two-column component. One for an image and the other for information and CTA buttons.",
+      "path": "/documentation/components/image-text/"
+    },
+    "components-level-centered": {
+      "name": "LevelCentered",
+      "subtitle": "A Level bulma with icons, heading and title centered.",
+      "path": "/documentation/components/level-centered/"
+    },
+    "components-media-grid": {
+      "name": "MediaGrid",
+      "subtitle": "Bulma's Media Object Grid component made easy.",
+      "path": "/documentation/components/media-grid/"
+    },
+    "components-media-list": {
+      "name": "MediaList",
+      "subtitle": "Bulma's Media Object List component made easy.",
+      "path": "/documentation/components/media-list/"
+    },
+    "components-modal-box": {
+      "name": "ModalBox",
+      "subtitle": "A Modal Box with a card, image, or message options.",
+      "path": "/documentation/components/modal-box/"
+    },
+    "components-omnichannel-chat": {
+      "name": "OmnichannelChat",
+      "subtitle": "Multi-channel chat button with WhatsApp, Messenger, Telegram, and more.",
+      "path": "/documentation/components/omnichannel-chat/"
+    },
+    "components-text-accordion": {
+      "name": "TextAccordion",
+      "subtitle": "Animated accordion to present information one by one.",
+      "path": "/documentation/components/text-accordion/"
+    },
+    "components-text-columns": {
+      "name": "TextColumns",
+      "subtitle": "Two-column text with CTA buttons.",
+      "path": "/documentation/components/text-columns/"
+    },
+    "components-text-message": {
+      "name": "TextMessage",
+      "subtitle": "Colored message blocks, to emphasize part of your page's content.",
+      "path": "/documentation/components/text-message/"
+    },
+    "components-text-notification": {
+      "name": "TextNotification",
+      "subtitle": "Bold notification blocks, to alert your users of something important.",
+      "path": "/documentation/components/text-notification/"
+    },
+    "components-text-section": {
+      "name": "TextSection",
+      "subtitle": "Text section with titles and CTA buttons.",
+      "path": "/documentation/components/text-section/"
+    },
+    "components-video-player": {
+      "name": "VideoPlayer",
+      "subtitle": "Video player with titles and CTA buttons.",
+      "path": "/documentation/components/video-player/"
+    },
+    "components-webinar-invitation": {
+      "name": "WebinarInvitation",
+      "subtitle": "Webinar banner with start date, duration, price, and iCal button.",
+      "path": "/documentation/components/webinar-invitation/"
+    },
+    "forms": {
+      "name": "Forms",
+      "subtitle": "Forms and form components for CJjs apps",
+      "path": "/documentation/forms/"
+    },
+    "forms-form-hero": {
+      "name": "FormHero",
+      "subtitle": "Two columns, one for the form and one for titles and CTA buttons",
+      "path": "/documentation/forms/form-hero"
+    },
+    "forms-form-lead": {
+      "name": "FormLead",
+      "subtitle": "Base form for all components with form",
+      "path": "/documentation/forms/form-lead"
+    },
+    "forms-form-modal": {
+      "name": "FormModal",
+      "subtitle": "A modal with a form inside.",
+      "path": "/documentation/forms/form-modal"
+    },
+    "forms-form-appoinment": {
+      "name": "FormAppoinment",
+      "subtitle": "Practical form to generate appointments.",
+      "path": "/documentation/forms/form-appoinment"
+    },
+    "sliders": {
+      "name": "Sliders",
+      "subtitle": "Sliders and carousels for CJjs apps",
+      "path": "/documentation/sliders/"
+    },
+    "sliders-multi-slider": {
+      "name": "MultiSlider",
+      "subtitle": "Multi-slider based on Swiper. Can generate sliders of different types stacked together.",
+      "path": "/documentation/sliders/multi-slider/"
+    },
+    "sliders-cj-swiper": {
+      "name": "CjSwiper",
+      "subtitle": "Base component for generating macro-components with sliders based on Swiper",
+      "path": "/documentation/sliders/cj-swiper/"
+    },
+    "linkin-bio": {
+      "name": "Link in Bio",
+      "subtitle": "Link In Bio App.",
+      "path": "/documentation/linkin-bio/"
+    },
+    "linkin-bio-linkin-bio": {
+      "name": "LinkinBio",
+      "subtitle": "A highly customizable Link In Bio page.",
+      "path": "/documentation/linkin-bio/linkin-bio/"
+    },
+    "gamification": {
+      "name": "Gamification",
+      "subtitle": "Gamification components to increase conversions.",
+      "path": "/documentation/gamification/"
+    },
+    "gamification-activation-modal": {
+      "name": "ActivationModal",
+      "subtitle": "A modal for activations with name and email fields.",
+      "path": "/documentation/gamification/activation-modal/"
+    },
+    "gamification-social-proof": {
+      "name": "SocialProof",
+      "subtitle": "Stackable social proof that slides across the screen.",
+      "path": "/documentation/gamification/social-proof/"
+    },
+    "odoo": {
+      "name": "Odoo",
+      "subtitle": "Odoo integration components for CJjs apps",
+      "path": "/documentation/odoo/"
+    },
+    "odoo-odoo-client": {
+      "name": "OdooClient",
+      "subtitle": "Full integration with Odoo's JSON-RPC API",
+      "path": "/documentation/odoo/odoo-client/"
+    }
+  },
+  "categories": {
+    "concept": [
+      "concept-touchpoint",
+      "concept-system",
+      "concept-adaptable",
+      "concept-scroll-stopping-content",
+      "concept-hyper-personalization"
+    ],
+    "project": [
+      "project-structure",
+      "project-titles",
+      "project-markdonwn-text",
+      "project-animations",
+      "project-buttons",
+      "project-i18n"
+    ],
+    "core": [
+      "core-page",
+      "core-state-management",
+      "core-app-page",
+      "core-page-header",
+      "core-page-footer",
+      "core-app-element",
+      "core-functions"
+    ],
+    "router": [
+      "router-router",
+      "router-routing"
+    ],
+    "components": [
+      "components-cards-list",
+      "components-cta-banner",
+      "components-countdown-timer",
+      "components-hero-banner",
+      "components-image-banner",
+      "components-image-text",
+      "components-level-centered",
+      "components-media-grid",
+      "components-media-list",
+      "components-modal-box",
+      "components-omnichannel-chat",
+      "components-text-accordion",
+      "components-text-columns",
+      "components-text-message",
+      "components-text-notification",
+      "components-text-section",
+      "components-video-player",
+      "components-webinar-invitation"
+    ],
+    "forms": [
+      "forms-form-hero",
+      "forms-form-lead",
+      "forms-form-modal",
+      "forms-form-appoinment"
+    ],
+    "sliders": [
+      "sliders-multi-slider",
+      "sliders-cj-swiper"
+    ],
+    "linkin-bio": [
+      "linkin-bio-linkin-bio"
+    ],
+    "gamification": [
+      "gamification-activation-modal",
+      "gamification-social-proof"
+    ],
+    "odoo": [
+      "odoo-odoo-client"
+    ]
   }
 }

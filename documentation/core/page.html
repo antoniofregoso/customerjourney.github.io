@@ -1,0 +1,11 @@
+---
+title: Page
+subtitle: "The router's callback function that controls each page of the web app"
+layout: docs
+---
+<div class="container">
+    <div class="content my-4">
+        {% capture content %}{% include docs/core/page.md %}{% endcapture %}
+        {{ content | markdownify }}
+    </div>
+</div>
