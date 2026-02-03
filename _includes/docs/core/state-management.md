@@ -1,5 +1,24 @@
-## Overview
+## State Management Architecture
+The library divides state management into three clearly differentiated concepts:
 
+### 1. Store
+Central and unique point containing all the application's state configuration.
+It is responsible for registering and organizing the different slices corresponding to each stage of the sales funnel.
+
+### 2. Slices
+Modular and self-contained units of state.
+Each slice defines:
+- Initial state
+- Reducers / state update functions (action → new state)
+These represent logical portions of the state, generally associated with a page or stage of the funnel.
+
+### 3. Updaters
+Reactive layer / side effects layer.
+These are functions that subscribe to specific state changes (precise selectors).
+Their main responsibility is to react to detected changes and perform the following actions:
+- Update the user interface
+- Execute transitions between pages
+- Trigger side effects (save data, send events, analytics, etc.)
 
 ## 1. Store
 

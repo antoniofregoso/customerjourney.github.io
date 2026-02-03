@@ -4,7 +4,7 @@
       <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TextNotification</title>
+<title>JSON Single Source of Truth (SSOT)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -33,23 +33,6 @@
 <!-- Overtracking Pixel Code -->
 <script defer src="https://cdn.overtracking.com/t/tWsnrSGMZRnHkpU7S/"></script>
 <!-- End Overtracking Pixel Code -->
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "@customerjourney/cj-components",
-    "description": "Bold notification blocks, to alert your users of something important",
-    "url": "https://customerjourney.ninja/getting-started/",
-    "codeRepository": [
-    "https://github.com/antoniofregoso/cj-components",
-    "https://www.npmjs.com/package/@customerjourney/cj-components"
-    ],
-    "supportContact": "https://customerjourney.ninja/sponsor/",
-    "programmingLanguage": "JavaScript",
-    "version": "0.10.1"
-  }
-  </script>
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -448,20 +431,30 @@ navbar-item
   <div class="column">
     <section class="hero is-medium is-cj" >
   <div class="hero-body">
-    <h1 class="title has-text-light" data-animation="fadeInDown"> TextNotification</h1>
-    <p class="subtitle has-text-light" data-animation="fadeInUp">Bold notification blocks, to alert your users of something important</p>
+    <h1 class="title has-text-light" data-animation="fadeInDown"> JSON Single Source of Truth (SSOT)</h1>
+    <p class="subtitle has-text-light" data-animation="fadeInUp">A JSON file like SSOT to control the appearance, content, and animations of each page of the sales funnel.</p>
 </section>
     <nav class="breadcrumb is-right" aria-label="breadcrumbs">
     <ul  class="breadcrumb-items">
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    <section class="hero is-medium is-warning">
-  <div class="hero-body">
-    <p class="title">Under Construction</p>
-    <p class="subtitle">Documentation will be available soon</p>
-  </div>
-</section>
+    <div class="container">
+    <div class="content my-4">
+        
+        <h2 id="overview">Overview</h2>
+<p>The SSOT JSON has 2 components: the funnel page properties and the webapp context. It has the following syntax:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"props"</span><span class="p">:{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"context"</span><span class="p">:{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Where props defines the content, animations, and appearance of each of the macro components, and context defines the language, theme (dark, light, or system), session id, and any other necessary information to be shared across all pages of the sales funnel.</p>
+
+<p>The web application handles the context, but the props are sent from the backend based on the customer’s classification and stage in the customer journey. These props are generated from a neutral Single Sign-On (SSOT) and using available customer data with an AI system to achieve true hyper-personalization.</p>
+
+    </div>
+</div>
 </main>
 
 

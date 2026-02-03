@@ -168,6 +168,13 @@ navbar-item
 
 
 
+<li><a class="is-lateral-link" href="/documentation/core/ssot">Single Source of Truth</a></li>
+
+    
+
+
+
+
 <li><a class="is-lateral-link" href="/documentation/core/app-page/">AppPage</a></li>
 
     
@@ -435,9 +442,33 @@ navbar-item
     <div class="container">
     <div class="content my-4">
         
-        <h2 id="overview">Overview</h2>
+        <h2 id="state-management-architecture">State Management Architecture</h2>
+<p>The library divides state management into three clearly differentiated concepts:</p>
 
-<h2 id="1-store">1. Store</h2>
+<h3 id="1-store">1. Store</h3>
+<p>Central and unique point containing all the application’s state configuration.
+It is responsible for registering and organizing the different slices corresponding to each stage of the sales funnel.</p>
+
+<h3 id="2-slices">2. Slices</h3>
+<p>Modular and self-contained units of state.
+Each slice defines:</p>
+<ul>
+  <li>Initial state</li>
+  <li>Reducers / state update functions (action → new state)
+These represent logical portions of the state, generally associated with a page or stage of the funnel.</li>
+</ul>
+
+<h3 id="3-updaters">3. Updaters</h3>
+<p>Reactive layer / side effects layer.
+These are functions that subscribe to specific state changes (precise selectors).
+Their main responsibility is to react to detected changes and perform the following actions:</p>
+<ul>
+  <li>Update the user interface</li>
+  <li>Execute transitions between pages</li>
+  <li>Trigger side effects (save data, send events, analytics, etc.)</li>
+</ul>
+
+<h2 id="1-store-1">1. Store</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">configureStore</span><span class="p">,</span> <span class="nx">combineReducers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@reduxjs/toolkit</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">persistStore</span><span class="p">,</span> <span class="nx">persistReducer</span><span class="p">,</span> <span class="nx">FLUSH</span><span class="p">,</span> <span class="nx">REHYDRATE</span><span class="p">,</span> <span class="nx">PAUSE</span><span class="p">,</span> <span class="nx">PERSIST</span><span class="p">,</span> <span class="nx">PURGE</span><span class="p">,</span> <span class="nx">REGISTER</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">redux-persist</span><span class="dl">'</span><span class="p">;</span>
@@ -484,7 +515,7 @@ navbar-item
 <span class="k">export</span> <span class="p">{</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">persistor</span> <span class="p">};</span>
 </code></pre></div></div>
 
-<h2 id="2-slices">2. Slices</h2>
+<h2 id="2-slices-1">2. Slices</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createSlice</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
 <span class="cm">/**
@@ -532,7 +563,7 @@ navbar-item
 <span class="k">export</span> <span class="k">default</span> <span class="nx">homeSlice</span><span class="p">.</span><span class="nx">reducer</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h2 id="3-updaters">3. Updaters</h2>
+<h2 id="3-updaters-1">3. Updaters</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../store/store</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">setSectionTracking</span><span class="p">,</span> <span class="nx">setEscapeAttempt</span><span class="p">,</span> <span class="nx">setPageQuit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../store/slices/homeSlice</span><span class="dl">"</span><span class="p">;</span>

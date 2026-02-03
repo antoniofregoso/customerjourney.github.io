@@ -168,6 +168,13 @@ navbar-item
 
 
 
+<li><a class="is-lateral-link" href="/documentation/core/ssot">Single Source of Truth</a></li>
+
+    
+
+
+
+
 <li><a class="is-lateral-link" href="/documentation/core/app-page/">AppPage</a></li>
 
     
@@ -436,9 +443,28 @@ navbar-item
     <div class="content my-4">
         
         <h2 id="overview">Overview</h2>
-<p>In CustomerJourney.js, each page of a sales funnel is generated and controlled by callback functions executed by the router based on the URL.</p>
+<p>In CustomerJourney.js, each page of a sales funnel is generated and controlled by callback functions executed by the router based on the URL where <strong>req</strong> is the object that contains all the information contained in the URL. The <strong>complete URL</strong>, the <strong>referrer</strong>, the <strong>query parameters</strong>, and the <strong>path parameters</strong> for <strong>hyper-personalization purposes</strong> and <code class="language-plaintext highlighter-rouge">router</code> provides access to the <code class="language-plaintext highlighter-rouge">router.pathFor("named route")</code> function to obtain complete routes in a concise form.</p>
 
-<p>This function has three responsibilities:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">home</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The request object has the following syntax:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=black-friday&amp;cjtm_profile=average"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"referrer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"utm_source"</span><span class="p">:</span><span class="s2">"newslette"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"utm_medium"</span><span class="p">:</span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"utm_campaign"</span><span class="p">:</span><span class="s2">"black-friday"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cjtm_profile"</span><span class="p">:</span><span class="s2">"average"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The callback function has three responsibilities:</p>
 <ol>
   <li>Initialize the AppPage object.</li>
   <li>Initialize scrollStopping tracking object</li>
@@ -625,10 +651,6 @@ navbar-item
      */</span>
     <span class="nx">data</span><span class="p">.</span><span class="nx">context</span> <span class="o">=</span> <span class="nx">currentState</span><span class="p">.</span><span class="nx">context</span><span class="p">;</span>
     <span class="cm">/**
-     * Page object created with the data and the template
-     */</span>
-    <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">template</span><span class="p">);</span>
-    <span class="cm">/**
      * Initialize scrollStopping tracking object
      */</span> 
     <span class="kd">let</span> <span class="nx">track</span> <span class="o">=</span> <span class="nx">page</span><span class="p">.</span><span class="nx">scrollStopping</span><span class="p">;</span>
@@ -722,7 +744,11 @@ navbar-item
             <span class="k">if</span> <span class="p">(</span><span class="nx">previousState</span> <span class="o">!==</span> <span class="nx">currentState</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">homeUpdater</span><span class="p">(</span><span class="nx">previousState</span><span class="p">,</span> <span class="nx">currentState</span><span class="p">);</span>
             <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="p">}</span>    
+    <span class="cm">/**
+     * Page object created with the data and the template
+     */</span>
+    <span class="nx">page</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AppPage</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">template</span><span class="p">);</span>
     <span class="cm">/**
      * set event handlers for the page
      */</span> 
@@ -734,6 +760,10 @@ navbar-item
     
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p>Code for No-Code means that, once the sales funnel is configured and deployed in production, all dynamic, real-time adjustments are made by modifying only the JSON file, which acts as the Single Source of Truth (SSOT).</p>
+
+<p>These changes can be generated or assisted by artificial intelligence tools, enabling powerful hyper-personalization and a fully conversion-oriented experience for each customer in a simple and scalable way, without needing to modify the application’s source code.</p>
 
 
     </div>

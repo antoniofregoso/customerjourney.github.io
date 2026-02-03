@@ -98,6 +98,11 @@
       "subtitle": "State management for CJjs apps",
       "path": "/documentation/core/state-management/"
     },
+    "core-ssot": {
+      "name": "Single Source of Truth",
+      "subtitle": "A JSON file like SSOT to control the appearance, content, and animations of each page of the sales funnel.",
+      "path": "/documentation/core/ssot"
+    },
     "core-app-page": {
       "name": "AppPage",
       "subtitle": "The container for all the page components, event controller and data management.",
@@ -328,6 +333,7 @@
     "core": [
       "core-page",
       "core-state-management",
+      "core-ssot",
       "core-app-page",
       "core-page-header",
       "core-page-footer",

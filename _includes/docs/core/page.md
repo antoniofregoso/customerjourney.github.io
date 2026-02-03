@@ -1,7 +1,28 @@
 ## Overview
-In CustomerJourney.js, each page of a sales funnel is generated and controlled by callback functions executed by the router based on the URL.
+In CustomerJourney.js, each page of a sales funnel is generated and controlled by callback functions executed by the router based on the URL where **req** is the object that contains all the information contained in the URL. The **complete URL**, the **referrer**, the **query parameters**, and the **path parameters** for **hyper-personalization purposes** and `router` provides access to the `router.pathFor("named route")` function to obtain complete routes in a concise form.
 
-This function has three responsibilities:
+```javascript
+export function home(req, router){
+    ...
+}
+```
+The request object has the following syntax:
+
+```json
+{
+    "uri": "/?utm_source=newsletter&utm_medium=email&utm_campaign=black-friday&cjtm_profile=average",
+    "referrer": "",
+    "query": {
+            "utm_source":"newslette",
+            "utm_medium":"email",
+            "utm_campaign":"black-friday",
+            "cjtm_profile":"average",
+    },
+    "params": {}
+}
+```
+
+The callback function has three responsibilities:
 1. Initialize the AppPage object.
 2. Initialize scrollStopping tracking object
 2. Handle events generated within AppPage.
@@ -191,10 +212,6 @@ export function home(req, router){
      */
     data.context = currentState.context;
     /**
-     * Page object created with the data and the template
-     */
-    page =  new AppPage(data, template);
-    /**
      * Initialize scrollStopping tracking object
      */ 
     let track = page.scrollStopping;
@@ -288,7 +305,11 @@ export function home(req, router){
             if (previousState !== currentState) {
                 homeUpdater(previousState, currentState);
             }
-        }
+        }    
+    /**
+     * Page object created with the data and the template
+     */
+    page =  new AppPage(data, template);
     /**
      * set event handlers for the page
      */ 
@@ -300,5 +321,9 @@ export function home(req, router){
     
 }
 ```
+
+Code for No-Code means that, once the sales funnel is configured and deployed in production, all dynamic, real-time adjustments are made by modifying only the JSON file, which acts as the Single Source of Truth (SSOT).
+
+These changes can be generated or assisted by artificial intelligence tools, enabling powerful hyper-personalization and a fully conversion-oriented experience for each customer in a simple and scalable way, without needing to modify the application's source code.
     
     

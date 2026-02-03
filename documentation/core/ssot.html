@@ -1,0 +1,11 @@
+---
+title: JSON Single Source of Truth (SSOT)
+subtitle: "A JSON file like SSOT to control the appearance, content, and animations of each page of the sales funnel."
+layout: docs
+---
+<div class="container">
+    <div class="content my-4">
+        {% capture content %}{% include docs/core/ssot.md %}{% endcapture %}
+        {{ content | markdownify }}
+    </div>
+</div>
