@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
+
+<head>
+  <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PageFooter</title>
@@ -34,32 +35,27 @@
 <script defer src="https://cdn.overtracking.com/t/tWsnrSGMZRnHkpU7S/"></script>
 <!-- End Overtracking Pixel Code -->
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "@customerjourney/cj-core",
-    "description": "Footer of the page with logo and privacy policies",
-    "url": "https://customerjourney.ninja/getting-started/",
-    "codeRepository": [
-    "https://github.com/antoniofregoso/cj-core",
-    "https://www.npmjs.com/package/@customerjourney/cj-core"
-    ],
-    "supportContact": "https://customerjourney.ninja/sponsor/",
-    "programmingLanguage": "JavaScript",
-    "version": "1.6.0"
-  }
-  </script>
-
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <script src="/assets/js/app.js" defer></script>
-  </head>
-  <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <meta property="og:title" content="PageFooter" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://customerjourney.ninja/documentation/core/page-footer/" />
+  <meta property="og:image" content="https://customerjourney.ninja/assets/images/custumerjourney_js.webp" />
+  <meta property="og:description" content="Footer of the page with logo and privacy policies" />
+  <meta property="og:site_name" content="Customer Journey" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@customerjourney" />
+  <meta name="twitter:title" content="PageFooter" />
+  <meta name="twitter:description" content="Footer of the page with logo and privacy policies" />
+  <meta name="twitter:image" content="https://customerjourney.ninja/assets/images/custumerjourney_js.webp" />
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <img src="/assets/images/cj-js.png" alt="CustumerJourney.js">
@@ -142,7 +138,7 @@ navbar-item
     </div>
   </div>
 </nav>
-    <main class="columns is-gapless">
+  <main class="columns is-gapless">
   <div class="column is-2 is-hidden-mobile aside-menu">
     <aside class="menu p-4">
   <a class="menu-label" href="/documentation/router/">Router</a>
@@ -456,18 +452,50 @@ navbar-item
       <li><a href="/">Home</a></li>
     </ul>
   </nav>
-    <section class="hero is-medium is-warning">
-  <div class="hero-body">
-    <p class="title">Under Construction</p>
-    <p class="subtitle">Documentation will be available soon</p>
+    <div class="container">
+  <div class="content my-4">
+    
+    
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">`&lt;page-footer id="footer"&gt;&lt;/page-footer&gt;`</span>
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"footer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/images/logo.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"srcDark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/images/logo-dark.webp"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open Source CRM | Hecho con ❤️ con CustomerJourney.js"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open Source CRM | Made with ❤️ with CustomerJourney.js"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRM Open Source | Fait avec ❤️ avec CustomerJourney.js"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"privacyPolicy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"es"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Política de Privacidad"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Privacy Policy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Politique de confidentialité"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://customerjourney.ninja/privacy-policy/"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/assets/images/docs/app-footer.png" alt="app-footer" /></p>
+
+<p><img src="/assets/images/docs/app-footer-dark.png" alt="app-footer-dark" /></p>
+
+
   </div>
-</section>
+</div>
 </main>
 
 
 
   
-    <footer class="footer">
+  <footer class="footer">
     <div class="content has-text-centered">
       <p>
         <strong>CustumerJourney.Js</strong> by <a href="https://bio.antoniofregoso.com">Antonio Fregoso</a>.
@@ -481,6 +509,8 @@ navbar-item
       <p><a href="/privacy-policy">Privacy Policy</a> - <a href="/terms-of-use">Terms of Use</a> - <a type="button" data-cc="show-preferencesModal">Cookie Preferences</a></p>      
     </div>
   </footer>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
-  </body>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+</body>
+
 </html>

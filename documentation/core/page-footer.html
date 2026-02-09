@@ -3,7 +3,12 @@ title: PageFooter
 subtitle: Footer of the page with logo and privacy policies
 layout: docs
 schema_data:
-  name: "cj-core"
-  version: 1.6.0
+name: "cj-core"
+version: 1.6.0
 ---
-{% include website/under-construction.html %}
+<div class="container">
+  <div class="content my-4">
+    {% capture content %}{% include docs/core/page-footer.md %}{% endcapture %}
+    {{ content | markdownify }}
+  </div>
+</div>
