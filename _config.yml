@@ -2,8 +2,8 @@
 env: production
 title: CustumerJourney.js
 description: Open Source Vanilla Javascript Libraries for Building Touchpoints as a System.
-baseurl: "/" # Ajusta a "/nombre-repositorio" si es necesario
-url: "https://antoniofregoso.github.io/customerjourney" # Dejar vacío para que Jekyll lo infiera
+baseurl: "/customerjourney/" # Ajusta a "/nombre-repositorio" si es necesario
+url: "https://antoniofregoso.github.io" # Dejar vacío para que Jekyll lo infiera
 permalink: /:name/
 # Build
 lsi: false
