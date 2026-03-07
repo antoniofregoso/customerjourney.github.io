@@ -15,7 +15,7 @@
   <div id="navMenu" class="navbar-menu">
     <div class="navbar-start">
       {% for link in site.data.links.navbar %}
-      {% include /website/nav-item.html link=link %}
+      {% include website/nav-item.html link=link %}
       {% endfor %}
       <a class="navbar-item" href="{{ '/github' | relative_url }}">
         <i class="fa-brands fa-lg fa-github"></i>

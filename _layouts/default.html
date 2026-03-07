@@ -2,24 +2,24 @@
 <html lang="en">
 
 <head>
-  {% include/website/head.html %}
+  {% include website/head.html %}
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://customerjourney.ninja{{ page.url }}" />
-  <meta property="og:image" content="https://customerjourney.ninja/assets/images/custumerjourney_js.webp" />
+  <meta property="og:image" content="https://antoniofregoso.github.io/customerjourney/assets/images/custumerjourney_js.webp" />
   <meta property="og:description" content="{{ page.subtitle }}" />
   <meta property="og:site_name" content="Customer Journey" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@customerjourney" />
   <meta name="twitter:title" content="{{ page.title }}" />
   <meta name="twitter:description" content="{{ page.subtitle }}" />
-  <meta name="twitter:image" content="https://customerjourney.ninja/assets/images/custumerjourney_js.webp" />
+  <meta name="twitter:image" content="https://antoniofregoso.github.io/customerjourney/assets/images/custumerjourney_js.webp" />
 </head>
 
 <body>
-  {% include /website/navigation.html %}
+  {% include website/navigation.html %}
   {{ content }}
-  {% include /website/footer.html %}
+  {% include website/footer.html %}
   <script type="module"
     src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
 </body>
