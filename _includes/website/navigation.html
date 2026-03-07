@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/assets/images/cj-js.png" alt="CustumerJourney.js">
+    <a class="navbar-item" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/cj-js.png' | relative_url }}" alt="CustumerJourney.js">
     </a>
 
     <a id="main-menu" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
@@ -17,7 +17,7 @@
       {% for link in site.data.links.navbar %}
       {% include /website/nav-item.html link=link %}
       {% endfor %}
-      <a class="navbar-item" href="/github">
+      <a class="navbar-item" href="{{ '/github' | relative_url }}">
         <i class="fa-brands fa-lg fa-github"></i>
       </a>
     </div>

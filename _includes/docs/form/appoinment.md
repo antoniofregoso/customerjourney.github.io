@@ -95,7 +95,7 @@
 ```
 ## Form
 
-[Form Configuration](/documentation/forms/)
+[Form Configuration]({{ '/documentation/forms/' | relative_url }})
 
 ## Example
 ```json
@@ -127,4 +127,4 @@
 ```
 
 
-![FormAppoinment View](/assets/images/docs/form_appoinment.webp)
+![FormAppoinment View]({{ '/assets/images/docs/form_appoinment.webp' | relative_url }})

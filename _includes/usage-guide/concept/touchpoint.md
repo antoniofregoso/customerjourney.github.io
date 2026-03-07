@@ -112,4 +112,4 @@ An AI-generated setting HeroBanner section in CustumerJourney.js style
 
 The result
 
-![Hero Banner](/assets/images/usage-guide/hero-banner.webp)
+![Hero Banner]({{ '/assets/images/usage-guide/hero-banner.webp' | relative_url }})

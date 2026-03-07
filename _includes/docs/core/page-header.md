@@ -21,6 +21,6 @@
 ```
 
 
-![app-header](/assets/images/docs/app-header.png)
+![app-header]({{ '/assets/images/docs/app-header.png' | relative_url }})
 
-![app-header-dark](/assets/images/docs/app-header-dark.png)
+![app-header-dark]({{ '/assets/images/docs/app-header-dark.png' | relative_url }})

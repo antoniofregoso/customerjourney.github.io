@@ -24,12 +24,12 @@ npm run init
 ## 6. Enjoy
 Go to http://localhost:8000/
 
-![Texto de ejemplo que aparece si la imagen falla](/assets/images/cjjs-demo.webp)
+![Texto de ejemplo que aparece si la imagen falla]({{ '/assets/images/cjjs-demo.webp' | relative_url }})
 
 ## 7. Observe status changes as you navigate the landing page
 Open the Redux DevTools extension in your browser and watch the magic happen.
 
-![Texto de ejemplo que aparece si la imagen falla](/assets/images/redux_usage.webp)
+![Texto de ejemplo que aparece si la imagen falla]({{ '/assets/images/redux_usage.webp' | relative_url }})
 
 ## 8. Modify the code
 ```bash
@@ -37,7 +37,7 @@ npm run dev
 ```
 Inside the src/app/data/home.json file make changes and observe the results.
 ## Project structure
-Here you can see the structure of the Customer Journey.js projects: [See CJ.js  structure](/usage-guide/project/structure).
+Here you can see the structure of the Customer Journey.js projects: [See CJ.js  structure]({{ '/usage-guide/project/structure' | relative_url }}).
 ## Integration with AI
 The home.json object describes the landing page's layout, content, and animations, but in production, it's generated in the backend and sent to the application based on route parameters, query parameters, status, and user-specific information from an enterprise management system, such as Odoo. An AI agent can generate a hyper-personalized user experience with all this information using tools like n8n.
 ## Open Source Project

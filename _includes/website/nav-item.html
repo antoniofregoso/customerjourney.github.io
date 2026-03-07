@@ -11,7 +11,7 @@ navbar-item
     {%
     else
     %}
-    href="{{ site.url }}{{ link.path }}"
+    href="{{ link.path | relative_url }}"
     {%
     endif
     %}>

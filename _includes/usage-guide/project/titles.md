@@ -8,7 +8,7 @@ Titles are header components for most macro components. They are generated withi
 ## Components
 - Multi-language text.
 - classList: Bulma or custom class..
-- animation: It is configured in the [CJ style](/usage-guide/project/animations/).
+- animation: It is configured in the [CJ style]({{ '/usage-guide/project/animations/' | relative_url }}).
 
 
 
@@ -53,4 +53,4 @@ Titles are header components for most macro components. They are generated withi
 }
 ```
 
-![Titles](/assets/images/usage-guide/titles.webp)
+![Titles]({{ '/assets/images/usage-guide/titles.webp' | relative_url }})

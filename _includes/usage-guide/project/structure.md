@@ -484,12 +484,12 @@ export function homeUpdater(previousState, currentState){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="CustumerJourneyJS"/>
-    <link rel="stylesheet" href="/assets.css">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="{{ '/assets.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/index.css' | relative_url }}">
 </head>
 <body>
     <div id="app"></div>  
-    <script  src="/index.js"></script> 
+    <script  src="{{ '/index.js' | relative_url }}"></script> 
 </body>
 </html>
 ```

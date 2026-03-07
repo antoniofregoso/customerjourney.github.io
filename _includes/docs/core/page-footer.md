@@ -29,8 +29,8 @@
 }
 ```
 
-![app-footer](/assets/images/docs/app-footer.png)
+![app-footer]({{ '/assets/images/docs/app-footer.png' | relative_url }})
 
 
-![app-footer-dark](/assets/images/docs/app-footer-dark.png)
+![app-footer-dark]({{ '/assets/images/docs/app-footer-dark.png' | relative_url }})
 

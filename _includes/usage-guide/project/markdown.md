@@ -14,4 +14,4 @@ The Markdown content is converted to HTML. It's contained within a div with the 
 }
 ```
 
-![Markdown](/assets/images/usage-guide/markdown.webp)
+![Markdown]({{ '/assets/images/usage-guide/markdown.webp' | relative_url }})

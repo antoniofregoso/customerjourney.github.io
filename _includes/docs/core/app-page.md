@@ -1,7 +1,7 @@
 ## Overview
 AppPage is the core of every CustomerJourney.js page. It renders all macro-components, applies the design, content, and animations to each macro-component, and communicates all events to the callback function that contains it so that the necessary state changes can be processed.
 ## AppPage instance
-Instantiating AppPage is very simple. All that's required is the template with the macrocomponent layout and the [SSOT JSON](/documentation/core/ssot/) props object, which can be passed along with the template or called from the backend by passing the necessary information to hyper-customize the customer experience, as shown in the example below.
+Instantiating AppPage is very simple. All that's required is the template with the macrocomponent layout and the [SSOT JSON]({{ '/documentation/core/ssot/' | relative_url }}) props object, which can be passed along with the template or called from the backend by passing the necessary information to hyper-customize the customer experience, as shown in the example below.
 
 ```javascript
 import { AppPage, PageHeader, PageFooter } from "@customerjourney/cj-core";
@@ -80,7 +80,7 @@ Initial data handling is handled by AppPage. A webhook sends all the request inf
 
 ```
 
-While the webhook waits for the SSOT JSON, it displays a page loader element that is configured with the [loading()](/documentation/core/functions/) function.
+While the webhook waits for the SSOT JSON, it displays a page loader element that is configured with the [loading()]({{ '/documentation/core/functions/' | relative_url }}) function.
 
 ### Event management
 ### Page events

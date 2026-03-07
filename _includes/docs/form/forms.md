@@ -163,27 +163,27 @@ All macro components of type fom have a form component with the same properties 
 Fields function, email, phone, company, subject and description are controlled in the same way.
 ### Options
 - **disabled**{boolean}:If true the field is not generated.
-- **animation**{object}: Animation [description](/usage-guide/project/animations/).
-- **label**{object}:[Multitext](/usage-guide/project/i18n/).
-- **placeholder**{object}:[Multitext](/usage-guide/project/i18n/).
+- **animation**{object}: Animation [description]({{ '/usage-guide/project/animations/' | relative_url }}).
+- **label**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}).
+- **placeholder**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}).
 - **required**{boolean}:
-- **help**{object}:[Multitext](/usage-guide/project/i18n/) Error message in required fields.
-- **help2**{object}:[Multitext](/usage-guide/project/i18n/). Bad format error message in phone and email fields. Error messages and label text are default for Spanish, English, and French.
+- **help**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}) Error message in required fields.
+- **help2**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}). Bad format error message in phone and email fields. Error messages and label text are default for Spanish, English, and French.
 
 ## terms
 Checkbox to accept terms and conditions.
 ### Options
 - **disabled**{boolean}:If true the field is not generated.
-- **text**{object}:[Multitext](/usage-guide/project/i18n/).
+- **text**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}).
 ## termsLink
 ### Options
 - **url**{string}: Link to the terms and conditions page.
-- **text**{object}:[Multitext](/usage-guide/project/i18n/).
+- **text**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}).
 
 ## Buttons
 The submit and cancel buttons are controlled in the same way.
 
 ### Options
-- **animation**{object}: Animation [description](/usage-guide/project/animations/).
+- **animation**{object}: Animation [description]({{ '/usage-guide/project/animations/' | relative_url }}).
 - **classList**: Array of bulma and custom classes.
-- **text**{object}:[Multitext](/usage-guide/project/i18n/).
+- **text**{object}:[Multitext]({{ '/usage-guide/project/i18n/' | relative_url }}).
