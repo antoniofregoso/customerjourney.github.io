@@ -1,7 +1,7 @@
 In the app.js file. The callback functions are located inside the pages folder within the app folder. We have one for home, one for thanks and notFound to style the 404 error. bj-router responds to the 404 error, but can optionally be customized.
 
 ```javascript
-import { Router } from "@customerjourney/router";
+import { Router } from "@customerjourney/cj-router";
 import { home, thanks, notFound } from "./app/pages";
 
 export const App = new bjRouter({ hashSensitive:true});
