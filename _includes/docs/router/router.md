@@ -21,14 +21,14 @@ router has two options.
 
 ## Routing
 ```javascript
-import { Router } from "@buyerjourney/router";
+import { Router } from "@custumerjourney/router";
 const App = new Router();
 App.on('/', (req, router)=>{console.log(req)});
 App.run();
 ```
 ## Routing with hash
 ```javascript
-import { Router } from "@buyerjourney/router";
+import { Router } from "@custumerjourney/router";
 
 const App = new Router({ hashSensitive:true});
 App.on('/', (req, router)=>{console.log(req)});
@@ -37,7 +37,7 @@ App.run();
 ```
 ## Routing whit path parameters
 ```javascript
-import { Router } from "@buyerjourney/router";
+import { Router } from "@custumerjourney/router";
 
 export const App = new Router({ hashSensitive:true});
 App.on('/', (req, router)=>{console.log(req)});
@@ -68,7 +68,7 @@ With the router configuration above we make the following request: http://localh
 ```
 ## Named routes
 ```javascript
-import { Router } from "@buyerjourney/router";
+import { Router } from "@custumerjourney/router";
 import { home, thanks } from "./app/pages";
 
 export const App = new Router({ hashSensitive:true});
