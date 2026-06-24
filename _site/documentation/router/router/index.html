@@ -181,7 +181,7 @@ navbar-item
 
 
 
-<li><a class="is-lateral-link" href="/customerjourney/documentation/router/routing">Routing CJ style</a></li>
+<li><a class="is-lateral-link" href=""></a></li>
 
 
 </ul>
@@ -539,7 +539,7 @@ navbar-item
 </ul>
 
 <h2 id="install">Install</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i @custumerjourney/router
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i @customerjourney/cj-router
 </code></pre></div></div>
 <h2 id="options">Options</h2>
 <p>router has two options.</p>
@@ -550,13 +550,13 @@ navbar-item
 </ol>
 
 <h2 id="routing">Routing</h2>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@custumerjourney/router</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">();</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">)});</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
 </code></pre></div></div>
 <h2 id="routing-with-hash">Routing with hash</h2>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@custumerjourney/router</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">)});</span>
@@ -564,7 +564,7 @@ navbar-item
 <span class="nx">App</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
 </code></pre></div></div>
 <h2 id="routing-whit-path-parameters">Routing whit path parameters</h2>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@custumerjourney/router</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
 <span class="nx">App</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">router</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">)});</span>
@@ -593,7 +593,7 @@ navbar-item
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 <h2 id="named-routes">Named routes</h2>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@custumerjourney/router</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">thanks</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>

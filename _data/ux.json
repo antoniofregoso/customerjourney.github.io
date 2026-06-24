@@ -8,10 +8,10 @@
                 "url":"https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             },
             {
-                "image":"/assets/images/redux.webp",
-                "name":"Redux",
+                "image":"/assets/images/signal.webp",
+                "name":"Signals",
                 "description":"",
-                "url":"https://redux-toolkit.js.org/"
+                "url":"https://preactjs.com/guide/v10/signals/"
             },
             {
                 "image":"/assets/images/animate.webp",

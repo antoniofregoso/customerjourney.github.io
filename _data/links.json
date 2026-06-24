@@ -138,11 +138,6 @@
       "subtitle": "Simple, light and flexible routing for your CJjs applications",
       "path": "/documentation/router/router/"
     },
-    "router-routing": {
-      "name": "Routing CJ style",
-      "subtitle": "The router as the heart of a CJjs app with persistent state management.",
-      "path": "/documentation/router/routing"
-    },
     "components": {
       "name": "Components",
       "subtitle": "Reusable UI macro-components for CJjs apps",

@@ -181,7 +181,7 @@ navbar-item
 
 
 
-<li><a class="is-lateral-link" href="/customerjourney/documentation/router/routing">Routing CJ style</a></li>
+<li><a class="is-lateral-link" href=""></a></li>
 
 
 </ul>
@@ -527,7 +527,7 @@ navbar-item
         
         <p>In the app.js file. The callback functions are located inside the pages folder within the app folder. We have one for home, one for thanks and notFound to style the 404 error. bj-router responds to the 404 error, but can optionally be customized.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/router</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@customerjourney/cj-router</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">thanks</span><span class="p">,</span> <span class="nx">notFound</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./app/pages</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bjRouter</span><span class="p">({</span> <span class="na">hashSensitive</span><span class="p">:</span><span class="kc">true</span><span class="p">});</span>
